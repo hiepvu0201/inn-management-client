@@ -1,0 +1,12 @@
+.btn-res{
+    width:40%;
+    height:auto;
+    font-family: "PT Sans, sans-serif";
+    color:black;
+    font-size: 14px;
+    cursor: pointer;
+}
+.btn-res:hover{
+    color:white;
+    background-color: #3fcc68;
+}

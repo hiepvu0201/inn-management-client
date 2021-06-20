@@ -1,0 +1,272 @@
+.outline {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+.container {
+  width: 90%;
+  height: auto;
+  background-color: #ffffff;
+}
+.rowAll {
+  width: 100%;
+  display: block;
+}
+.rowFirst {
+  width: 100%;
+  display: flex;
+  text-align: left;
+  padding-left: 2%;
+  padding-top: 5px;
+  border-bottom: 1px solid #eef1f5;
+  padding-bottom: 15px;
+    padding-top: 15px;
+}
+.rowSecond {
+  width: 100%;
+}
+.colLeft {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  padding-top: 1%;
+  padding-left: 2%;
+}
+.colRight {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  padding-top: 1%;
+}
+.imgAva {
+  width: 100%;
+}
+.innercolLeft {
+  width: 95%;
+  height: auto;
+  display: block;
+  background-color: #fff;
+  box-shadow: 0 2px 3px 2px rgb(0 0 0 / 3%);
+  text-align: center;
+  padding-top: 30px;
+}
+.innercolRight {
+  width: 95%;
+  height: auto;
+  display: block;
+  background-color: #fff;
+  box-shadow: 0 2px 3px 2px rgb(0 0 0 / 3%);
+  text-align: center;
+  border-bottom: 1px solid #eef1f5;
+  padding-left: 5px;
+  padding-bottom: 2%;
+}
+.iconUser {
+  width: 3%;
+}
+.titleUser {
+  width: 97%;
+  font-size: 20px;
+  color: #007c7e;
+  font-family: "PT Sans, sans-serif";
+}
+.fullName {
+  width: 100%;
+  font-size: 20px;
+  color: #5a7391;
+  font-family: "PT Sans, sans-serif";
+  padding-top: 2%;
+}
+.telephone {
+  width: 100%;
+  font-size: 20px;
+  color: #32c5d2;
+  font-family: "PT Sans, sans-serif";
+    padding-top: 2%;
+
+}
+.detailedimg {
+  width: 40%;
+  height: auto;
+}
+.rowfirst-right {
+  width: 100%;
+  height: auto;
+  display: flex;
+}
+.label {
+  width: 20%;
+  height: auto;
+  font-size: 15px;
+  color: #000;
+  font-family: "PT Sans, sans-serif";
+  text-align: right;
+}
+.contentname {
+  width: 60%;
+  height: auto;
+  font-size: 15px;
+  color: #000;
+  font-family: "PT Sans, sans-serif";
+  text-align: left;
+  padding-left: 2%;
+}
+.topi2c {
+  width: 100%;
+  height: auto;
+  font-size: 30px;
+  color: #000;
+  font-family: "PT Sans, sans-serif";
+  text-align: center;
+  font-weight: bold;
+  padding-left: 2%;
+  padding-bottom: 10px;
+  padding-top: 25px;
+}
+.btnupdate {
+  width: 15%;
+  height: auto;
+  font-family: "PT Sans, sans-serif";
+  color: #007c7e;
+    font-size:12px;
+    background-color: #fff;
+    display:flex;
+    text-align: center;
+}
+.btnupdate:hover{
+    background-color: #007c7e;
+    color:#fff;
+}
+.fontawesome{
+    width:20%;
+}
+.contentbtn{
+    width:80%;
+    text-align: left;
+}
+.row-all{
+  padding-bottom: 3%;
+}
+.cover-btn{
+  width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.input-userName{
+  margin-left:20px;
+}
+.input-password{
+  margin-left:25px;
+  width:20vw;
+}
+.input-email{
+  margin-left: 50px;
+  width:20vw;
+}
+.input-fullName{
+  margin-left:25px
+}
+.radio-sex{
+  margin-left:28px;
+}
+.input-job{
+  margin-left:20px;
+}
+.input-address{
+  margin-left:40px;
+  width: 20vw;
+}
+.select-roleid{
+  margin-left: 40px;
+}
+ .btn-updae-us{
+   margin-left: 54px; 
+   width: 70%;
+  }
+@media only screen and (max-width: 1026px) {
+   .btn-updae-us{
+    position: relative;
+    left:-56px
+  }
+   .form-img-us{
+    padding-left:26px;
+  }
+    .select-roleid{
+    position:relative;
+    left: -38px;
+  }
+   .form-roleid{
+    padding-left:20px;
+  }
+  .form-phoneno{
+    padding-left:20px;
+  }
+    .input-address{
+    position:relative;
+    left:-40px;
+  }
+  .form-address{
+    padding-left: 20px;
+  }
+   .input-job{
+    position:relative;
+    left: -20px;
+  }
+  .form-job{
+    padding-left: 20px;
+  }
+  .form1-sex1{
+    padding-left:20px;
+  }
+   .radio-sex{
+    position:relative;
+    left:-30px;
+  }
+    .input-fullName{
+    position:relative;
+    left:-25px;
+  }
+   .form-fullName{
+    padding-left:20px;
+  }
+   .input-password{
+    position:relative;
+    left:-25px;
+  }
+    .input-email{
+    position:relative;
+    left:-50px;
+  }
+   .form-email{
+    padding-left:35px;
+  }
+   .form-password{
+    padding-left:20px
+  }
+   .input-userName{
+    position:relative;
+    left:-20px;
+  }
+  .form-userName{
+    padding-left:20px;
+  }
+  .row-all{
+    padding-top:15px;
+  }
+  .cover-btn{
+    padding-top: 15px;
+  }
+  .btnupdate{
+    width:50%;
+  }
+  .colLeft{
+    padding-left: 15%;
+  }
+  .colRight{
+     padding-left: 15%;
+  }
+}

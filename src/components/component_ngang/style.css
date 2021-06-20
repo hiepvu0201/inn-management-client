@@ -1,0 +1,28 @@
+.box-ngang{
+    width:80%;
+    height: auto;
+}
+.topicabc{
+    width: 80%;
+    height: auto;
+    font-size: 24px;
+    font-family: "PT Sans", sans-serif;
+    font-weight: bold;
+    padding-top: 10px;
+    color: black;
+}
+.content-n{
+    width: 90%;
+    height: auto;
+    font-family: "PT Sans", sans-serif;
+    font-size: 15px;
+    color: black;
+}
+@media only screen and (max-width: 1026px) {
+  .box-ngang{
+      width: 100%;
+  }
+  .content-n{
+      padding-top: 15px;
+  }
+}

@@ -1,0 +1,311 @@
+@import "~antd/dist/antd.css";
+
+.menuBaradmin {
+  padding: 0 20px;
+  border-bottom: solid 1px #e8e8e8;
+  /* overflow: auto; */
+  box-shadow: 0 0 30px #f3f1f1;
+  display: flex;
+  background-color: white;
+  width: 100%;
+}
+.menuone1{
+  background-color: #007c7e;
+}
+
+.logoadmin {
+  width: 15%;
+}
+
+.logoadmin a {
+  display: inline-block;
+  font-size: 20px;
+  padding: 19px 20px;
+  text-transform: capitalize;
+}
+
+.menuConAdmin {
+  /* width: calc(100% - 150px); */
+  width: 85%;
+  display: flex;
+  margin-top: 10px;
+  margin-right: 20px;
+}
+
+.menuConAdmin .ant-menu-item {
+  padding: 0px 5px;
+}
+
+.menuConAdmin .ant-menu-submenu-title {
+  padding: 5px 10px;
+}
+
+.menuConAdmin .ant-menu-item a,
+.menuConAdmin .ant-menu-submenu-title a {
+  padding: 10px 5px;
+}
+
+.menuConAdmin .ant-menu-horizontal {
+  border-bottom: none;
+  /* background-color: #efefef; */
+}
+
+.menuConAdmin .leftMenuad {
+  width: 90%;
+  height: auto;
+}
+
+.menuConAdmin .rightMenuad {
+  float: right;
+  padding-bottom: 10px;
+  width: 10%;
+}
+
+.barsMenuabc {
+  float: right;
+  height: 32px;
+  padding: 6px;
+  margin-top: 8px;
+  display: none;
+  background: none;
+}
+
+.barsBtnabc {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: #1890ff;
+  position: relative;
+}
+
+.barsBtnabc:after,
+.barsBtnablockquote {
+  content: attr(x);
+  width: 20px;
+  position: absolute;
+  top: -6px;
+  left: 0;
+  height: 2px;
+  background: #1890ff;
+}
+
+.barsBtnabc:after {
+  top: auto;
+  bottom: -6px;
+}
+
+.ant-drawer-body {
+  padding: 0;
+}
+
+.barsMenuabc > span {
+  display: block;
+}
+
+.ant-drawer-body .ant-menu-horizontal > .ant-menu-item,
+.ant-drawer-body .ant-menu-horizontal > .ant-menu-submenu {
+  display: inline-block;
+  width: 100%;
+}
+
+.ant-drawer-body .ant-menu-horizontal {
+  border-bottom: none;
+}
+
+.ant-drawer-body .ant-menu-horizontal > .ant-menu-item:hover {
+  border-bottom-color: transparent;
+}
+.homecss {
+  margin-right: 10px;
+  background-color: #007c7e;
+}
+.roomcss {
+  background-color: #007c7e;
+  padding-left: 10px;
+  width: 10%;
+}
+.contractcss {
+  background-color: #007c7e;
+  /* padding-left: 5px; */
+  width: 11%;
+  padding-left: 10px;
+}
+.notifi {
+  background-color: #007c7e;
+  /* padding-left: 5px; */
+  width: 19%;
+  padding-left: 17px;
+}
+.contentroomcss {
+  color: white;
+  font-size: 15px;
+  font-family: "PT Sans", sans-serif;
+  padding-left: 15px;
+}
+.contentnotify {
+  color: white;
+  font-size: 15px;
+  font-family: "PT Sans", sans-serif;
+  padding-left: 15px;
+}
+.moneycss {
+  background-color: #007c7e;
+  padding-left: 5px;
+  width: 11%;
+  padding-left: 10px;
+}
+.contentmoneycss {
+  color: white;
+  font-size: 15px;
+  font-family: "PT Sans", sans-serif;
+}
+.hovercc {
+  width: 100%;
+  height: auto;
+  display: flex;
+  padding-top: 5px;
+}
+.hovercc:hover {
+  color: #337ab7;
+}
+.menuone {
+  background-color: #007c7e;
+  padding-left: 10px;
+  color: white;
+  width: 100%;
+}
+.contentcontract {
+  color: white;
+  font-size: 15px;
+  font-family: "PT Sans", sans-serif;
+}
+.inv {
+  padding-left: 5px;
+}
+.report {
+  color: rgb(0, 124, 126);
+  font-size: 15px;
+  font-family: "PT Sans", sans-serif;
+  padding-left: 48px;
+}
+.detailed-report {
+  padding-left: 12px;
+}
+.middle-img{
+  width: 100%;
+  height: auto;
+}
+.roomdetailed{
+      padding-left: 3px;
+}
+.acvd{
+  width: 100%;
+    height: auto;
+    padding-bottom: 5px;
+}
+@media (max-width: 1210px) {
+  .contentcontract {
+    padding-left: 20px;
+  }
+  .middle-img{
+    width:20vw;
+    height:auto;
+    position:relative;
+    left:30vw;
+  }
+  .logoadmin{
+    width:2%;
+  }
+  .report {
+    padding-left: 50px;
+  }
+  .detailed-report {
+    padding-left: 10px;
+  }
+  .inv {
+    padding-left: 5px;
+  }
+  .menuone {
+    color: white;
+    padding-left: 27px;
+  }
+  .barsMenuabc {
+    display: inline-block;
+  }
+  .faci {
+    padding-left: 20px;
+    color: black;
+  }
+  .menuConAdmin .leftMenuad {
+    display: none;
+  }
+
+  /* .leftMenu,
+  .rightMenu {
+    display: none;
+  } */
+  
+  .leftMenuad{
+    display: none;
+  }
+  .logoadmin a {
+    margin-left: -20px;
+  }
+
+  .menuConAdmin .ant-menu-item,
+  .menuConAdmin .ant-menu-submenu-title {
+    padding: 1px 20px;
+  }
+
+  .logoadmin a {
+    padding: 10px 20px;
+  }
+  .rightMenuad {
+    float: right;
+  }
+  .padding {
+  }
+  .homecss {
+    padding-left: 30px;
+  }
+  .roomcss {
+    padding-left: 18px;
+    width: 100%;
+  }
+  .barsMenuabc{
+    left:90%
+  }
+  .contractcss {
+    padding-left: 18px;
+    width: 100%;
+  }
+  .notifi {
+    padding-left: 18px;
+    width:100%;
+  }
+  .contentroomcss {
+    padding-left: 18px;
+    width: 100%;
+  }
+  .contentnotify {
+    padding-left: 18px;
+    width: 100%;
+  }
+  .roomdetailed {
+    padding-left: 12px;
+  }
+  .ant-menu-inline .ant-menu-item:not(:last-child) {
+    padding-left: 40px;
+  }
+  .moneycss {
+    padding-left: 19px;
+    width:100%;
+  }
+  .contentmoneycss {
+    padding-left: 19px;
+  }
+  .hostmenu{
+    width:100vw;
+    background-color: #007c7e;
+  }
+}

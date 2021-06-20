@@ -1,0 +1,182 @@
+.rectanglecontract {
+  width: 98%;
+  margin-left: 15px;
+  height: auto;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+}
+.topic-left-con {
+  float: left;
+  display: flex;
+  width: 70%;
+  padding-left: 16px;
+}
+
+.contentcontract {
+  font-size: 20px;
+  font-family: "PT Sans, sans-serif";
+  color: #007c7e;
+  padding-left: 20px;
+  text-align: left;
+  height: auto;
+  padding-top: 5px;
+}
+.btn-right-con {
+  float: right;
+  display: flex;
+  width: 30%;
+  padding-left: 100px;
+}
+.detailed-btn-con {
+  font-size: 15px;
+  font-family: "PT Sans, sans-serif";
+  color: #007c7e;
+  width: 100px;
+  background-color: white;
+  border-color: #007c7e;
+  border-style: solid;
+  height: auto;
+  margin-right: 20px;
+  border-radius: 20px;
+}
+.detailed-btn-con:hover {
+  background-color: #007c7e;
+  color: white;
+}
+.btnsearch {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: auto;
+  padding-top: 10px;
+}
+.detailedsearch {
+  width: 60%;
+  padding-right: 10px;
+}
+.btbtncreate{
+    display: flex;
+}
+.containercontainer{
+    width: 100%;
+    height: auto;
+    background-color: rgb(239, 239, 239);
+}
+.input-details{
+}
+.input-signDate{
+  margin-left: 58px;
+}
+.input-room-contract{
+ margin-left:50px;
+}
+.input-stage-contract{
+  margin-left:70px;
+}
+.input-yearpicker{
+  margin-left:65px;
+}
+.input-voucher{
+  margin-left:40px;
+  width:20vw;
+}
+.select-owner{
+  margin-left:68px;
+}
+.select-tenant{
+  margin-left:42px;
+}
+.input-room-contract{
+  width:20vw;
+}
+.input-stage-contract{
+  width:20vw;
+}
+@media only screen and (max-width: 1026px) {
+  .form-details{
+    padding-left:15px;
+  }
+  .form-signDate{
+    padding-left: 15px;
+  }
+  .form-num-room{
+    padding-left:20px;
+  }
+  .form-num-stages{
+    padding-left:20px;
+  }
+  .form-year{
+    padding-left: 20px;
+  }
+  .form-voucher{
+    padding-left:20px;
+  }
+  .form-owner{
+    padding-left: 25px;
+  }
+  .form-tenant{
+    padding-left:25px;
+  }
+  .select-tenant{
+      position:relative;
+    left:-40px;
+  }
+  .select-owner{
+    position:relative;
+    left:-70px;
+  }
+  .input-voucher{
+    position:relative;
+    left:-40px;
+  }
+  .input-yearpicker{
+    position: relative;
+    left:-64px;
+  }
+  .input-stage-contract{
+    position:relative;
+    left: -70px;
+  }
+  .input-room-contract{
+    position:relative;
+    left:-50px;
+  }
+  .input-signDate{
+    position:relative;
+    left:-55px;
+  }
+  .input-details{
+    position: relative;
+    left:2px;
+  }
+  .btnsearch {
+    display: block;
+  }
+  .contentcontract {
+    font-size: 12px;
+    padding-left: 10px;
+  }
+  .btn-right-con {
+    width: 96%;
+    padding-left: initial;
+    padding-bottom: 10px;
+  }
+  .detailedsearch {
+    width: 40%;
+  }
+  .detailed-btn-con {
+    font-size: 12px;
+    width: 30%;
+  }
+  .rectanglecontract{
+      width:94%
+  }
+  .btbtncreate{
+      width: 100%;
+  }
+  .containercontainer{
+      height:auto;
+  }
+}

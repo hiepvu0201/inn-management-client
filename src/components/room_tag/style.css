@@ -1,0 +1,12 @@
+.btn{
+    width:40%;
+    height:auto;
+    font-family: "PT Sans, sans-serif";
+    color:black;
+    font-size: 13px;
+    cursor: pointer;
+}
+.btn:hover{
+    color:white;
+    background-color: #3fcc68;
+}

@@ -1,0 +1,76 @@
+.num-1 {
+  /* text-align: right; */
+ width: 30%;
+    padding-right: 55px;
+}
+.primary-btn {
+  width: 40%;
+  height: auto;
+  font-family: "PT Sans", sans-serif;
+  font-size: 25px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  background-color: rgb(0, 124, 126);
+  color: white;
+  border-radius: 8px;
+}
+.primary-btn:hover {
+  background-color: #eb2f5b;
+}
+.textac {
+  font-family: "PT Sans", sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: left;
+  width: 60%;
+  padding-left: 310px;
+  padding-top: 20px;
+}
+.recad {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  padding-left: 240px;
+  padding-top: 20px;
+}
+.item-title {
+  width: 88%;
+  margin-left: 47px;
+}
+.item-description {
+  width: 88%;
+  margin-left: 58px;
+}
+.item-status {
+  margin-left: 28px;
+  width: 93%;
+}
+@media only screen and (max-width: 1026px) {
+  .primary-btn {
+    width: 100%;
+  }
+  .recad {
+    padding-left: 10px;
+    /* width: 100vw; */
+  }
+  .num-1 {
+    width: 100%;
+  }
+  .textac {
+    width: 100%;
+    padding-left: 10px;
+  }
+  .item-status {
+    left: -27px;
+    position: relative;
+  }
+  .item-description {
+    position: relative;
+    left: -55px;
+  }
+  .item-title {
+    position: relative;
+    left: -39px;
+  }
+}

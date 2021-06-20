@@ -1,0 +1,45 @@
+.box-1-docxanh {
+  width: 80%;
+  height: 280px;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+}
+.icon-hover-1 {
+  border-radius: 50%;
+  background-color: white;
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.topic-com-1 {
+  width: 80%;
+  height: auto;
+  font-size: 18px;
+  font-family: "PT Sans", sans-serif;
+  color: #007c7e;
+  font-weight: bold;
+  padding-top: 10px;
+}
+.content-com-1 {
+  width: 94%;
+  height: auto;
+  font-family: "PT Sans", sans-serif;
+  font-size: 15px;
+  color: black;
+}
+.box-1-block{
+  display: block;
+}
+@media only screen and (max-width: 1026px) {
+  .box-1-docxanh {
+    width: 100%;
+    height: auto;
+    padding-bottom: 15px;
+  }
+  .box-1-block{
+    width: 80vw;
+  }
+}

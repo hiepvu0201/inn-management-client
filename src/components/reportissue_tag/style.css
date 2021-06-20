@@ -1,0 +1,78 @@
+.title2{
+    width: 18%;
+    font-family: "PT Sans", sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    text-align: left;
+}
+.prop-title{
+    width: 82%;
+    font-family: "PT Sans", sans-serif;
+    font-size: 15px;
+    text-align: left;
+}
+.description{
+        width: 18%;
+    font-family: "PT Sans", sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    text-align: left;
+}
+.prop-description{
+        width: 82%;
+    font-family: "PT Sans", sans-serif;
+    font-size: 15px;
+    text-align: left;
+}
+.status{
+    width: 18%;
+    font-family: "PT Sans", sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    text-align: left;
+}
+.prop-status{
+    width: 82%;
+    font-family: "PT Sans", sans-serif;
+    font-size: 15px;
+    text-align: left;
+}
+.admin{
+    width: 18%;
+    font-family: "PT Sans", sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    text-align: left;
+}
+.prop-admin{
+    width: 82%;
+    font-family: "PT Sans", sans-serif;
+    font-size: 15px;
+    text-align: left;
+}
+@media only screen and (max-width: 1026px) {
+    .admin{
+        width:40%;
+    }
+    .prop-admin{
+        width: 60%;
+    }
+    .status{
+        width:40%;
+    }
+    .prop-status{
+        width:60%;
+    }
+    .title2{
+        width:40%;
+    }
+    .prop-title{
+        width: 60%;
+    }
+    .description{
+        width: 40%;
+    }
+    .prop-description{
+        width:  60%;
+    }
+}

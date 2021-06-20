@@ -1,0 +1,102 @@
+.rectangleinvoices{
+    width:98%;
+    margin-left: 15px;
+    height:auto;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+}
+.topic-left-invoice{
+    float: left;
+    display: flex;
+    width:70%;
+    padding-left: 15px;
+    height: auto;
+}
+.topic-right-invoice{
+    width:30%;
+    height:auto
+}
+.contentinvoices{
+    font-size: 20px;
+    font-family: "PT Sans, sans-serif";
+    color:#007c7e;
+    padding-left: 20px;
+    height:auto;
+    text-align: left;
+    padding-top: 5px;
+
+}
+.btn-right-invoice{
+    width: 80%;
+    float:right;
+    display: flex;
+}
+.detailed-btn-invoices{
+    font-size: 15px;
+    font-family: "PT Sans, sans-serif";
+    color:#007c7e;
+    width:100px;
+    background-color: white;
+    border-color: #007c7e;
+    border-style: solid;
+    height:auto;
+    margin-right:20px;
+    border-radius:20px;
+}
+.detailed-btnCSN{
+    font-size: 15px;
+    font-family: "PT Sans, sans-serif";
+    color:#007c7e;
+    width:210px;
+    background-color: white;
+    border-color: #007c7e;
+    border-style: solid;
+    height:auto;
+    margin-right:20px;
+    border-radius:20px;
+    display: flex;
+    justify-content: center;
+}
+.detailed-btnCSN:hover{
+    background-color: #007c7e;
+    color:white;
+}
+.detailed-btn-invoices:hover{
+    background-color: #007c7e;
+    color:white;
+}
+.input-location{
+    margin-left:90px;
+}
+@media only screen and (max-width: 1026px) {
+  .topic-right-invoice
+  {
+      width: 60%;
+  }
+  .topic-left-invoice{
+      width: 40%;
+  }
+  .contentinvoices{
+      font-size: 12px;
+  }
+  .rectangleinvoices{
+      width:94%;
+  }
+  .btn-right-invoice{
+      width:100%;
+  }
+  .item-us-invoices{
+      padding-left:15px;
+  }
+  .item-paymentDate{
+      padding-left:15px;
+  }
+  .detailed-btn-invoices{
+      width:40%;
+  }
+  .input-location{
+      position:relative;
+      left:-80px
+  }
+}

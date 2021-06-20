@@ -1,0 +1,167 @@
+.rectangleelectricwater {
+  width: 98%;
+  margin-left: 15px;
+  height: auto;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+}
+.topic-left-electric {
+  float: left;
+  display: flex;
+  width: 50%;
+  padding-left: 15px;
+}
+.topic-right-electric {
+  width: 50%;
+}
+.contentelectricwater {
+  font-size: 20px;
+  font-family: "PT Sans, sans-serif";
+  color: #007c7e;
+  padding-left: 20px;
+  height: auto;
+  padding-top: 5px;
+}
+.btn-right-elec {
+  float: right;
+  display: flex;
+}
+.detailed-btn-elec {
+  font-size: 15px;
+  font-family: "PT Sans, sans-serif";
+  color: #007c7e;
+  width: 100px;
+  background-color: white;
+  border-color: #007c7e;
+  border-style: solid;
+  height: auto;
+  margin-right: 20px;
+  border-radius: 20px;
+}
+.detailed-btn-elec:hover {
+  background-color: #007c7e;
+  color: white;
+}
+.btnbtncreateelectricitywater {
+  display: flex;
+}
+.input-numElectricOld {
+  margin-left: 20px;
+}
+.input-numElectricNew {
+  margin-left: 12px;
+}
+.input-numWaterOld {
+  margin-left: 13px;
+}
+.input-numWaterNew {
+  margin-left: 4px;
+}
+.input-electricityUnitPrice{
+  margin-left: 33px;
+  width:20vw;
+}
+.input-waterUnit-Price{
+  margin-left: 27px;
+  width:20vw
+}
+.select-month{
+  margin-left: 45px;
+}
+.radio-checked
+{
+  margin-left: 30px;
+}
+.select-roomid{
+  margin-left: 43px;
+}
+@media only screen and (max-width: 1026px) {
+  .tagcolor{
+    width:150px;
+  }
+  .form-numElectricNew{
+    padding-left: 15px;
+  }
+  .form-numWaterNew{
+    padding-left: 19px;
+  }
+  .form-electricityUnitPrice{
+    padding-left: 20px;
+  }
+  .form-waterUnitPrice{
+    padding-left: 20px;
+  }
+  .form-month{
+    padding-left: 20px;
+  }
+  .form-checked{
+    padding-left:25px;
+  }
+  .radio-checked{
+    position:relative;
+    left:-25px;
+  }
+  .form-roomid{
+    padding-left: 20px;
+  } 
+  .select-roomid{
+    position:relative;
+    left:-40px;
+  }
+  .select-month{
+    position:relative;
+    left:-38px;
+  }
+  .input-waterUnit-Price{
+    position: relative;
+    left:-20px;
+  }
+  .input-electricityUnitPrice{
+    position: relative;
+    left:-28px;
+  }
+  .form-numWaterOld{
+    padding-left: 18px;
+  }
+  .input-numWaterOld{
+    position: relative;
+    left: -10px;
+  }
+  .input-numElectricOld{
+    position: relative;
+    left:-18px;
+  }
+  .form-numElectricOld{
+    padding-left: 15px;
+  }
+  .input-numElectricOld{
+    position:relative;
+    left:-13px;
+  }
+  .contentelectricwater {
+    font-size: 12px;
+  }
+  .detailed-btn-elec {
+    font-size: 12px;
+  }
+  .rectangleelectricwater {
+    width: 94%;
+  }
+  .ant-table-thead > tr > th {
+    font-size: 5px;
+  }
+  .topic-left-electric {
+    width: 60%;
+  }
+  .topic-right-electric {
+    width: 40%;
+  }
+  .btnbtncreateelectricitywater {
+    width: 100%;
+    padding-left: 170px;
+  }
+  /* .ant-table {
+    font-size: 2px;
+} */
+}

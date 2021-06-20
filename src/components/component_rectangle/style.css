@@ -1,0 +1,48 @@
+.rectangle-box{
+    width:250px;
+    height: 250px;
+    background-color: #f4f4f4;
+    position:relative;
+    padding:60px 25px;
+    box-sizing: border-box;
+    margin-bottom: 35px;
+    box-shadow: 10px 20px 0px 0px #007c7e ;
+}
+.rectangle-box:hover{
+    box-shadow:  20px 40px 0px 5px #007c7e ;
+}
+
+.form-icon{
+    color:#f7f7f7;
+    font-size: 100px;
+    position:absolute;
+    left:0;
+    right:0;
+    z-index: index 1;
+}
+.form-topic{
+    position:relative;
+    line-height: 20px;
+    font-size:25px;
+    color:#007c7e;
+    font-weight: bold;
+    font-family: "PT Sans", sans-serif;
+}
+.form-content{
+    position:relative;
+    line-height: 20px;
+    font-size:15px;
+    text-align: center;
+    color:black;
+    font-family: "PT Sans", sans-serif;
+    padding-top: 30px;
+}
+.row-rectangle{}
+@media only screen and (max-width: 1026px) {
+ .row-rectangle{
+         padding-left: 20px;
+ }
+ .rectangle-box{
+     width:90%;
+ }
+}

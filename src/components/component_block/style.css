@@ -1,0 +1,48 @@
+.box-block{
+    max-width: 250px;
+    height: 250px;
+    background-color: #007c7e;
+    border-radius: 80% 60% 25% 76%;
+    display:flex;
+    justify-content: center;
+    /* padding-top: 5px  !important; */
+    /* padding-top: 70px  !important; */
+}
+.number-topinleft{
+    width:40px;
+    height:40px;
+    line-height: 40px;
+    border-radius:50%;
+    background-color: #009c7e;
+    text-align: center;
+    color:#ffff;
+    position: absolute;
+    left:210px;
+    top: 20px;
+}
+.ti-content-compo{
+    width:100%;
+    height:auto;
+    font-size: 24px;
+    font-family: 700;
+    color: white;
+    font-family: "PT Sans", sans-serif;
+
+}
+.row-block{
+    padding-top: 20px;
+    padding-left: 30px;
+}
+
+@media only screen and (max-width: 1026px) {
+  .row-block{
+      display: block;
+      padding-left: 90px;
+  }
+  .box-block{
+      margin-left: 110px
+  }
+  .number-topinleft{
+          left: 310px;
+  }
+}

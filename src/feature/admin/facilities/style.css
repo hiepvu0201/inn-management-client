@@ -1,0 +1,132 @@
+.rectanglefacilities {
+  width: 98%;
+  height: auto;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 15px;
+}
+.topic-left-faci {
+  float: left;
+  display: flex;
+  width: 70%;
+  padding-left: 15px;
+}
+.topic-right-faci {
+  width: 50%;
+}
+.contentfacilities {
+  font-size: 20px;
+  font-family: "PT Sans, sans-serif";
+  color: #007c7e;
+  padding-left: 20px;
+  width: 40%;
+  height: auto;
+  padding-top: 5px;
+}
+.btn-right-faci {
+  float: right;
+  display: flex;
+  width: 20%;
+}
+.boxfacilities {
+  width: 100%;
+  height: auto;
+  background-color: #efefef;
+}
+.detailed-btn-faci {
+  font-size: 15px;
+  font-family: "PT Sans, sans-serif";
+  color: #007c7e;
+  width: 100%;
+  background-color: white;
+  border-color: #007c7e;
+  border-style: solid;
+  height: auto;
+  margin-right: 20px;
+  border-radius: 20px;
+}
+.detailed-btn-faci:hover {
+  background-color: #007c7e;
+  color: white;
+}
+.btnbtncreatefaci{
+  display: flex;
+}
+.select-quality{
+  margin-left: 30px;
+}
+.input-name-facility{
+  margin-left: 20px;
+}
+.input-quantity{
+  margin-left:40px;
+  width:22vw;
+}
+.input-unitPrice{
+  margin-left:48px;
+   width:22vw;
+}
+@media only screen and (max-width: 1026px) {
+  .boxfacilities {
+    height: auto;
+  }
+  .form-unitPrice{
+    padding-left:20px;
+  }
+  .input-unitPrice{
+    position:relative;
+    left:-45px;
+    width:50vw;
+  }
+  .input-quantity{
+    position:relative;
+    left:-40px;
+    width:50vw;
+  }
+  .form-quantity{
+    padding-left:20px;
+  }
+  .form-name-facility{
+    padding-left:20px
+  }
+  .input-name-facility{
+    position:relative;
+    left:-20px;
+  }
+  .form-quality{
+    padding-left:20px;
+  }
+  .select-quality{
+    position:relative;
+    left:-30px;
+  }
+  .contentfacilities {
+    font-size: 12px;
+    width: 80%;
+    text-align: left;
+  }
+  .topic-left-faci {
+    width: 70%;
+  }
+  .topic-right-faci {
+    width: 30%;
+  }
+  .btn-right-faci {
+    width: 100%;
+    height: auto;
+    padding-top: 6px;
+  }
+  .detailed-btn-faci {
+    font-size: 12px;
+    width: 80%;
+  }
+  .rectanglefacilities {
+    width: 94%;
+  }
+  .btnbtncreatefaci{
+    width:100%;
+    padding-left: 170px;
+  }
+  
+}

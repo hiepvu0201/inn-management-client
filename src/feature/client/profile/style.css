@@ -1,0 +1,270 @@
+.outline {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+.container {
+  width: 90%;
+  height: auto;
+  background-color: #ffffff;
+}
+.rowAll {
+  width: 100%;
+  display: block;
+}
+.rowFirstabc {
+  width: 100%;
+  display: flex;
+  text-align: left;
+  padding-left: 2%;
+  padding-top: 15px;
+  border-bottom: 1px solid #eef1f5;
+  padding-bottom: 15px;
+}
+.rowSecond {
+  width: 100%;
+}
+.colLeft {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  padding-top: 1%;
+}
+.colRight {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  padding-top: 1%;
+}
+.imgAva {
+  width: 100%;
+}
+.innercolLeft {
+  width: 95%;
+  height: auto;
+  display: block;
+  background-color: #fff;
+  box-shadow: 0 2px 3px 2px rgb(0 0 0 / 3%);
+  text-align: center;
+}
+.innercolRight {
+  width: 95%;
+  height: auto;
+  display: block;
+  background-color: #fff;
+  box-shadow: 0 2px 3px 2px rgb(0 0 0 / 3%);
+  text-align: center;
+  border-bottom: 1px solid #eef1f5;
+  padding-left: 5px;
+  padding-bottom: 2%;
+}
+.iconUser {
+  width: 3%;
+}
+.titleUser {
+  width: 97%;
+  font-size: 20px;
+  color: #007c7e;
+  font-family: "PT Sans, sans-serif";
+}
+.fullName {
+  width: 100%;
+  font-size: 20px;
+  color: #5a7391;
+  font-family: "PT Sans, sans-serif";
+  padding-top: 2%;
+}
+.telephone {
+  width: 100%;
+  font-size: 20px;
+  color: #32c5d2;
+  font-family: "PT Sans, sans-serif";
+    padding-top: 2%;
+
+}
+.detailedimg {
+  width: 40%;
+  height: auto;
+}
+.rowfirst-right {
+  width: 100%;
+  height: auto;
+  display: flex;
+}
+.label {
+  width: 20%;
+  height: auto;
+  font-size: 15px;
+  color: #000;
+  font-family: "PT Sans, sans-serif";
+  text-align: right;
+}
+.contentname {
+  width: 60%;
+  height: auto;
+  font-size: 15px;
+  color: #000;
+  font-family: "PT Sans, sans-serif";
+  text-align: left;
+  padding-left: 2%;
+}
+.topi2c {
+  width: 100%;
+  height: auto;
+  font-size: 30px;
+  color: #000;
+  font-family: "PT Sans, sans-serif";
+  text-align: center;
+  font-weight: bold;
+  padding-left: 2%;
+  padding-bottom: 10px;
+}
+.btnupdate {
+  width: 15%;
+  height: auto;
+  font-family: "PT Sans, sans-serif";
+  color: #007c7e;
+    font-size:12px;
+    background-color: #fff;
+    display:flex;
+    text-align: center;
+    border-radius: 8px;
+}
+.btnupdate:hover{
+    background-color: #007c7e;
+    color:#fff;
+}
+.fontawesome{
+    width:20%;
+}
+.contentbtn{
+    width:80%;
+    text-align: left;
+}
+.row-select{
+  margin-left: 40px;
+}
+.row-address{
+  margin-left: 40px;
+}
+.row-job{
+  margin-left: 23px;
+}
+.row-sex{
+  margin-left:30px;
+}
+.row-id{
+  margin-left:42px;
+}
+.row-full{
+  margin-left:25px
+}
+.row-email{
+  margin-left:49px
+}
+.row-user{
+  margin-left: 23px;
+}
+.row-img{
+  margin-left: 54px;
+  width:90%;
+  border-radius: 8px;
+}
+.element-sax{
+      width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+@media only screen and (max-width: 1026px) {
+  .form-user{
+    padding-left: 12px;
+  }
+  .form-email{
+    padding-left: 15px;
+  }
+  .form-fullname{
+    padding-left: 15px;
+  }
+  .form-id{
+    padding-left: 15px;
+  }
+  .form-sex{
+    padding-left:15px;
+  }
+  .form-job{
+    padding-left:15px
+  }
+  .form-address{
+    padding-left:18px;
+  }
+  .form-phone{
+    padding-left:15px
+  }
+  .row-address{
+    position:relative;
+    left:-39px;
+  }
+  .row-phone{
+    position:relative;
+    left:2px;
+  }
+  .row-job{
+    position: relative;
+    left:-22px;
+  }
+  .row-user{
+    position: relative;
+    right:22px
+  }
+  .row-email{
+    position: relative;
+    left:-48px
+  }
+  .row-full{
+    position:relative;
+    left:-25px
+  }
+  .row-id{
+     position:relative;
+    left:-40px
+  }
+  .row-sex{
+    position:relative;
+    left: -27px;
+  }
+  .row-select{
+    position: relative;
+    left:-35px
+  }
+  .form-select{
+    padding-left:15px
+  }
+  .form-img{
+    padding-left:15px
+  }
+  .row-img{
+    position: relative;
+    left:-52px;
+  }
+  .btnupdate{
+        width: 30%;
+    text-align: center;
+    padding-left: 20px;
+  }
+  .label{
+    width:30%;
+  }
+  .contentname{
+    width:70%;
+  }
+  .element-sax{
+    padding-top:15px
+  }
+  .topi2c{
+    font-size:20px
+  }
+}

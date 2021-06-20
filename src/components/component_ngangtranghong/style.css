@@ -1,0 +1,46 @@
+.content11{
+    width:80%;
+    height: auto;
+    /* background-color: gray; */
+}
+.icon-hover-11{
+    border-radius: 50%;
+    border-color: #eb2f5b;
+    border-style: solid;
+    width:4rem;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.topicabc{
+    width: 90%;
+    height: auto;
+    font-size: 24px;
+    font-family: "PT Sans", sans-serif;
+    font-weight: bold;
+    padding-top: 10px;
+    color: black;
+}
+.contentnth{
+    width: 80%;
+    height: auto;
+    font-family: "PT Sans", sans-serif;
+    font-size: 15px;
+    color: black;
+}
+.display-content11{
+    display: block;
+}
+@media only screen and (max-width: 1026px) {
+  .content{
+      text-align: center;
+      width: 90%;
+  }
+  .content11{
+      height:auto
+  }
+  .display-content11{
+      width: 90vw;
+  }
+}

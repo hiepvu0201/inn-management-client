@@ -1,0 +1,282 @@
+.rectangleusers {
+  width: 98%;
+  margin-left: 15px;
+  height: auto;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+}
+.topic-left-user {
+  float: left;
+  display: flex;
+  /* width: 40%; */
+  padding-left: 15px;
+  width: 50%;
+}
+.topic-right-user {
+  width: 50%;
+  display: flex;
+}
+.contentusers {
+  font-size: 20px;
+  font-family: "PT Sans, sans-serif";
+  color: #007c7e;
+  padding-left: 20px;
+  height: auto;
+  padding-top: 5px;
+  text-align: left;
+}
+.element-selectuser {
+  width: 45%;
+  text-align: right;
+
+}
+.element2-selectuser {
+  width: 30%;
+  text-align: right;
+}
+.btn-right-user {
+  width: 20%;
+  height:auto;
+}
+.detailed-btn-user {
+  font-size: 15px;
+  font-family: "PT Sans, sans-serif";
+  color: #007c7e;
+  width: 100px;
+  background-color: white;
+  border-color: #007c7e;
+  border-style: solid;
+  height: auto;
+  margin-right: 20px;
+  border-radius: 20px;
+}
+.detailed-btn-user:hover {
+  background-color: #007c7e;
+  color: white;
+}
+.sumusser {
+  width: 100%;
+  height: auto;
+  background-color: rgb(239, 239, 239);
+}
+.btnbtnussers {
+  display: flex;
+}
+.padding-table{
+    padding-top: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+}
+.row-1{
+        display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    padding-top: 20px;
+
+}
+.input-userName{
+  margin-left:20px;
+}
+.input-password{
+  margin-left:25px;
+  width:20vw;
+}
+.input-email{
+  margin-left: 50px;
+  width:20vw;
+}
+.input-fullName{
+  margin-left:25px
+}
+.radio-sex{
+  margin-left:28px;
+}
+.input-job{
+  margin-left:20px;
+}
+.input-address{
+  margin-left:40px;
+  width: 20vw;
+}
+.input-phoneno{
+}
+.select-roleid{
+  margin-left: 40px;
+}
+ .btn-updae-us{
+   margin-left: 54px; 
+   width: 70%;
+  }
+  .datepicker-checkindate{
+    margin-left: 20px;
+  }
+  .datepicker-checkoutdate{
+    margin-left: 12px;
+  }
+  .form-checkindate{
+
+  }
+  .input-username-2{
+    margin-left: 43px;
+    width:20vw;
+
+  }
+  .select-roomNo{
+    margin-left:60px;
+    width:20vw;
+  }
+  .form-userName-2{
+  }
+@media only screen and (max-width: 1026px) {
+  .form-checkindate{
+    padding-left:20px
+  }
+  .form-checkoutdate{
+        padding-left:20px
+
+  }
+  .datepicker-checkoutdate{
+    position: relative;
+    left:-10px;
+  }
+  .select-roomNo{
+    position:relative;
+    left:-60px
+  }
+  .form-roomnous2{
+    padding-left: 20px;
+  }
+  .input-username-2{
+    position:relative;
+    left:-36px;
+    width:50vw;
+  }
+  .form-userName-2{
+    padding-left:20px
+  }
+  .datepicker-checkindate{
+    position: relative;
+    left:-22px
+  }
+  .abcd{
+    font-size:10px ;
+  }
+  .topic-left-user {
+    width: 100%;
+  }
+  .form-phoneno{
+    padding-left:20px;
+  }
+  .form-roleid{
+    padding-left:20px;
+  }
+  .select-roleid{
+    position:relative;
+    left: -38px;
+  }
+  .btn-updae-us{
+    position: relative;
+    left:-56px
+  }
+  .form-img-us{
+    padding-left:26px;
+  }
+  .form-fullName{
+    padding-left:20px;
+  }
+  .input-fullName{
+    position:relative;
+    left:-25px;
+  }
+  .form-email{
+    padding-left:35px;
+  }
+  .form-job{
+    padding-left: 20px;
+  }
+  .form-address{
+    padding-left: 20px;
+  }
+  .input-address{
+    position:relative;
+    left:-40px;
+  }
+  .input-job{
+    position:relative;
+    left: -20px;
+  }
+  .form1-sex1{
+    padding-left:20px;
+  }
+  .radio-sex{
+    position:relative;
+    left:-30px;
+  }
+  .input-email{
+    position:relative;
+    left:-50px;
+  }
+  .form-password{
+    padding-left:20px
+  }
+  .input-password{
+    position:relative;
+    left:-25px;
+  }
+  .btn-existed{
+    position:relative;
+    bottom: -40px;
+    left: -100px;
+  }
+  .form-userName{
+    padding-left:20px;
+  }
+  .input-userName{
+    position:relative;
+    left:-20px;
+  }
+  .padding-table{
+      padding-right:10px ;
+      width: 80%;
+  }
+  .row-1{
+      display: block;
+  }
+  .contentusers {
+    font-size: 12px;
+    width: 100%;
+  }
+  .topic-right-user {
+    width: 100%;
+    padding-left: 15px;
+  }
+  .btn-right-user {
+    width: 30%;
+  }
+  .detailed-btn-user {
+    font-size: 12px;
+    width: 80%;
+  }
+  .sumusser {
+    height: auto;
+  }
+  .rectangleusers {
+    width: 94%;
+  }
+  .btnbtnussers {
+    width: 100%;
+    padding-left: 170px;
+  }
+  .ant-form-item-control-input {
+    width: 88%;
+  }
+  .element-selectuser{
+    width:30%;
+  }
+  .element2-selectuser{
+    width:70%;
+  }
+}

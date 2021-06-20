@@ -1,0 +1,183 @@
+.rectangleroom {
+  width: 98%;
+  height: auto;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 15px;
+}
+.topic-left-room {
+  float: left;
+  display: flex;
+  width: 70%;
+  padding-left: 12px;
+}
+.contentroom {
+  font-size: 20px;
+  font-family: "PT Sans, sans-serif";
+  color: #007c7e;
+  padding-left: 20px;
+  width: 80%;
+  text-align: left;
+}
+.btn-right-rooms {
+  float: right;
+  display: flex;
+  width: 30%;
+}
+.detailed-btnroom {
+  font-size: 15px;
+  font-family: "PT Sans, sans-serif";
+  color: #007c7e;
+  width: 30%;
+  background-color: white;
+  border-color: #007c7e;
+  border-style: solid;
+  height: auto;
+  margin-right: 20px;
+  border-radius: 20px;
+}
+.detailed-btnroom:hover {
+  background-color: #007c7e;
+  color: white;
+}
+.boxroom {
+  width: 100%;
+  height: auto;
+  background-color: #efefef;
+}
+.btnbtncrateroom{
+  display: flex;
+}
+.input-roomNo{
+  margin-left: 72px;
+  width:20vw;
+}
+.input-position{
+  margin-left:104px;
+  width:20vw;
+}
+.select-roomType{
+  margin-left: 64px;
+}
+.input-priceByDay{
+  margin-left:2px;
+}
+.input-pricebyWeek{
+  margin-left:5px;
+}
+.select-branches{
+  margin-left:70px;
+  width: 80%;
+}
+.select-facility{
+  margin-left:90px
+}
+.btn-upload{
+  margin-left: 110px;
+}
+.form-facilityids{
+  width:80%;
+}
+@media only screen and (max-width: 1026px) {
+  .form-roomNo{
+    padding-left: 15px;
+  }
+  .input-roomNo{
+    position: relative;
+    left:-70px;
+    width:50vw;
+  }
+  .form-postion{
+    padding-left: 15px;
+  }
+  .input-position{
+    position: relative;
+    left:-100px;
+    width:50vw
+  }
+  .form-roomType{
+    padding-left:15px;
+  }
+  .select-roomType{
+    position:relative;
+    left:-60px;
+  }
+  .form-pricebyfristhour{
+    padding-left:15px;
+  }
+  .form-pricebynexthour{
+    padding-left: 17px;
+  }
+  .priceByDay{
+    padding-left:20px;
+  }
+  .input-priceByNextHour{
+    position:relative;
+    left:5px;
+  }
+  .form-branches{
+    padding-left:25px;
+  }
+  .form-facilityids{
+    padding-left:25px;
+  }
+  .select-facility{
+    position: relative;
+    left:-90px;
+  }
+  .select-branches{
+    position: relative;
+    left:-70px;
+  }
+  .form-imageroom{
+    padding-left:25px;
+  }
+  .btn-upload{
+    position: relative;
+    left:-110px;
+  }
+  .pricebymonth{
+    padding-left:25px;
+  }
+  .pricebyweek{
+    padding-left:20px;
+  }
+  .input-priceByFirstHour{
+    position:relative;
+    left:5px
+  }
+  
+  .menu {
+    display: none;
+  }
+  .contentroom {
+    height: auto;
+    padding-top: 5px;
+    font-size: 12px;
+    width: 90%;
+  }
+  .topic-left-room {
+    width: 50%;
+  }
+  .btn-right-rooms {
+    width: 50%;
+  }
+  .detailed-btnroom {
+    font-size: 10px;
+    width: 40%;
+  }
+  .rectangleroom {
+    width: 93%;
+  }
+  .boxroom {
+    height: auto;
+  }
+  .btnbtncrateroom{
+    width:100%;
+    padding-left: 5px;
+  }
+  .ant-table{
+    font-size:5px
+  }
+}
