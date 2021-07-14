@@ -86,21 +86,21 @@
   }
   .input-item-report{
     position:relative;
-    left:-40px;
+    left:14px;
   }
   .form-description-report{
     padding-left:20px;
   }
   .input-description-report{
     position:relative;
-    left:-55px;
+    left:10px;
   }
   .form-status-report{
     padding-left:20px
   }
   .select-status-report{
     position: relative;
-    left:-20px;
+    left:10px;
   }
   .name-report-issue{
     padding-left:25px;

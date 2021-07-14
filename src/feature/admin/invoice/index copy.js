@@ -93,7 +93,7 @@ function Invoices() {
         id: record.id,
       };
       console.log("<<<id", data);
-      const urldown = `https://inn-server.herokuapp.com/api/v1/invoices/${data.id}/download/`;
+      const urldown = `http://localhost:8080/api/v1/invoices/${data.id}/download/`;
       window.open(urldown, "_blank");
       // setdownsingle(response.data);
     } catch (error) {
@@ -104,7 +104,7 @@ function Invoices() {
     try {
       const response = await invoicesApi.download_many();
       console.log("Download many file successfully", response);
-      const urldown = `https://inn-server.herokuapp.com/api/v1/invoices/download/`;
+      const urldown = `http://localhost:8080/api/v1/invoices/download/`;
       window.open(urldown, "_blank");
       // setdownsingle(response.data);
     } catch (error) {

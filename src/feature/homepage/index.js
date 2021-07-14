@@ -502,7 +502,7 @@ function Home() {
               <div className="civ-civ">
                 <div className="topic">
                   <div className="circle-topic"></div>
-                  <div className="why-room">Tại sao chủ trọ thích KHUTRO?</div>
+                  <div className="why-room">Các lợi ích khi lựa chọn nhà trọ này</div>
                 </div>
               </div>
               <div style={{ display: "flex", justifyContent: "center" }}>
@@ -570,7 +570,7 @@ function Home() {
                 <div className="topic">
                   <div className="circle-topic"></div>
                   <div style={{ position: "relative", bottom: "10px" }}>
-                    KHUTRO được thiết kế tối ưu{" "}
+                   Việc thiết kế{" "}
                   </div>
                 </div>
               </div>
@@ -754,7 +754,7 @@ function Home() {
 
                     //  style={{ position: "relative", bottom: "10px" }}
                   >
-                    Với nhiều tính năng ưu việt chỉ có tại KHUTRO{" "}
+                    Các tính năng tối ưu{" "}
                   </div>
                 </div>
               </div>
@@ -861,7 +861,7 @@ function Home() {
                     className="content-partIX"
                     // style={{ position: "relative", bottom: "10px" }}
                   >
-                    Quy trình mua Phần mềm KHUTRO
+                    Quy trình mua Phần mềm 
                   </div>
                 </div>
               </div>
@@ -908,7 +908,7 @@ function Home() {
                   <div className="topic">
                     <div className="circle-topic"></div>
                     <div style={{ position: "relative", bottom: "10px" }}>
-                      Vì sao chọn KHUTRO?
+                      Nét đặc trưng
                     </div>
                   </div>
                 </div>
@@ -953,7 +953,7 @@ function Home() {
                 <div className="topic">
                   <div className="circle-topic"></div>
                   <div style={{ position: "relative", bottom: "10px" }}>
-                    3 khác biệt từ KHUTRO
+                    Những điều khác biệt
                   </div>
                 </div>
               </div>
@@ -1131,7 +1131,7 @@ function Home() {
                     className="content-circle"
                     //  style={{ position: "relative", bottom: "10px" }}
                   >
-                    Khách hàng nói về KHUTRO
+                    Nhận xét của khách hàng
                   </div>
                 </div>
               </div>
@@ -1302,7 +1302,7 @@ function Home() {
                         paddingTop: "10px",
                       }}
                     >
-                      <div className="topic-com-4">Hotline: 056.372.3333</div>
+                      <div className="topic-com-4">Hotline: 0901.632.176</div>
                     </div>
                     <div
                       style={{
@@ -1343,7 +1343,7 @@ function Home() {
                       }}
                     >
                       <div className="topic-com-4">
-                        Email: official.khutro@gmail.com
+                        Email: nduy9744@gmail.com
                       </div>
                     </div>
                     <div

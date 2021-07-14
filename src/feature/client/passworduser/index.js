@@ -155,7 +155,7 @@ function PasswordUs() {
               <div className="rowSecond">
                 <Row style={{ paddingBottom: "3%" }}>
                   <Col lg={8} md={24} className="colLeft">
-                    <div className="innercolLeftus">
+                    <div className="innercolLeftus-pw2">
                       <div className="imgAva">
                         <img src={userList.images} className="detailedimg" />
                       </div>

@@ -24,6 +24,8 @@
   border-radius: 5px;
   /* border-top: 40px; */
   font-family: "Open Sans", sans-serif;
+  padding-top: 5px;
+    padding-bottom: 5px;
 }
 .username {
   width: 100%;
@@ -123,5 +125,8 @@
   }
   .form-register{
     height:auto
+  }
+  .password-register{
+    margin-left:30px
   }
 }

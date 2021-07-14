@@ -30,6 +30,7 @@ import Menu_adminpage from "../../../components/menu_adminpage";
 import usersApi from "./../../../api/usersApi";
 import rolesApi from "./../../../api/roleApi";
 import {Link} from 'react-router-dom'
+import Footer from "./../../../components/footer"
 import Cookies from "js-cookie";
 function Password() {
   const [isloadingUpdate, setIsloadingUpdate] = useState(false);
@@ -209,7 +210,7 @@ function Password() {
         style={{
           width: "100%",
           height: "auto",
-          backgroundColor: "#efefef",
+          backgroundColor: "#F8F8FF",
         }}
       >
         <div style={{ height: "120px" }}>
@@ -291,7 +292,7 @@ function Password() {
                               </Form.Item>
                             </div>
                           </div>
-                          <div className="cover-btn">
+                          <div className="cover-btnpw">
                             <Button
                               className="btnupdatePW"
                               type="primary"
@@ -325,19 +326,7 @@ function Password() {
             paddingBottom: "40px",
           }}
         >
-          Thesis - Inn Management
-          <Link
-            to="/"
-            style={{
-              width: "100%",
-              height: "auto",
-              fontFamily: "PT Sans, sans-serif",
-              fontSize: "12px",
-              color: "#33404c",
-              paddingLeft: "10px",
-            }}
-          >
-          </Link>
+          <Footer/>
         </div>
       </div>
     </div>

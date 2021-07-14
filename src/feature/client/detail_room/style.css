@@ -1,0 +1,121 @@
+.css-detailed{
+    width: 90vw;
+    height: auto;
+    background-color: white;
+    border-radius: 8px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+.img-detailed-ro{
+    height: auto;
+    width: 100%;
+    border-radius: 8px;
+}
+.css-detailed-row-second{
+        width: 90vw;
+    height: auto;
+    background-color: white;
+    border-radius: 8px;
+    padding-bottom: 10px;
+}
+.detailed-title{
+        width: 80%;
+    height: auto;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 5vw;
+}
+.row-detailed-third{
+padding-left: 10px;
+    display: flex;
+    width: 100%;
+    padding-top: 10px;
+}
+.onleft-col{
+    margin-left: 5vw;
+    padding-top: 20px;
+}
+.title-admin{
+        width: 20%;
+    font-family: "PT Sans", sans-serif;
+    font-size: 20px;
+    text-align: left;
+    padding-left: 15px;
+}
+.content-admin{
+    width: 80%;
+    font-family: "PT Sans", sans-serif;
+    font-size: 20px;
+    text-align: left;
+}
+.col-detailed-title{
+    margin-left:5vw;
+    padding-top: 20px;
+}
+.col-detailed-img{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    padding-left: 120px;
+}
+.title-info-room{
+    width: 100%;
+    font-family: "PT Sans", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+    padding-top: 20px;
+}
+.icon-ticker-green{
+    width: 6%;
+}
+.title-detailed-room{
+    width: 40%;
+    font-family: "PT Sans", sans-serif;
+    font-size: 20px;
+}
+.input-detailed-room{
+        width: 52%;
+    font-family: "PT Sans", sans-serif;
+    font-size: 20px;
+}
+.padding-rol{
+    width: 100%;
+    padding-top: 20px;
+    text-align: left;
+    display: flex;
+}
+@media only screen and (max-width: 1026px) {
+    .row-detailed-third{
+        display: block;
+    }
+    .onleft-col{
+        margin-left: 10vw;
+    }
+    .title-admin{
+        width:30%;
+    }
+    .content-admin{
+        width:70%;
+    }
+    .col-detailed-title{
+        margin-left:10vw;
+    }
+    .col-detailed-img{
+        padding-left:10vw;
+    }
+    .title-info-room{
+        padding-left:20px;
+    }
+    .padding-rol{
+        padding-left:20px;
+    }
+    .title-detailed-room{
+        width:49%
+    }
+    .input-detailed-room{
+        width:43%
+    }
+}

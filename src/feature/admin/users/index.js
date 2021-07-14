@@ -12,6 +12,7 @@ import {
   faMapMarkerAlt,
   faSignOutAlt,
 } from "@fortawesome/free-solid-svg-icons";
+import Footer from "./../../../components/footer"
 import { faSave } from "@fortawesome/free-regular-svg-icons";
 import Menu_AdminPage from "../../../components/menu_adminpage";
 import {
@@ -387,45 +388,57 @@ function Users(props) {
       dataIndex: "userName",
       key: "userName",
     },
-    // {
-    //   title: "Email",
-    //   dataIndex: "email",
-    //   key: "email",
-    // },
-    // {
-    //   title: "Họ và tên",
-    //   dataIndex: "fullName",
-    //   key: "fullName",
-    // },
-    // {
-    //   title: "Số điện thoại",
-    //   dataIndex: "phoneNo",
-    //   key: "phoneNo",
-    // },
-    // {
-    //   title: "Giới tính",
-    //   dataIndex: "sex",
-    //   key: "sex",
-    // },
-    // {
-    //   title: "Địa chỉ",
-    //   dataIndex: "address",
-    //   key: "address",
-    // },
-    // {
-    //   title: "Công việc",
-    //   dataIndex: "job",
-    //   key: "job",
-    // },
+    {
+      title: "Email",
+      dataIndex: "email",
+      key: "email",
+    },
+    {
+      title: "Họ và tên",
+      dataIndex: "fullName",
+      key: "fullName",
+    },
+    {
+      title: "Số điện thoại",
+      dataIndex: "phoneNo",
+      key: "phoneNo",
+    },
+    {
+      title: "Giới tính",
+      dataIndex: "sex",
+      key: "sex",
+    },
+    {
+      title: "Địa chỉ",
+      dataIndex: "address",
+      key: "address",
+    },
+    {
+      title: "Công việc",
+      dataIndex: "job",
+      key: "job",
+    },
     {
       title: "Ngày checkin",
       dataIndex: "checkinDate",
       key: "checkinDate",
+      render: (checkinDate) =>
+        checkinDate === null ? (
+          <Tag color="#80efb2">NULL</Tag>
+        ) : (
+          <Tag color="#52b4f4">{checkinDate}</Tag>
+        ),
     },
     {
       title: "Ngày checkout",
       dataIndex: "checkoutDate",
       key: "checkoutDate",
+      render: (checkoutDate) =>
+        checkoutDate === null ? (
+          <Tag color="#e28f20">NULL</Tag>
+        ) : (
+          <Tag color="#fca304">{checkoutDate}</Tag>
+        ),
     },
     {
       title: "Hình ảnh",
@@ -439,7 +452,6 @@ function Users(props) {
       dataIndex: "roles",
       key: "roles",
       render: (roles) => <div>{roles[0].name}</div>,
-      // render: (facilities) => <div>{facilities.map((us) => us.name)+ " "}</div>,
     },
     {
       title: "Phòng",
@@ -448,9 +460,9 @@ function Users(props) {
       render: (room) => (
         <>
           {room === null ? (
-            <div>NULL</div>
+            <Tag color="#5e4f3e">NULL</Tag>
           ) : (
-            <div>{room.roomNo}</div>
+            <Tag color="#e1df07">{room.roomNo}</Tag>
           )}
         </>
       ),
@@ -546,7 +558,6 @@ function Users(props) {
             "Fetch userall by username successfully: ",
             response.data
           );
-          // setIsstateInput(response.data);
           setIsusersList(response.data);
         } catch (error) {
           console.log("Failed to fetch list: ", error);
@@ -592,11 +603,11 @@ function Users(props) {
               name="checkInDate"
               className="form-checkindate"
             >
-                <DatePicker
-                  showTime
-                  format="YYYY-MM-DD HH:mm:ss"
-                  className="datepicker-checkindate"
-                />
+              <DatePicker
+                showTime
+                format="YYYY-MM-DD HH:mm:ss"
+                className="datepicker-checkindate"
+              />
             </Form.Item>
             <Form.Item
               label="Khách trọ"
@@ -604,20 +615,20 @@ function Users(props) {
               value="userName"
               className="form-userName-2"
             >
-                <Input
-                  placeholder={rowEditcheck.userName}
-                  disabled
-                  className="input-username-2"
-                />
+              <Input
+                placeholder={rowEditcheck.userName}
+                disabled
+                className="input-username-223"
+              />
             </Form.Item>
             <Form.Item label="Phòng" name="roomNo" className="form-roomnous2">
-                <Select className="select-roomNo" style={{width:350}}>
-                  {roomList.map((roomid) => (
-                    <Select.Option key={roomid.roomNo} value={roomid.roomNo}>
-                      {roomid.roomNo}
-                    </Select.Option>
-                  ))}
-                </Select>
+              <Select className="select-roomNo12" style={{ width: 320 }}>
+                {roomList.map((roomid) => (
+                  <Select.Option key={roomid.roomNo} value={roomid.roomNo}>
+                    {roomid.roomNo}
+                  </Select.Option>
+                ))}
+              </Select>
             </Form.Item>
             <div style={{ display: "flex" }}>
               <Button type="primary" htmlType="submit">
@@ -669,22 +680,22 @@ function Users(props) {
               value="userName"
               className="form-userName-2"
             >
-                <Input
-                  className="input-username-2"
-                  placeholder={rowEditcheckout.userName}
-                  disabled
-                />
+              <Input
+                className="input-username-24"
+                placeholder={rowEditcheckout.userName}
+                disabled
+              />
             </Form.Item>
             <Form.Item
               className="form-checkoutdate"
               label="Ngày checkout"
               name="checkOutDate"
             >
-                <DatePicker
-                  className="datepicker-checkoutdate"
-                  showTime
-                  format="YYYY-MM-DD HH:mm:ss"
-                />
+              <DatePicker
+                className="datepicker-checkoutdate"
+                showTime
+                format="YYYY-MM-DD HH:mm:ss"
+              />
             </Form.Item>
             <div style={{ display: "flex" }}>
               <Button type="primary" htmlType="submit">
@@ -733,13 +744,13 @@ function Users(props) {
                 value="userName"
                 className="form-userName"
               >
-                  <Input
-                    className="input-userName"
-                    placeholder={rowEdit.userName}
-                    disabled
-                  />
+                <Input
+                  className="input-userName12"
+                  placeholder={rowEdit.userName}
+                  disabled
+                />
               </Form.Item>
-              <div style={{ paddingLeft: "20px", width: "20%" }}>
+              <div className="element-btn">
                 <Button
                   className="btn-existed"
                   onClick={() => fetchcheckusername()}
@@ -753,60 +764,55 @@ function Users(props) {
               name="password"
               className="form-password"
             >
-                <Input.Password
-                  placeholder={rowEdit.password}
-                  disabled
-                  className="input-password"
-                />
+              <Input.Password
+                placeholder={rowEdit.password}
+                disabled
+                className="input-password12"
+              />
             </Form.Item>
             <Form.Item label="Email" name="email" className="form-email">
-                <Input placeholder={rowEdit.email} className="input-email" />
+              <Input placeholder={rowEdit.email} className="input-email12" />
             </Form.Item>
             <Form.Item
               label="Họ và tên"
               name="fullName"
               className="form-fullName"
             >
-                <Input
-                  placeholder={rowEdit.fullName}
-                  className="input-fullName"
-                />
+              <Input
+                placeholder={rowEdit.fullName}
+                className="input-fullName12"
+              />
             </Form.Item>
             <Form.Item label="Giới tính" name="sex" className="form1-sex1">
-                <Radio.Group className="radio-sex">
-                  <Radio value="female">Female</Radio>
-                  <Radio value="male">Male</Radio>
-                </Radio.Group>
+              <Radio.Group className="radio-sex12">
+                <Radio value="female">Female</Radio>
+                <Radio value="male">Male</Radio>
+              </Radio.Group>
             </Form.Item>
             <Form.Item label="Công việc" name="job" className="form-job">
-                <Input placeholder={rowEdit.job} className="input-job" />
+              <Input placeholder={rowEdit.job} className="input-job12" />
             </Form.Item>
             <Form.Item label="Địa chỉ" name="address" className="form-address">
-                <Input
-                  placeholder={rowEdit.address}
-                  className="input-address"
-                />
+              <Input
+                placeholder={rowEdit.address}
+                className="input-address12"
+              />
             </Form.Item>
-            <Form.Item
-              label="Số điện thoại"
-              name="phoneNo"
-              className="form-phoneno"
-            >
-                <Input
-                  placeholder={rowEdit.phoneNo}
-                  className="input-phoneno"
-                />
+            <Form.Item label="Số ĐT" name="phoneNo" className="form-phoneno">
+              <Input
+                placeholder={rowEdit.phoneNo}
+                className="input-phoneno12"
+              />
             </Form.Item>
             <Form.Item label="Quyền" name="roleIds" className="form-roleid">
-                <Select
-                  onChange={handleChange}
-                  allowClear
-                  mode="multiple"
-                  className="select-roleid"
-                  style={{width:320}}
-                >
-                  {propsselect}
-                </Select>
+              <Select
+                onChange={handleChange}
+                allowClear
+                className="select-roleid12"
+                style={{ width: 320 }}
+              >
+                {propsselect}
+              </Select>
             </Form.Item>
             <Form.Item label="Hình" className="form-img-us">
               <Upload
@@ -820,7 +826,7 @@ function Users(props) {
               >
                 {state?.fileList.length < 1 && (
                   <Button
-                    className="btn-updae-us"
+                    className="btn-updae-us12"
                     onClick={uploadimg}
                     icon={<UploadOutlined />}
                   >
@@ -854,7 +860,7 @@ function Users(props) {
                 <div className="contentusers">QUẢN LÝ KHÁCH TRỌ</div>
               </div>
               <div className="topic-right-user">
-                <div className="element-selectuser">
+                {/* <div className="element-selectuser">
                   <Input.Search
                     allowClear
                     size="middle"
@@ -862,12 +868,11 @@ function Users(props) {
                     // mode="multiple"
                     onSearch={(value) => onSearch_1(value)}
                   ></Input.Search>
-                </div>
-                <div className="element2-selectuser">
+                </div> */}
+                {/* <div className="element2-selectuser">
                   <Select
                     allowClear
-                    size="middle"
-                    style={{ width: "200px" }}
+                    style={{ width: "80%" }}
                     // mode="multiple"
                     onChange={onSearch_1}
                   >
@@ -877,7 +882,7 @@ function Users(props) {
                       </Select.Option>
                     ))}
                   </Select>
-                </div>
+                </div> */}
                 <div className="btn-right-user">
                   <button className="detailed-btn-user" onClick={showModal}>
                     THÊM MỚI
@@ -922,9 +927,9 @@ function Users(props) {
                           value="userName"
                           className="form-userName"
                         >
-                            <Input className="input-userName" />
+                          <Input className="input-userName12" />
                         </Form.Item>
-                        <div style={{ paddingLeft: "35px", width: "20%" }}>
+                        <div className="element-btn">
                           <Button
                             className="btn-existed"
                             onClick={() => fetchcheckusername()}
@@ -938,67 +943,66 @@ function Users(props) {
                         name="password"
                         className="form-password"
                       >
-                          <Input.Password disabled className="input-password" />
+                        <Input.Password disabled className="input-password12" />
                       </Form.Item>
                       <Form.Item
                         label="Email"
                         name="email"
                         className="form-email"
                       >
-                          <Input className="input-email" />
+                        <Input className="input-email12" />
                       </Form.Item>
                       <Form.Item
                         label="Họ và tên"
                         name="fullName"
                         className="form-fullName"
                       >
-                          <Input className="input-fullName" />
+                        <Input className="input-fullName12" />
                       </Form.Item>
                       <Form.Item
                         label="Giới tính"
                         name="sex"
                         className="form1-sex1"
                       >
-                          <Radio.Group className="radio-sex">
-                            <Radio value="female">Female</Radio>
-                            <Radio value="male">Male</Radio>
-                          </Radio.Group>
+                        <Radio.Group className="radio-sex12">
+                          <Radio value="female">Female</Radio>
+                          <Radio value="male">Male</Radio>
+                        </Radio.Group>
                       </Form.Item>
                       <Form.Item
                         label="Công việc"
                         name="job"
                         className="form-job"
                       >
-                          <Input className="input-job" />
+                        <Input className="input-job12" />
                       </Form.Item>
                       <Form.Item
                         label="Địa chỉ"
                         name="address"
                         className="form-address"
                       >
-                          <Input className="input-address" />
+                        <Input className="input-address12" />
                       </Form.Item>
                       <Form.Item
-                        label="Số điện thoại"
+                        label="Số ĐT"
                         name="phoneNo"
                         className="form-phoneno"
                       >
-                          <Input className="input-phoneno" />
+                        <Input className="input-phoneno12" />
                       </Form.Item>
                       <Form.Item
                         label="Quyền"
                         name="roleIds"
                         className="form-roleid"
                       >
-                          <Select
-                            onChange={handleChange}
-                            allowClear
-                            mode="multiple"
-                            className="select-roleid"
-                            style={{width:320}}
-                          >
-                            {propsselect}
-                          </Select>
+                        <Select
+                          onChange={handleChange}
+                          allowClear
+                          className="select-roleid12"
+                          style={{ width: 320 }}
+                        >
+                          {propsselect}
+                        </Select>
                       </Form.Item>
                       <Form.Item label="Hình" className="form-img-us">
                         <Upload
@@ -1012,7 +1016,7 @@ function Users(props) {
                         >
                           {state?.fileList.length < 1 && (
                             <Button
-                              className="btn-updae-us"
+                              className="btn-updae-us12"
                               onClick={uploadimg}
                               icon={<UploadOutlined />}
                             >
@@ -1023,7 +1027,7 @@ function Users(props) {
                       </Form.Item>
                       <div style={{ display: "flex" }}>
                         <Button type="primary" htmlType="submit">
-                         THÊM MỚI{" "}
+                          THÊM MỚI{" "}
                         </Button>
                         <div style={{ paddingLeft: "10px" }}>
                           <Button type="default" onClick={handleCancel}>
@@ -1056,23 +1060,10 @@ function Users(props) {
             fontSize: "12px",
             marginTop: "40px",
             textAlign: "left",
-            paddingLeft: "50px",
-            paddingBottom: "40px",
+            paddingTop:"15vh"
           }}
         >
-          Thesis - Inn Management
-          <Link
-            to="/"
-            style={{
-              width: "100%",
-              height: "auto",
-              fontFamily: "PT Sans, sans-serif",
-              fontSize: "12px",
-              color: "#33404c",
-              paddingLeft: "10px",
-            }}
-          >
-          </Link>
+          <Footer/>
         </div>
       </div>
     </div>

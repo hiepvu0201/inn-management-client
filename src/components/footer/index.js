@@ -28,11 +28,10 @@ function Footer() {
                   <img src={Images.LOGIN} className="img-icon" />
                 </div>
                 <div className="content-icon-first">
-                  KHUTRO – Phần mềm Quản lý Nhà trọ, Căn hộ dịch vụ. Là một
-                  trong những đơn vị tiên phong trong lĩnh vực phát triển phần
-                  mềm quản lý bất động sản cho thuê số 1 thị trường hiện nay.
+                  Phần mềm quản lý phòng trọ phục vụ cho mục đích luận văn tốt
+                  nghiệp
                 </div>
-                <div className="icon-social" >
+                <div className="icon-social">
                   <div className="icon">
                     <div style={{ display: "flex", justifyContent: "center" }}>
                       <FontAwesomeIcon icon={faFacebook} />
@@ -95,8 +94,7 @@ function Footer() {
                   >
                     Văn phòng:
                   </strong>
-                  Số 12, Ngõ 115 Phố Định Công, P.Định Công, Q.Hoàng Mai, TP Hà
-                  Nội
+                  <div>1 Võ Văn Ngân Phường Linh Chiểu Thành phố Thủ Đức</div>
                 </div>
                 <div
                   style={{
@@ -137,14 +135,14 @@ function Footer() {
                   >
                     Email:
                   </strong>
-                  <div className="email">official.khutro@gmail.com</div>
+                  <div className="email">nduy9744@gmail.com</div>
                 </div>
                 <div
                   style={{
-                    width: "80%",
+                    width: "100%",
                     fontSize: "15px",
                     textAlign: "left",
-                    display: "flex",
+                    display: "block",
                     paddingRight: "100px",
                   }}
                 >
@@ -157,7 +155,7 @@ function Footer() {
                   >
                     Website:
                   </strong>
-                  <div className="email">khutro.com</div>
+                  <div className="email">https://inn-app.herokuapp.com/login</div>
                 </div>
                 <div
                   style={{
@@ -176,8 +174,7 @@ function Footer() {
                   >
                     Giờ làm việc:
                   </strong>
-                  
-                    Từ 8h – 18h từ Thứ 2 đến Thứ 6 và Sáng Thứ 7{" "}
+                  Từ 8h – 18h từ Thứ 2 đến Thứ 6 và Sáng Thứ 7{" "}
                 </div>
               </div>
             </Col>

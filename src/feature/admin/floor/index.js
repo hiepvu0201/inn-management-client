@@ -9,9 +9,7 @@ import {
   faPlus,
   faTrash,
   faEdit,
-  faRestroom
 } from "@fortawesome/free-solid-svg-icons";
-import Footer from "./../../../components/footer"
 import { faSave } from "@fortawesome/free-regular-svg-icons";
 import Menu_AdminPage from "./../../../components/menu_adminpage";
 import {
@@ -26,68 +24,103 @@ import {
   InputNumber,
   Spin,
 } from "antd";
-import roleApi from "./../../../api/roleApi";
-const { Option } = Select;
+import Footer from "./../../../components/footer";
+import floorApi from "./../../../api/floorApi";
+import branchesApi from "./../../../api/branchesApi"
+import { Link } from "react-router-dom";
 
-function Role(props) {
+function Floor(props) {
   // loading state
   const [isloadingUpdate, setIsloadingUpdate] = useState(false);
   //api
   //getAll
-  const [roleList, setRoleList] = useState([]);
+  const [floorList, setFloorList] = useState([]);
   const [rowEdit, setRowedit] = useState({});
-  const fetchRoleList = async () => {
+  const [branchesList, setbranchesList] = useState([]);
+  const [currentState, setcurrentState] = useState([])
+  const fetchFloorList = async () => {
     try {
-      const response = await roleApi.getAll();
-      console.log("Fetch role successfully: ", response.data);
-      setRoleList(response.data);
+      const response = await floorApi.getAll();
+      console.log("Fetch floor successfully: ", response.data);
+      setFloorList(response.data);
+      setcurrentState(response.data)
       setIsloadingUpdate(false);
       setIsModalVisible_1(false);
     } catch (error) {
-      console.log("Failed to fetch role list: ", error);
+      console.log("Failed to fetch floor list: ", error);
+    }
+  };
+  const fetchBranchesList = async () => {
+    try {
+      const response = await branchesApi.getAll();
+      console.log("Fetch branches successfully: ", response.data);
+      setbranchesList(response.data);
+    } catch (error) {
+      console.log("Failed to fetch branches list: ", error);
     }
   };
   useEffect(() => {
-    fetchRoleList();
+    fetchFloorList();
+    fetchBranchesList();
   }, []);
   //delete
-  const fetchDeleteRole = async (record) => {
+  const fetchDeleteFloor = async (record) => {
     try {
-      const response = await roleApi.deleteRole(record.id);
-      console.log("Delete role successfully", response);
-      setRoleList(roleList.filter((item) => item.id !== record.id));
+      const response = await floorApi.deleteFloor(record.id);
+      console.log("Delete floor successfully", response);
+      setFloorList(floorList.filter((item) => item.id !== record.id));
     } catch (error) {
-      console.log("Failed to delete role list", error);
+      console.log("Failed to delete floor list", error);
     }
   };
 
   //form
-  const fetchUpdateRole = async (editv) => {
+  const fetchUpdateFloor = async (editv) => {
     setIsloadingUpdate(true);
     try {
-      const response = await roleApi.updateRole(editv);
-      console.log("Fetch update role successfully", response);
+      const response = await floorApi.updateFloor(editv);
+      console.log("Fetch update floor successfully", response);
       console.log("editv", editv);
-      fetchRoleList();
+      fetchFloorList();
     } catch (error) {
-      console.log("failed to update role", error);
+      console.log("failed to update floor", error);
       setIsloadingUpdate(false);
+    }
+  };
+  const onSearch_1 = (value) => {
+    console.log("<<VALUE", value);
+    if (value === undefined) {
+      setFloorList(currentState);
+    } else {
+      const ChangeLocaiton = async () => {
+        try {
+          const response = await floorApi.getLocation(value);
+          console.log(
+            "Fetch FLOOR BY BRANCH successfully: ",
+            response.data
+          );
+          // setIsstateInput(response.data);
+          setFloorList(response.data);
+        } catch (error) {
+          console.log("Failed to fetch list: ", error);
+        }
+      };
+      ChangeLocaiton();
     }
   };
   const onFinish = (values) => {
     console.log(values);
-    const fetchCreateRole = async () => {
+    const fetchCreateFloor = async () => {
       try {
-        const response = await roleApi.createRole(values);
-        console.log("Fetch create role successfully: ", response);
-        setRoleList([...roleList, response.data]);
-        console.log(roleList);
+        const response = await floorApi.createFloor(values);
+        console.log("Fetch create floor successfully: ", response);
+        setFloorList([...floorList, response.data]);
         setIsModalVisible(false);
       } catch (error) {
-        console.log("failed to fetch create role list: ", error);
+        console.log("failed to fetch create floor list: ", error);
       }
     };
-    fetchCreateRole();
+    fetchCreateFloor();
   };
 
   const onFinishFailed = (errorInfo) => {
@@ -97,7 +130,7 @@ function Role(props) {
   const onFinish_edit = (values) => {
     console.log("Success", values);
     const dataupdate = { id: rowEdit.id, data: values };
-    fetchUpdateRole(dataupdate);
+    fetchUpdateFloor(dataupdate);
   };
 
   //select
@@ -119,9 +152,21 @@ function Role(props) {
   }
   const columns = [
     {
-      title: "Loại người dùng",
-      dataIndex: "name",
-      key: "name",
+      title: "Số Lầu",
+      dataIndex: "numberOfFloors",
+      key: "numberOfFloors",
+    },
+    {
+      title: "Chi nhánh",
+      dataIndex: "branch",
+      key: "branch",
+      render: (branch) => <div>{branch.description}</div>,
+    },
+    {
+      title: "Vị trí chi nhánh",
+      dataIndex: "branch",
+      key: "branch",
+      render: (branch) => <div>{branch.location}</div>,
     },
     {
       title: "",
@@ -131,7 +176,7 @@ function Role(props) {
         <div style={{ display: "flex" }}>
           <Popconfirm
             title="BẠN CÓ CHẮC MUỐN XÓA DỮ LIỆU KHÔNG?"
-            onConfirm={() => fetchDeleteRole(record)}
+            onConfirm={() => fetchDeleteFloor(record)}
             okText="Có"
             cancelText="Không"
           >
@@ -159,6 +204,9 @@ function Role(props) {
   const handleCancel = () => {
     setIsModalVisible(false);
   };
+   const handleCance_1 = () => {
+     setIsModalVisible_1(false);
+   };
   const [isModalVisible_1, setIsModalVisible_1] = useState(false);
 
   const showModal_1 = (values) => {
@@ -203,18 +251,27 @@ function Role(props) {
         <Spin spinning={isloadingUpdate} size="large">
           <Form initialValues={{ remember: true }} onFinish={onFinish_edit}>
             <Form.Item
-              label="Tên chức năng người dùng"
-              name="name"
+              label="Số lầu"
+              name="numberOfFloors"
               className="roles-us2"
             >
-              <Input placeholder={rowEdit.name} />
+              <Input placeholder={rowEdit.numberOfFloors} className="input-flo" />
+            </Form.Item>
+            <Form.Item label="Chi nhánh" name="branchId" className="roles-us2">
+              <Select>
+                {branchesList.map((branchid) => (
+                  <Select.Option key={branchid.id} value={branchid.id}>
+                    {branchid.description}
+                  </Select.Option>
+                ))}
+              </Select>
             </Form.Item>
             <div style={{ display: "flex" }}>
               <Button type="primary" htmlType="submit">
                 LƯU LẠI
               </Button>
               <div style={{ paddingLeft: "10px" }}>
-                <Button type="default" onClick={handleCancel}>
+                <Button type="default" onClick={handleCancel_1}>
                   HỦY BỎ
                 </Button>
               </div>
@@ -243,12 +300,28 @@ function Role(props) {
                 paddingTop: "10px",
               }}
             >
-              <div className="topic-left">
-                <FontAwesomeIcon icon={faRestroom} size="2x" color="#007c7e" />
-                <div className="content">PHÂN QUYỀN NGƯỜI DÙNG</div>
+              <div className="topic-left-flo">
+                <FontAwesomeIcon icon={faSitemap} size="2x" color="#007c7e" />
+                <div className="content">QUẢN LÝ LẦU</div>
               </div>
-              <div className="btn-right">
-                <button className="detailed-btn-role" onClick={showModal}>
+              <div className="btn-right-flo">
+                <div className="detailed-select-flo">
+                  <Select
+                    onChange={onSearch_1}
+                    style={{ width: 220 }}
+                    allowClear
+                  >
+                    {branchesList.map((branchid) => (
+                      <Select.Option
+                        key={branchid.location}
+                        value={branchid.location}
+                      >
+                        {branchid.description}
+                      </Select.Option>
+                    ))}
+                  </Select>
+                </div>
+                <button className="detailed-btn-flo" onClick={showModal}>
                   THÊM MỚI
                 </button>
                 <Modal
@@ -285,15 +358,25 @@ function Role(props) {
                     onFinishFailed={onFinishFailed}
                   >
                     <Form.Item
-                      label="Tên chức năng người dùng"
-                      name="name"
+                      label="Số lầu"
+                      name="numberOfFloors"
                       className="roles-us2"
                     >
-                      <div style={{ width: "90%" }}>
-                        <Input className="input-role" />
-                      </div>
+                      <Input className="input-flo" />
                     </Form.Item>
-
+                    <Form.Item
+                      label="Chi nhánh"
+                      name="branchId"
+                      className="roles-us2"
+                    >
+                      <Select>
+                        {branchesList.map((branchid) => (
+                          <Select.Option key={branchid.id} value={branchid.id}>
+                            {branchid.description}
+                          </Select.Option>
+                        ))}
+                      </Select>
+                    </Form.Item>
                     {/* <Form.Item></Form.Item> */}
                     <div style={{ display: "flex" }}>
                       <Button type="primary" htmlType="submit">
@@ -320,7 +403,7 @@ function Role(props) {
               <Table
                 columns={columns}
                 bordered
-                dataSource={roleList}
+                dataSource={floorList}
                 rowKey="id"
               />
             </div>
@@ -346,4 +429,4 @@ function Role(props) {
     </div>
   );
 }
-export default Role;
+export default Floor;

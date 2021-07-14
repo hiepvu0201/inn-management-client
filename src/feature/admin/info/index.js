@@ -17,6 +17,7 @@ import Menu_adminpage from "../../../components/menu_adminpage";
 import usersApi from "./../../../api/usersApi";
 import rolesApi from "./../../../api/roleApi";
 import Cookies from 'js-cookie';
+import Footer from "./../../../components/footer";
 import {Link} from "react-router-dom"
 function Info() {
      const [isloadingUpdate, setIsloadingUpdate] = useState(false);
@@ -129,23 +130,27 @@ function Info() {
        fetchUseridList();
      }, []);
      const { Option } = Select;
-     const propsselect = [];
-     {
-       roleList.map((rolesid) =>
-         propsselect.push(
-           <Option key={rolesid.id} value={rolesid.id}>
-             {rolesid.name}
-           </Option>
-         )
-       );
-     }
+    //  const propsselect = [];
+    //  {
+    //    roleList.map((us) =>
+    //     us.name === "ROLE_ADMIN"?():(
+    //       <>Null</>
+    //     ));
+      //  roleList.map((rolesid) =>
+      //    propsselect.push(
+      //      <Option key={rolesid.id} value={rolesid.id}>
+      //        {rolesid.name}
+      //      </Option>
+      //    )
+      //  );
+    //  }
     return (
       <div>
         <div
           style={{
             width: "100%",
             height: "auto",
-            backgroundColor: "#efefef",
+            backgroundColor: "#F8F8FF",
           }}
         >
           <div style={{ height: "120px" }}>
@@ -164,7 +169,7 @@ function Info() {
                   <Row className="row-all">
                     <Col lg={8} md={24} className="colLeft">
                       <div className="innercolLeft">
-                        <div className="imgAva">
+                        <div className="imgAva2">
                           <img src={userList.images} className="detailedimg" />
                         </div>
                         <div className="fullName">{userList.fullName}</div>
@@ -172,48 +177,48 @@ function Info() {
                       </div>
                     </Col>
                     <Col lg={16} md={24} className="colRight">
-                      <div className="innercolRight">
+                      <div className="innercolRight-us">
                         <div className="topi2c">THÔNG TIN CÁ NHÂN</div>
-                        <div className="rowfirst-right">
-                          <div className="label">Họ và tên:</div>
+                        <div className="rowfirst-rightus">
+                          <div className="labelus">Họ và tên:</div>
                           <div className="contentname">{userList.fullName}</div>
                         </div>
-                        <div className="rowfirst-right">
-                          <div className="label">Username:</div>
+                        <div className="rowfirst-rightus">
+                          <div className="labelus">Username:</div>
                           <div className="contentname">{userList.userName}</div>
                         </div>
-                        <div className="rowfirst-right">
-                          <div className="label">Email:</div>
+                        <div className="rowfirst-rightus">
+                          <div className="labelus">Email:</div>
                           <div className="contentname">{userList.email}</div>
                         </div>
-                        <div className="rowfirst-right">
-                          <div className="label">CMND:</div>
+                        <div className="rowfirst-rightus">
+                          <div className="labelus">CMND:</div>
                           <div className="contentname">{userList.idNo}</div>
                         </div>
-                        <div className="rowfirst-right">
-                          <div className="label">Giới tính:</div>
+                        <div className="rowfirst-rightus">
+                          <div className="labelus">Giới tính:</div>
                           <div className="contentname">{userList.sex}</div>
                         </div>
-                        <div className="rowfirst-right">
-                          <div className="label">Nghề nghiệp:</div>
+                        <div className="rowfirst-rightus">
+                          <div className="labelus">Nghề nghiệp:</div>
                           <div className="contentname">{userList.job}</div>
                         </div>
-                        <div className="rowfirst-right">
-                          <div className="label">Địa chỉ:</div>
+                        <div className="rowfirst-rightus">
+                          <div className="labelus">Địa chỉ:</div>
                           <div className="contentname">{userList.address}</div>
                         </div>
-                        <div className="rowfirst-right">
-                          <div className="label">Số điện thoại:</div>
+                        <div className="rowfirst-rightus">
+                          <div className="labelus">Số điện thoại:</div>
                           <div className="contentname">{userList.phoneNo}</div>
                         </div>
-                        <div className="rowfirst-right">
-                          <div className="label">Quyền:</div>
+                        <div className="rowfirst-rightus">
+                          <div className="labelus">Quyền:</div>
                           <div className="contentname">
                             <Tag color="#f50">{userList.roles[0].name}</Tag>
                             {/* {userList.roles.name} */}
                           </div>
                         </div>
-                        <div className="cover-btn">
+                        <div className="cover-btnus">
                           <button className="btnupdate">
                             <div className="fontawesome">
                               <FontAwesomeIcon icon={faSave} size="1x" />
@@ -266,7 +271,7 @@ function Info() {
                                     />
                                   </Form.Item>
                                 </div>
-                                <Form.Item
+                                {/* <Form.Item
                                   label="Mật khẩu"
                                   name="password"
                                   className="form-password"
@@ -276,7 +281,7 @@ function Info() {
                                     disabled
                                     className="input-password"
                                   />
-                                </Form.Item>
+                                </Form.Item> */}
                                 <Form.Item
                                   label="Email"
                                   name="email"
@@ -285,6 +290,16 @@ function Info() {
                                   <Input
                                     placeholder={userList.email}
                                     className="input-email"
+                                  />
+                                </Form.Item>
+                                <Form.Item
+                                  label="CMND"
+                                  name="idNo"
+                                  className="form-idNo"
+                                >
+                                  <Input
+                                    placeholder={userList.idNo}
+                                    className="input-idNo"
                                   />
                                 </Form.Item>
                                 <Form.Item
@@ -349,7 +364,15 @@ function Info() {
                                     className="select-roleid"
                                     style={{ width: 320 }}
                                   >
-                                    {propsselect}
+                                    {roleList.map((us) =>
+                                      us.name === "ROLE_ADMIN" ? (
+                                        <Option key={us.id} value={us.id}>
+                                          {us.name}
+                                        </Option>
+                                      ) : (
+                                        <>Null</>
+                                      )
+                                    )}
                                   </Select>
                                 </Form.Item>
                                 <Form.Item label="Hình" className="form-img-us">
@@ -386,92 +409,6 @@ function Info() {
                                     </Button>
                                   </div>
                                 </div>
-                                {/* <Form.Item
-                                  label="Tài khoản"
-                                  name="userName"
-                                  value="userName"
-                                >
-                                  <Input
-                                    placeholder={userList.userName}
-                                    disabled
-                                  />
-                                </Form.Item>
-
-                                <Form.Item label="email">
-                                  <Input
-                                    placeholder={userList.email}
-                                    disabled
-                                  />
-                                </Form.Item>
-                                <Form.Item label="Họ và tên" name="fullName">
-                                  <Input placeholder={userList.fullName} />
-                                </Form.Item>
-                                <Form.Item label="Mật khẩu" name="password">
-                                  <Input.Password disabled />
-                                </Form.Item>
-                                <Form.Item label="CMND" name="idNo">
-                                  <Input placeholder={userList.idNo} />
-                                </Form.Item>
-                                <Form.Item label="Giới tính" name="sex">
-                                  <Radio.Group>
-                                    <Radio value="female">Female</Radio>
-                                    <Radio value="male">Male</Radio>
-                                  </Radio.Group>
-                                </Form.Item>
-                                <Form.Item label="Công việc" name="job">
-                                  <Input placeholder={userList.job} />
-                                </Form.Item>
-                                <Form.Item label="Địa chỉ" name="address">
-                                  <Input placeholder={userList.address} />
-                                </Form.Item>
-                                <Form.Item label="Số điện thoại" name="phoneNo">
-                                  <Input placeholder={userList.phoneNo} />
-                                </Form.Item>
-                                <Form.Item label="Quyền">
-                                  <Select
-                                    onChange={handleChange}
-                                    allowClear
-                                    mode="multiple"
-                                    disabled
-                                    placeholder={userList.roles[0].name}
-                                    //   placeholder={userList.roles[0].name}
-                                  >
-                                    {propsselect}
-                                  </Select>
-                                </Form.Item>
-                                <Form.Item>
-                                  <Upload
-                                    {...propsimg}
-                                    action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
-                                    listType="picture"
-                                    defaultFileList={[...fileList]}
-                                    onPreview={handlePreview}
-                                    onChange={handleChangeimg}
-                                    fileList={state.fileList}
-                                  >
-                                    {state?.fileList.length < 1 && (
-                                      <Button
-                                        onClick={uploadimg}
-                                        icon={<UploadOutlined />}
-                                      >
-                                        Upload
-                                      </Button>
-                                    )}
-                                  </Upload>
-                                </Form.Item>
-                                <div style={{ display: "flex" }}>
-                                  <Button type="primary" htmlType="submit">
-                                    CHỈNH SỬA{" "}
-                                  </Button>
-                                  <div style={{ paddingLeft: "10px" }}>
-                                    <Button
-                                      type="default"
-                                      onClick={handleCancel}
-                                    >
-                                      HỦY BỎ
-                                    </Button>
-                                  </div>
-                                </div> */}
                               </Form>
                             </Spin>
                           </Modal>
@@ -492,25 +429,11 @@ function Info() {
               fontSize: "12px",
               marginTop: "90px",
               textAlign: "left",
-              paddingLeft: "70px",
-              paddingBottom: "40px",
+              paddingTop:"15vh"
             }}
           >
-            © Copyright 2016 CHUOICANHO - GIẢI PHÁP QUẢN LÝ NHÀ TRỌ&CĂN HỘ 4.0 -
-            SỐ 1 THỊ TRƯỜNG. All rights reserved. Thiết kế bởi
-            <Link
-              to="/"
-              style={{
-                width: "100%",
-                height: "auto",
-                fontFamily: "PT Sans, sans-serif",
-                fontSize: "12px",
-                color: "#33404c",
-                paddingLeft: "10px",
-              }}
-            >
-              NHÀ TRỌ CỦA CHÚNG TÔI
-            </Link>
+            <Footer/>
+           
           </div>
         </div>
       </div>

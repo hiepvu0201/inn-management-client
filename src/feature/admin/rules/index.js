@@ -26,6 +26,7 @@ import {
 } from "antd";
 import rulesApi from "../../../api/rulesApi";
 import { Link } from "react-router-dom";
+import Footer from "./../../../components/footer";
 const { Option } = Select;
 function Rules(props) {
   //loading update
@@ -345,23 +346,10 @@ function Rules(props) {
             fontSize: "12px",
             marginTop: "40px",
             textAlign: "left",
-            paddingLeft: "50px",
-            paddingBottom: "40vh",
+            paddingTop:"15vh"
           }}
         >
-          Thesis - Inn Management
-          <Link
-            to="/"
-            style={{
-              width: "100%",
-              height: "auto",
-              fontFamily: "PT Sans, sans-serif",
-              fontSize: "12px",
-              color: "#33404c",
-              paddingLeft: "10px",
-            }}
-          >
-          </Link>
+          <Footer/>
         </div>
       </div>
     </div>

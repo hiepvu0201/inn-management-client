@@ -150,7 +150,7 @@
   width: 80%;
   text-align: left;
 }
-.cover-btn{
+.cover-btnpw{
   width: 100%;
     text-align: center;
     display: flex;
@@ -176,7 +176,7 @@
   .btnupdatePW{
     width:35%;
   }
-  .cover-btn{
+  .cover-btnpw{
     padding-bottom:20px
   }
 }

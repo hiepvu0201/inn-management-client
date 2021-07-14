@@ -10,3 +10,28 @@
     color:white;
     background-color: #3fcc68;
 }
+.title-room-tag{
+    width: 50%;
+    font-size: 11px;
+    font-family: "PT Sans", sans-serif;
+    font-weight: bold;
+    color: rgb(63, 204, 104);
+    padding-left: 10px;
+}
+.content-room-tag{
+    width: 50%;
+    font-size: 11px;
+    font-family: "PT Sans", sans-serif;
+}
+.image-tag{
+        width: 100%;
+    height: 30vh;
+    border-radius: 8px;
+    display: inline-block;
+    overflow: hidden;
+}
+@media only screen and (max-width: 1026px) {
+    .image-tag{
+        height:auto;
+    }
+}

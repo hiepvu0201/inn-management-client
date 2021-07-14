@@ -26,6 +26,7 @@ import {
 } from "antd";
 import branchesApi from "./../../../api/branchesApi";
 import { WarningOutlined } from "@ant-design/icons";
+import Footer from "./../../../components/footer"
 import { Link } from "react-router-dom";
 import { text } from "@fortawesome/fontawesome-svg-core";
 const { Option } = Select;
@@ -289,7 +290,6 @@ function Facilities(props) {
                 <Input
                   className="input-unitPrice"
                   placeholder={rowEdit.unitPrice}
-                  onChange={(unitPrice) => check(unitPrice)}
                 />
             </Form.Item>
             <div style={{ display: "flex" }}>
@@ -401,7 +401,6 @@ function Facilities(props) {
                       >
                           <Input
                             className="input-unitPrice"
-                            onChange={(unitPrice) => check(unitPrice)}
                             />
                       </Form.Item>
                       <div style={{ display: "flex" }}>
@@ -446,23 +445,10 @@ function Facilities(props) {
             fontSize: "12px",
             marginTop: "40px",
             textAlign: "left",
-            paddingLeft: "50px",
-            paddingBottom: "30vh",
+            paddingTop:"15vh"
           }}
         >
-          Thesis - Inn Management
-          <Link
-            to="/"
-            style={{
-              width: "100%",
-              height: "auto",
-              fontFamily: "PT Sans, sans-serif",
-              fontSize: "12px",
-              color: "#33404c",
-              paddingLeft: "10px",
-            }}
-          >
-          </Link>
+          <Footer/>
         </div>
       </div>
     </div>

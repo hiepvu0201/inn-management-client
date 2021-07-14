@@ -9,9 +9,244 @@
   color: white;
   cursor: pointer;
   width: 50%;
-  padding-top:10px
+  padding-top: 10px;
 }
-.btbtn:hover{
-    background-color: white;
-    color:#007c7e
+.btbtn:hover {
+  background-color: white;
+  color: #007c7e;
+}
+.detailed-invoice {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  font-family: "PT Sans", sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+}
+.col-one {
+  width: 100%;
+  height: auto;
+  background-color: rgb(227, 207, 247);
+  display: flex;
+}
+.content-1 {
+  font-size: 35px;
+  font-family: "PT Sans", sans-serif;
+  padding-left: 10px;
+  padding-top: 5px;
+}
+.col-one-title {
+  width: 50%;
+  height: auto;
+  text-align: left;
+  padding-left: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  display: block;
+}
+.col-two-title {
+  width: 50%;
+  height: auto;
+  text-align: right;
+  display: block;
+  padding-right: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.col-two-title-left {
+  width: 100%;
+  height: auto;
+  display: flex;
+  text-align: right;
+}
+.col-two-title-left-icon {
+  width: 60%;
+}
+.col-two-title-left-content {
+  font-size: 35px;
+  font-family: "PT Sans", sans-serif;
+  width: 40%;
+}
+.col-one-title-box {
+  width: 100%;
+  height: auto;
+  text-align: left;
+  padding-left: 20px;
+  padding-top: 5px;
+  padding-bottom: 15px;
+  display: flex;
+}
+.col-two-title-right {
+  font-size: 25px;
+  font-family: "PT Sans", sans-serif;
+  width: 50%;
+  float: right;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.col-two-title-right-content {
+  font-size: 20px;
+  font-family: "PT Sans", sans-serif;
+  width: 98%;
+}
+.col-third-left {
+  width: 90%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+.col-third-right {
+  width: 90%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+.col-last{
+  width: 95%;
+    height: auto;
+    background-color: rgb(240, 243, 244);
+    border-radius: 10px;
+    display: flex;
+}
+.col-last-left{
+  width: 75%;
+    height: auto;
+    display: flex;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.col-last-left-content{
+      width: 20%;
+    height: auto;
+    display: block;
+    padding-left: 10px;
+}
+.col-last-left-content-2{
+  width: 100%;
+    height: auto;
+    font-size: 20px;
+    font-family: "PT Sans", sans-serif;
+    text-align: left;
+}
+.col-last-left-content-3{
+  width: 60%;
+    height: auto;
+    font-size: 20px;
+    font-family: "PT Sans", sans-serif;
+    text-align: left;
+}
+.col-last-left-icon{
+  width: 6%;
+    height: auto;
+    display: block;
+    padding-left: 10px;
+    text-align: left;
+    padding-top: 10px;
+}
+.col-second-last{
+  width: 25%;
+    height: auto;
+    background-color: rgb(45, 53, 60);
+    border-radius: 8px;
+}
+.col-second-last-inner{
+  width: 100%;
+    height: auto;
+    display: block;
+    padding-left: 10px;
+}
+.inner-start{
+  width: 30%;
+    display: flex;
+    padding-top: 25px;
+    justify-content: center;
+}
+.select-invoice{
+  padding-left:52px
+}
+@media only screen and (max-width: 1026px) {
+  .detailed-invoice {
+    text-align: left;
+    padding-left: 25vw;
+  }
+  .col-one {
+    display: block;
+    border-radius: 8px;
+  }
+  .content-1 {
+    width: 80%;
+  }
+  .col-one-title {
+    width: 100%;
+  }
+  .col-two-title {
+    width: 100%;
+    display: flex;
+  }
+  .col-two-title-left {
+    width: 50%;
+    text-align: left;
+  }
+  .col-two-title-left-icon {
+    width: 10%;
+  }
+  .col-two-title-left-content {
+    width: 90%;
+    font-size: 25px;
+    padding-left: 10px;
+  }
+  .col-one-title-box {
+    padding-left: initial;
+    padding-right: 5px;
+  }
+  .col-two-title-right-content {
+    font-size: 15px;
+    padding-left: 10px;
+  }
+  .col-two-title-right {
+    position: relative;
+    bottom: 15px;
+  }
+  .col-third-left {
+    padding-left: 20px;
+  }
+  .col-third-right {
+    padding-left: 8vw;
+  }
+  .col-last{
+    display: block;
+  }
+  .col-last-left{
+    display: block;
+  }
+  .col-last-left-content{
+    width:100%;
+    display: flex;
+  }
+  .col-last-left-content-2{
+    width:50%;
+  }
+  .col-last-left-content-3{
+    width:50%;
+  }
+  .col-last-left-icon{
+        padding-left: 20vw;
+  }
+  .col-second-last{
+    width: 55%;
+    margin-left: 15px;
+  }
+  .col-second-last-inner{
+    height:80px;
+  }
+  .inner-start{
+    width:100%;
+  }
+  .form-create{
+    margin-left: 5vw;
+  }
+  .select-invoice{
+    padding-left:50px
+  }
 }

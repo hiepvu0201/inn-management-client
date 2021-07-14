@@ -10,3 +10,29 @@
     color:white;
     background-color: #3fcc68;
 }
+.full-width{
+
+}
+.left-col{
+    width: 90%;
+    height:auto;
+}
+.img-rest{
+    height: 50vh;
+    width: 100%;
+    border-radius: 8px;
+    display: inline-block;
+    overflow: hidden;
+}
+
+@media only screen and (max-width: 1026px) {
+    .full-width{
+        width:100vw;
+    }
+    .img-rest{
+        height:auto;
+    }
+    .left-col{
+        margin-left: 10vw;
+    }
+}

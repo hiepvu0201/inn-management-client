@@ -170,7 +170,7 @@ function Profile() {
                 <Row style={{ paddingBottom: "3%" }}>
                   <Col lg={8} md={24} className="colLeft">
                     <div className="innercolLeft">
-                      <div className="imgAva">
+                      <div className="imgAva-3">
                         <img src={userList.images} className="detailedimg" />
                       </div>
                       <div className="fullName">{userList.fullName}</div>

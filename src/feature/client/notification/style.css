@@ -1,8 +1,8 @@
 .row-acv{
-    padding-left: 6vw;
+    padding-left: 15vw;
 }
 .title-info{
-    width: 100%;
+    width: 80%;
     height: auto;
     font-family: "PT Sans", sans-serif;
     font-size: 30px;
@@ -10,7 +10,7 @@
     padding-bottom: 15px;
     padding-top: 15px;
     text-align: left;
-    padding-left: 270px;
+    padding-left: 15vw;
 }
 @media only screen and (max-width: 1026px) {
     .row-acv{

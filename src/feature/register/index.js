@@ -103,7 +103,7 @@ function Register() {
                 }}
               >
                 <Form.Item name="password">
-                  <Input.Password placeholder="Nhập password" />
+                  <Input.Password placeholder="Nhập password" className="password-register" />
                 </Form.Item>
               </div>
               <div
@@ -145,18 +145,40 @@ function Register() {
             >
               <div
                 style={{
-                  fontSize: "15px",
+                  fontSize: "14px",
                   color: "white",
                   fontFamily: "Open Sans', sans-serif",
                   display: "flex",
-                  paddingTop:"10px",
-                  paddingBottom:"10px"
+                  paddingTop: "10px",
+                  paddingBottom: "10px",
                 }}
               >
-                <FontAwesomeIcon icon={faUserPlus} color="white" /> Bạn đã có
-                tài khoản rồi hãy,
+                <div
+                  style={{
+                    fontSize: "15px",
+                    color: "white",
+                    fontFamily: "'Source Sans Pro', sans-serif",
+                  }}
+                >
+                  <FontAwesomeIcon icon={faUserPlus} color="white" /> Bạn đã có
+                  tài khoản rồi hãy,
+                </div>
+
                 <Link to="/login">
-                  <div style={{ color: "white",textDecorationLine:"underline",textDecorationThickness:"2px",textDecorationStyle:"solid" }}> đăng nhập ngay</div>
+                  <div
+                    style={{
+                      color: "white",
+                      textDecorationLine: "underline",
+                      textDecorationThickness: "2px",
+                      textDecorationStyle: "solid",
+                      fontSize:"14px",
+                      fontFamily:"Open Sans,sans-serif",
+                      paddingLeft:"8px"
+                    }}
+                  >
+                    {" "}
+                    ĐĂNG NHẬP NGAY
+                  </div>
                 </Link>
               </div>
             </div>

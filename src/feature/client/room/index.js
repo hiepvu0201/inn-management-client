@@ -16,29 +16,44 @@ import Room_tag from "./../../../components/room_tag";
 import { Images } from "./../../../config/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import roomApi from "./../../../api/roomApi";
+import branchesApi from "./../../../api/branchesApi"
 import Footer from "./../../../components/footer";
 import {
   faFacebookSquare,
   faTwitterSquare,
   faYoutubeSquare,
 } from "@fortawesome/free-brands-svg-icons";
+import {Link} from "react-router-dom"
+import {faMapMarkerAlt} from "@fortawesome/free-solid-svg-icons"
+import './style.css'
 const { Search } = Input;
 function Room_client() {
   const [value, setValue] = React.useState(1);
   const [fakedataa, setfakedata] = useState([])
   const [roomList, setIsRoomList] = useState([]);
-  useEffect(() => {
-    const fetchRoomList = async () => {
+  const [branchesList, setbranchesList] = useState([]);
+   const fetchRoomList = async () => {
+     try {
+       const response = await roomApi.getAll();
+       console.log("Fetch room successfully: ", response.data);
+       setIsRoomList(response.data);
+       setstate(response.data);
+       setfakedata(response.data);
+     } catch (error) {
+       console.log("Failed to fetch ROOM list: ", error);
+     }
+   };
+    const fetchBranchesList = async () => {
       try {
-        const response = await roomApi.getAll();
-        console.log("Fetch room successfully: ", response.data);
-        setIsRoomList(response.data);
-        setstate(response.data);
-        setfakedata(response.data);
+        const response = await branchesApi.getAll();
+        console.log("Fetch branches successfully: ", response.data);
+        setbranchesList(response.data)
       } catch (error) {
         console.log("Failed to fetch ROOM list: ", error);
       }
     };
+  useEffect(() => {
+    fetchBranchesList();
     fetchRoomList();
   }, []);
   const [state, setstate] = useState([]);
@@ -150,25 +165,17 @@ function Room_client() {
                     }}
                   >
                     <div>
-                      <div style={{ paddingBottom: "20px" }}>
+                      <div className="search-first">
                         <Search
                           placeholder="Tìm kiếm phòng theo chi nhánh"
                           allowClear
                           onSearch={onSearch_1}
                         />
                       </div>
-                      <div
-                        style={{
-                          width: "100%",
-                          height: "auto",
-                          display: "flex",
-                          justifyContent: "space-between",
-                          borderBottom: "1px solid #59d49a",
-                        }}
-                      >
+                      <div className="title-room-user">
                         <div
                           style={{
-                            width: "80%",
+                            width: "50%",
                             height: "auto",
                             color: "#59d49a",
                             fontFamily: "PT Sans, sans-serif",
@@ -179,10 +186,41 @@ function Room_client() {
                         >
                           NHÀ TRỌ
                         </div>
+                        <div
+                          style={{
+                            width: "50%",
+                            height: "auto",
+                            textAlign: "right",
+                            display: "flex",
+                            fontFamily: "PT Sans, sans-serif",
+                            fontSize: "20px",
+                            paddingLeft: "80px",
+                            color: "#59d49a",
+                          }}
+                        >
+                          <Link
+                            to="/map"
+                            style={{
+                              width: "100%",
+                              height: "auto",
+                              textAlign: "right",
+                              display: "flex",
+                              fontFamily: "PT Sans, sans-serif",
+                              fontSize: "20px",
+                              paddingLeft: "120px",
+                              color: "#59d49a",
+                            }}
+                          >
+                            <div style={{ paddingRight: "5px" }}>
+                              <FontAwesomeIcon icon={faMapMarkerAlt} />
+                            </div>
+                            Tìm theo bản đồ
+                          </Link>
+                        </div>
                       </div>
                     </div>
                     <div>
-                      <Row style={{ paddingTop: "10px" }}>
+                      <Row className="antd-row-room">
                         {roomList.map((roomId) => (
                           <Col
                             lg={8}
@@ -197,7 +235,7 @@ function Room_client() {
                             <Room_tag
                               id={roomId.id}
                               roomNo={roomId.roomNo}
-                              position={roomId.position}
+                              floors={roomId.floor.numberOfFloors}
                               facilities={
                                 roomId.facilities.map((us) => us.name) + " "
                               }
@@ -227,82 +265,44 @@ function Room_client() {
                     justifyContent: "center",
                   }}
                 >
-                  <div
-                    style={{
-                      width: "80%",
-                      height: "auto",
-                      //   backgroundColor: "purple",
-                      display: "block",
-                      textAlign: "left",
-                      paddingTop: "70px",
-                    }}
-                  >
-                    <div
-                      style={{
-                        width: "100%",
-                        height: "auto",
-                        fontSize: "30px",
-                        fontWeight: "bold",
-                      }}
-                    >
+                  <div className="search-by-branch">
+                    <div className="content-search-branch">
                       Tìm kiếm theo chi nhánh
                     </div>
                     <Radio.Group
                       name="abc"
                       onChange={onChange}
                       value={value}
-                      style={{
-                        display: "block",
-                        paddingTop: "10px",
-                        fontSize: "50px",
-                      }}
+                      className="css-radio"
                       size="medium"
                     >
-                      <Space direction="vertical">
-                        <Radio value={"Quận 1"}>Quận 1</Radio>
-                        <Radio value={"Quận 2"}>Quận 2</Radio>
-                        <Radio value={"Tất cả"}>Tất cả</Radio>
-                      </Space>
+                      {branchesList.map((us) => (
+                        <Radio key={us.location} value={us.location}>
+                          {us.description}
+                        </Radio>
+                      ))}
+                      <Radio value={"Tất cả"}>Tất cả</Radio>
                     </Radio.Group>
-                    <div
-                      style={{
-                        width: "100%",
-                        height: "auto",
-                        fontSize: "30px",
-                        fontWeight: "bold",
-                        paddingTop: "15px",
-                      }}
-                    >
+                    <div className="content-search-roomtype">
                       Tìm kiếm theo loại phòng
                     </div>
                     <Radio.Group
                       name="abc2"
                       value={value}
-                      style={{
-                        display: "block",
-                        paddingTop: "10px",
-                        fontSize: "50px",
-                      }}
+                      className="css-radio"
                       size="medium"
                       onChange={onChange_1}
                     >
-                      <Space direction="vertical">
-                        <Radio value={"ROOM_BY_WEEK"}>ROOM_BY_WEEK</Radio>
-                        <Radio value={"ROOM_BY_HOUR"}>ROOM_BY_HOUR</Radio>
-                         <Radio value={"ROOM_BY_DAY"}>ROOM_BY_DAY</Radio>
-                        <Radio value={"ROOM_BY_MONTH"}>ROOM_BY_MONTH</Radio>
-                        <Radio value={"Tất cả 2"}>Tất cả</Radio>
-                      </Space>
+                      {/* <Space direction="vertical"> */}
+                      <Radio value={"ROOM_BY_WEEK"}>ROOM_BY_WEEK</Radio>
+                      <Radio value={"ROOM_BY_HOUR"}>ROOM_BY_HOUR</Radio>
+                      <Radio value={"ROOM_BY_DAY"}>ROOM_BY_DAY</Radio>
+                      <Radio value={"ROOM_BY_MONTH"}>ROOM_BY_MONTH</Radio>
+                      <Radio value={"Tất cả 2"}>Tất cả</Radio>
+                      {/* </Space> */}
                     </Radio.Group>
                     <div>
-                      <img
-                        src={Images.IMG_ROOM_1}
-                        style={{
-                          height: "auto",
-                          width: "100%",
-                          paddingTop: "20px",
-                        }}
-                      />
+                      <img src={Images.IMG_ROOM_1} className="img-right" />
                     </div>
                   </div>
                 </Col>

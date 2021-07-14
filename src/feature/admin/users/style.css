@@ -11,10 +11,10 @@
   display: flex;
   /* width: 40%; */
   padding-left: 15px;
-  width: 50%;
+  width: 80%;
 }
 .topic-right-user {
-  width: 50%;
+  width: 20%;
   display: flex;
 }
 .contentusers {
@@ -27,17 +27,19 @@
   text-align: left;
 }
 .element-selectuser {
-  width: 45%;
-  text-align: right;
+width: 40%;
+    text-align: center;
+    padding-left: 80px;
 
 }
 .element2-selectuser {
-  width: 30%;
+  width: 35%;
   text-align: right;
 }
 .btn-right-user {
-  width: 20%;
-  height:auto;
+ width: 20%;
+    height: auto;
+    padding-left: 120px;
 }
 .detailed-btn-user {
   font-size: 15px;
@@ -58,7 +60,7 @@
 .sumusser {
   width: 100%;
   height: auto;
-  background-color: rgb(239, 239, 239);
+  background-color:#F8F8FF;
 }
 .btnbtnussers {
   display: flex;
@@ -77,36 +79,36 @@
     padding-top: 20px;
 
 }
-.input-userName{
+.input-userName12{
   margin-left:20px;
 }
-.input-password{
+.input-password12{
   margin-left:25px;
   width:20vw;
 }
-.input-email{
+.input-email12{
   margin-left: 50px;
   width:20vw;
 }
-.input-fullName{
+.input-fullName12{
   margin-left:25px
 }
-.radio-sex{
+.radio-sex12{
   margin-left:28px;
 }
-.input-job{
+.input-job12{
   margin-left:20px;
 }
-.input-address{
+.input-address12{
   margin-left:40px;
   width: 20vw;
 }
-.input-phoneno{
+.input-phoneno12{
 }
-.select-roleid{
+.select-roleid12{
   margin-left: 40px;
 }
- .btn-updae-us{
+ .btn-updae-us12{
    margin-left: 54px; 
    width: 70%;
   }
@@ -124,11 +126,29 @@
     width:20vw;
 
   }
+  .input-username-24{
+    margin-left: 43px;
+    width:20vw;
+
+  }
+   .input-username-223{
+    margin-left: 43px;
+    width:20vw;
+
+  }
   .select-roomNo{
     margin-left:60px;
     width:20vw;
   }
+   .select-roomNo12{
+    margin-left:60px;
+    width:20vw;
+  }
   .form-userName-2{
+  }
+  .element-btn{
+    padding-left: 35px;
+    width: 20%;
   }
 @media only screen and (max-width: 1026px) {
   .form-checkindate{
@@ -146,6 +166,14 @@
     position:relative;
     left:-60px
   }
+   .select-roomNo12{
+    position:relative;
+    left:40px
+  }
+  .input-phoneno12{
+    position:relative;
+    left:33px
+  }
   .form-roomnous2{
     padding-left: 20px;
   }
@@ -153,6 +181,15 @@
     position:relative;
     left:-36px;
     width:50vw;
+  }
+  .input-username-24{
+    position:relative;
+    left:-5px;
+  }
+  .input-username-223{
+        position: relative;
+    left: 20px;
+    width: 35vw;
   }
   .form-userName-2{
     padding-left:20px
@@ -173,13 +210,13 @@
   .form-roleid{
     padding-left:20px;
   }
-  .select-roleid{
+  .select-roleid12{
     position:relative;
-    left: -38px;
+    left: -7px;
   }
-  .btn-updae-us{
+  .btn-updae-us12{
     position: relative;
-    left:-56px
+    left:-13px
   }
   .form-img-us{
     padding-left:26px;
@@ -187,9 +224,9 @@
   .form-fullName{
     padding-left:20px;
   }
-  .input-fullName{
+  .input-fullName12{
     position:relative;
-    left:-25px;
+    left:-10px;
   }
   .form-email{
     padding-left:35px;
@@ -200,43 +237,44 @@
   .form-address{
     padding-left: 20px;
   }
-  .input-address{
+  .input-address12{
     position:relative;
-    left:-40px;
+    left:-10px;
   }
-  .input-job{
+  .input-job12{
     position:relative;
-    left: -20px;
+    left: -5px;
   }
   .form1-sex1{
     padding-left:20px;
   }
-  .radio-sex{
+  .radio-sex12{
     position:relative;
-    left:-30px;
+    left:-13px;
   }
-  .input-email{
+  .input-email12{
     position:relative;
-    left:-50px;
+    left:-13px;
   }
   .form-password{
     padding-left:20px
   }
-  .input-password{
+  .input-password12{
     position:relative;
-    left:-25px;
+    left:-5px;
   }
   .btn-existed{
     position:relative;
     bottom: -40px;
     left: -100px;
+    
   }
   .form-userName{
     padding-left:20px;
   }
-  .input-userName{
+  .input-userName12{
     position:relative;
-    left:-20px;
+    left:-5px;
   }
   .padding-table{
       padding-right:10px ;
@@ -254,7 +292,7 @@
     padding-left: 15px;
   }
   .btn-right-user {
-    width: 30%;
+    width: 20%;
   }
   .detailed-btn-user {
     font-size: 12px;
@@ -277,6 +315,11 @@
     width:30%;
   }
   .element2-selectuser{
-    width:70%;
+    width:30%;
+  }
+  .element-btn{
+    position: relative;
+    top: -40px;
+    left: 30px;
   }
 }

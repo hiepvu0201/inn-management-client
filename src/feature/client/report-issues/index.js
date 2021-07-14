@@ -124,34 +124,40 @@ function Reportissues_client() {
                 <Form.Item
                   label="Tiêu đề"
                   name="title"
+                  className="title-form"
                   // className="item-title"
                   // style={{ paddingLeft: "45px" }}
                 >
-                  <Input  className="item-title" />
+                  <Input className="item-title" />
                 </Form.Item>
                 <Form.Item
                   label="Mô tả"
                   name="description"
-                  // className="item-description"
-                  // style={{ paddingLeft: "58px" }}
+                  className="title-form"
                 >
-                  <Input className="item-description"/>
+                  <Input className="item-description" />
                 </Form.Item>
                 <Form.Item
                   label="Tình trạng"
                   name="status"
-                  // className="item-status"
-                  // style={{ paddingLeft: "30px" }}
+                  className="title-form"
                 >
-                  <Input className="item-status"  />
+                  <Input className="item-status" />
                 </Form.Item>
-                <Form.Item label="Người báo cáo" name="reporterId">
+                <Form.Item label="Người báo cáo" name="reporterId" className="title-form">
                   <Select>
-                    {usersList.map((reporterid) => (
-                      <Select.Option key={reporterid.id} value={reporterid.id}>
-                        {reporterid.fullName}
-                      </Select.Option>
-                    ))}
+                    {usersList.map((reporterid) =>
+                      reporterid.roles[0].name === "ROLE_USER" ? (
+                        <Select.Option
+                          key={reporterid.id}
+                          value={reporterid.id}
+                        >
+                          {reporterid.userName}
+                        </Select.Option>
+                      ) : (
+                        <>Null</>
+                      )
+                    )}
                   </Select>
                 </Form.Item>
                 {/* <Form.Item></Form.Item> */}
@@ -167,7 +173,7 @@ function Reportissues_client() {
             </Modal>
           </div>
         </div>
-        <Row style={{paddingRight:"10vw"}}>
+        <Row style={{ paddingRight: "10vw" }}>
           {reportIssuesList.map((reportissuesid) => (
             <Col lg={22} md={24} className="recad" key={reportissuesid.id}>
               <div style={{ width: "90%", height: "auto" }}>
@@ -183,7 +189,7 @@ function Reportissues_client() {
             </Col>
           ))}
         </Row>
-        <div style={{ paddingTop: "40vh" }}>
+        <div style={{ paddingTop: "45vh" }}>
           <Footer />
         </div>
       </div>

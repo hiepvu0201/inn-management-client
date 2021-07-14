@@ -25,6 +25,7 @@ import branchesApi from "./../../../api/branchesApi";
 import facilitiesApi from "./../../../api/facilitiesApi";
 import usersApi from "../../../api/usersApi";
 import Cookies from "js-cookie";
+import Footer from "./../../../components/footer"
 import { Link } from "react-router-dom";
 const { Option } = Select;
 
@@ -309,110 +310,80 @@ function Branches(props) {
         footer={null}
       >
         {/* <Spin spinning={isloadingUpdate} size="large"> */}
-          <Form initialValues={{ remember: true }} onFinish={onFinish_edit}>
-            <Form.Item label="Vị trí" name="location" className="form-location">
-              <Select
-                className="input-location-branches"
-                style={{ width: 250 }}
-              >
-                <Option value="Quận 1">Quận 1</Option>
-                <Option value="Quận 2">Quận 2</Option>
-                <Option value="Quận 3">Quận 3</Option>
-                <Option value="Quận 4">Quận 4</Option>
-                <Option value="Quận 5">Quận 5</Option>
-                <Option value="Quận 6">Quận 6</Option>
-                <Option value="Quận 7">Quận 7</Option>
-                <Option value="Quận 8">Quận 8</Option>
-                <Option value="Quận 9">Quận 9</Option>
-                <Option value="Quận 10">Quận 10</Option>
-                <Option value="Quận 11">Quận 11</Option>
-                <Option value="Quận 12">Quận 12</Option>
-                <Option value="Quận Bình Tân">Quận Bình Tân</Option>
-                <Option value="Quận Bình Thạnh">Quận Bình Thạnh</Option>
-                <Option value="Quận Phú Nhuận">Quận Phú Nhuận</Option>
-                <Option value="Quận Tân Bình">Quận Tân Bình</Option>
-                <Option value="Quận Tân Phú">Quận Tân Phú</Option>
-                <Option value="Quận Thủ Đức">Quận Thủ Đức</Option>
-                <Option value="Quận Gò Vấp">Quận Gò Vấp</Option>
-              </Select>
-            </Form.Item>
-            <Form.Item
-              label="Tên chi nhánh"
-              name="description"
-              className="form-description"
+        <Form initialValues={{ remember: true }} onFinish={onFinish_edit}>
+          <Form.Item label="Vị trí" name="location" className="form-location">
+            <Input className="input-location-branches" />
+          </Form.Item>
+          <Form.Item
+            label="Tên chi nhánh"
+            name="description"
+            className="form-description"
+          >
+            <Input
+              className="input-description"
+              placeholder={rowEdit.description}
+            />
+          </Form.Item>
+          <Form.Item
+            label="Số lầu"
+            name="numberOfStages"
+            className="form-stages"
+          >
+            {" "}
+            <Input className="input-floor" />
+          </Form.Item>
+          <Form.Item
+            label="Số phòng"
+            name="numberOfRooms"
+            className="form-rooms"
+          >
+            <Input className="input-room" placeholder={rowEdit.numberOfRooms} />
+          </Form.Item>
+          <Form.Item
+            label="Thiết bị"
+            name="facilityIds"
+            className="form-id-facility"
+          >
+            <Select
+              onChange={handleChange}
+              allowClear
+              mode="multiple"
+              className="input-facility2"
+              style={{ width: 320 }}
             >
-              <Input
-                className="input-description"
-                placeholder={rowEdit.description}
-              />
-            </Form.Item>
-            <Form.Item
-              label="Số lầu"
-              name="numberOfStages"
-              className="form-stages"
+              {propsselect}
+            </Select>
+          </Form.Item>
+          <Form.Item label="Người dùng" name="userName" className="form-user-2">
+            <Select
+              onChange={handleChange_user}
+              allowClear
+              className="input-user"
+              placeholder={rowEdit.userName}
             >
-              {" "}
-              <Input className="input-floor" />
-            </Form.Item>
-            <Form.Item
-              label="Số phòng"
-              name="numberOfRooms"
-              className="form-rooms"
-            >
-              <Input
-                className="input-room"
-                placeholder={rowEdit.numberOfRooms}
-              />
-            </Form.Item>
-            <Form.Item
-              label="Thiết bị"
-              name="facilityIds"
-              className="form-id-facility"
-            >
-              <Select
-                onChange={handleChange}
-                allowClear
-                mode="multiple"
-                className="input-facility2"
-                style={{ width: 320 }}
-              >
-                {propsselect}
-              </Select>
-            </Form.Item>
-            <Form.Item
-              label="Người dùng"
-              name="userName"
-              className="form-user-2"
-            >
-              <Select
-                onChange={handleChange_user}
-                allowClear
-                className="input-user"
-                placeholder={rowEdit.userName}
-              >
-                <Select.Option value={Cookies.get("userName")}>
-                  {Cookies.get("userName")}
-                </Select.Option>
-              </Select>
-            </Form.Item>
-            <div className="btncreatebranches">
-              <Button type="primary" htmlType="submit">
-                CHỈNH SỬA
+              <Select.Option value={Cookies.get("userName")}>
+                {Cookies.get("userName")}
+              </Select.Option>
+            </Select>
+          </Form.Item>
+          <div className="btncreatebranches">
+            <Button type="primary" htmlType="submit">
+              CHỈNH SỬA
+            </Button>
+            <div style={{ paddingLeft: "10px" }}>
+              <Button type="default" onClick={handleCancel_1}>
+                HỦY BỎ
               </Button>
-              <div style={{ paddingLeft: "10px" }}>
-                <Button type="default" onClick={handleCancel_1}>
-                  HỦY BỎ
-                </Button>
-              </div>
             </div>
-          </Form>
+          </div>
+        </Form>
         {/* </Spin> */}
       </Modal>
       <div
         style={{
           width: "100%",
           height: "auto",
-          backgroundColor: "#efefef",
+          backgroundColor: "#F8F8FF",
         }}
       >
         <div style={{ height: "120px" }}>
@@ -438,7 +409,7 @@ function Branches(props) {
                         key={branchid.location}
                         value={branchid.location}
                       >
-                        {branchid.location}
+                        {branchid.description}
                       </Select.Option>
                     ))}
                   </Select>
@@ -507,32 +478,7 @@ function Branches(props) {
                         name="location"
                         className="form-location"
                       >
-                        <Select
-                          className="input-location-branches"
-                          style={{ width: 250 }}
-                        >
-                          <Option value="Quận 1">Quận 1</Option>
-                          <Option value="Quận 2">Quận 2</Option>
-                          <Option value="Quận 3">Quận 3</Option>
-                          <Option value="Quận 4">Quận 4</Option>
-                          <Option value="Quận 5">Quận 5</Option>
-                          <Option value="Quận 6">Quận 6</Option>
-                          <Option value="Quận 7">Quận 7</Option>
-                          <Option value="Quận 8">Quận 8</Option>
-                          <Option value="Quận 9">Quận 9</Option>
-                          <Option value="Quận 10">Quận 10</Option>
-                          <Option value="Quận 11">Quận 11</Option>
-                          <Option value="Quận 12">Quận 12</Option>
-                          <Option value="Quận Bình Tân">Quận Bình Tân</Option>
-                          <Option value="Quận Bình Thạnh">
-                            Quận Bình Thạnh
-                          </Option>
-                          <Option value="Quận Phú Nhuận">Quận Phú Nhuận</Option>
-                          <Option value="Quận Tân Bình">Quận Tân Bình</Option>
-                          <Option value="Quận Tân Phú">Quận Tân Phú</Option>
-                          <Option value="Quận Thủ Đức">Quận Thủ Đức</Option>
-                          <Option value="Quận Gò Vấp">Quận Gò Vấp</Option>
-                        </Select>
+                        <Input className="input-location-branches" />
                       </Form.Item>
                       <Form.Item
                         label="Tên chi nhánh"
@@ -636,23 +582,10 @@ function Branches(props) {
             fontSize: "12px",
             marginTop: "60px",
             textAlign: "left",
-            paddingLeft: "50px",
-            paddingBottom: "180px",
+            paddingTop: "15vh",
           }}
         >
-          Thesis - Inn Management
-          <Link
-            to="/"
-            style={{
-              width: "100%",
-              height: "auto",
-              fontFamily: "PT Sans, sans-serif",
-              fontSize: "12px",
-              color: "#33404c",
-              paddingLeft: "10px",
-            }}
-          >
-          </Link>
+          <Footer />
         </div>
       </div>
     </div>

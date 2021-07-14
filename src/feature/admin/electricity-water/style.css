@@ -100,45 +100,42 @@
   }
   .radio-checked{
     position:relative;
-    left:-25px;
+    left:-5px;
   }
   .form-roomid{
     padding-left: 20px;
   } 
   .select-roomid{
     position:relative;
-    left:-40px;
+    left:-5px;
   }
   .select-month{
     position:relative;
-    left:-38px;
+    left:-5px;
   }
   .input-waterUnit-Price{
     position: relative;
-    left:-20px;
+    left:-5px;
   }
   .input-electricityUnitPrice{
     position: relative;
-    left:-28px;
+    left:-5px;
   }
   .form-numWaterOld{
     padding-left: 18px;
   }
   .input-numWaterOld{
     position: relative;
-    left: -10px;
+    left: 4px;
   }
   .input-numElectricOld{
     position: relative;
-    left:-18px;
+    left:5px;
   }
   .form-numElectricOld{
     padding-left: 15px;
   }
-  .input-numElectricOld{
-    position:relative;
-    left:-13px;
-  }
+
   .contentelectricwater {
     font-size: 12px;
   }
@@ -146,7 +143,7 @@
     font-size: 12px;
   }
   .rectangleelectricwater {
-    width: 94%;
+    width: 96%;
   }
   .ant-table-thead > tr > th {
     font-size: 5px;

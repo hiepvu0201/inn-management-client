@@ -12,7 +12,7 @@
 }
 
 .logoUS {
-  width: 10%;
+  width: 5;
   height: auto;
 }
 
@@ -24,7 +24,7 @@
 }
 
 .menuConUser {
-  width: 90%;
+  width: 95%;
   display: flex;
   margin-top: 10px;
 }

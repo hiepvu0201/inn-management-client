@@ -44,7 +44,7 @@
 .boxroom {
   width: 100%;
   height: auto;
-  background-color: #efefef;
+  background-color: #F8F8FF
 }
 .btnbtncrateroom{
   display: flex;
@@ -67,8 +67,15 @@
   margin-left:5px;
 }
 .select-branches{
-  margin-left:70px;
-  width: 80%;
+  /* margin-left:10vw;
+  width: 100%;
+  position: relative;
+  top:-30px; */
+  margin-left:5vw;
+}
+.select-floor{
+  margin-left:93px;
+  width: 50px;
 }
 .select-facility{
   margin-left:90px
@@ -77,8 +84,19 @@
   margin-left: 110px;
 }
 .form-facilityids{
-  width:80%;
+  
 }
+.form-imageroom{
+
+}
+.select-branches-edit{
+    position:relative;
+    left:70px
+  }
+  .select-facility-edit{
+    position:relative;
+    left:90px
+  }
 @media only screen and (max-width: 1026px) {
   .form-roomNo{
     padding-left: 15px;
@@ -87,6 +105,15 @@
     position: relative;
     left:-70px;
     width:50vw;
+  }
+  .select-floor{
+    max-width:90vw;
+    position:relative;
+    left:-95px
+  }
+  .form-floor{
+    padding-left:17px;
+    display:block
   }
   .form-postion{
     padding-left: 15px;
@@ -98,6 +125,7 @@
   }
   .form-roomType{
     padding-left:15px;
+    display:block
   }
   .select-roomType{
     position:relative;
@@ -111,6 +139,7 @@
   }
   .priceByDay{
     padding-left:20px;
+    display:block;
   }
   .input-priceByNextHour{
     position:relative;
@@ -118,25 +147,45 @@
   }
   .form-branches{
     padding-left:25px;
+    display: block;
   }
   .form-facilityids{
     padding-left:25px;
+    display:block;
+  }
+  .form-imageroom-edit{
+    margin-top:20px
+  }
+  .form-facilityids-edit{
+    padding-left:25px;
+    display:block;
+    margin-bottom: 10px;
   }
   .select-facility{
     position: relative;
     left:-90px;
   }
+  .select-facility-edit{
+    position:relative;
+    left:-3px
+  }
+  .select-branches-edit{
+    position:relative;
+    left:-3px
+  }
   .select-branches{
     position: relative;
-    left:-70px;
+    left:-85px;
   }
   .form-imageroom{
     padding-left:25px;
+    display:block;
   }
   .btn-upload{
     position: relative;
     left:-110px;
   }
+  
   .pricebymonth{
     padding-left:25px;
   }
@@ -180,4 +229,7 @@
   .ant-table{
     font-size:5px
   }
+ .form-imageroom-edit{
+   padding-left: 20px;
+ }
 }

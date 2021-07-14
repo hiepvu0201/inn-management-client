@@ -25,6 +25,7 @@ import {
   Spin,
 } from "antd";
 import { Link } from "react-router-dom";
+import Footer from "./../../../components/footer"
 import notificationApi from "../../../api/notifiactionApi";
 const { Option } = Select;
 function Notification(props) {
@@ -240,7 +241,7 @@ function Notification(props) {
         style={{
           width: "100%",
           height: "auto",
-          backgroundColor: "#efefef",
+          backgroundColor: "#F8F8FF",
         }}
       >
         <div style={{ height: "100px" }}>
@@ -357,23 +358,10 @@ function Notification(props) {
             fontSize: "12px",
             marginTop: "40px",
             textAlign: "left",
-            paddingLeft: "50px",
-            paddingBottom: "40vh",
+            paddingTop:"15vh"
           }}
         >
-          Thesis - Inn Management
-          <Link
-            to="/"
-            style={{
-              width: "100%",
-              height: "auto",
-              fontFamily: "PT Sans, sans-serif",
-              fontSize: "12px",
-              color: "#33404c",
-              paddingLeft: "10px",
-            }}
-          >
-          </Link>
+          <Footer/>
         </div>
       </div>
     </div>

@@ -93,7 +93,7 @@ function Invoiceone() {
     };
     console.log("<<<data", datacreate);
 
-    fetchhgetInvoicebyUsername(values);
+    fetchhgetInvoicebyUsername(datacreate);
   };
 
   const downloadSingleFiles = async (value) => {
@@ -102,7 +102,7 @@ function Invoiceone() {
         id: fakestate.id,
       };
       console.log("<<<id", data);
-      const urldown = `http://localhost:8080/api/v1/invoices/${data.id}/download/`;
+      const urldown = `https://inn-server.herokuapp.com/api/v1/invoices/${data.id}/download/`;
       window.open(urldown, "_blank");
       // setdownsingle(response.data);
     } catch (error) {
@@ -141,15 +141,19 @@ function Invoiceone() {
           onFinish={onFinish}
           // onFinishFailed={onFinishFailed}
         >
-          <Form.Item label="Khách trọ" name="userName">
-            <Select placeholder={userList.userName}>
+          <Form.Item label="Khách trọ" name="userName" className="form-create">
+            <Select placeholder={userList.userName} disabled className="select-invoice">
               <Select.Option key={userList.userName} value={userList.userName}>
                 {userList.userName}
               </Select.Option>
             </Select>
           </Form.Item>
-          <Form.Item label="Khách trọ" name="paymentDate">
-            <DatePicker showTime format="YYYY-MM-DD HH:mm:ss" />
+          <Form.Item
+            label="Ngày tạo hóa đơn"
+            name="paymentDate"
+            className="form-create"
+          >
+            <DatePicker showTime format="YYYY-MM-DD HH:mm:ss" disabled />
           </Form.Item>
           <div style={{ display: "flex" }}>
             <Button type="primary" htmlType="submit">
@@ -175,19 +179,7 @@ function Invoiceone() {
           <Menu_client />
         </div>
 
-        <div
-          style={{
-            width: "100%",
-            height: "auto",
-            textAlign: "center",
-            fontFamily: "PT Sans, sans-serif",
-            fontSize: "30px",
-            fontWeight: "bold",
-          }}
-        >
-          {" "}
-          HÓA ĐƠN CHI TIẾT{" "}
-        </div>
+        <div className="detailed-invoice"> HÓA ĐƠN CHI TIẾT </div>
 
         {state === false ? (
           <div>
@@ -205,16 +197,14 @@ function Invoiceone() {
                   Vui lòng nhấn vào nút Thêm mới hóa đơn
                 </div>
               </div>
-              <div style={{ width: "100%",display:"flex",justifyContent:"center" }}>
-                <div
-                  style={{
-                    width: "30%",
-                    // paddingLeft: "20vw",
-                    display: "flex",
-                    paddingTop: "25px",
-                    justifyContent:"center"
-                  }}
-                >
+              <div
+                style={{
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
+                <div className="inner-start">
                   <Button type="primary" className="btnbtn" onClick={showModal}>
                     Thêm mới hóa đơn
                   </Button>
@@ -242,76 +232,25 @@ function Invoiceone() {
                   borderRadius: "8px",
                 }}
               >
-                <div
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                    backgroundColor: "#e3cff7",
-                    display: "flex",
-                  }}
-                >
-                  <div
-                    style={{
-                      width: "50%",
-                      height: "auto",
-                      textAlign: "left",
-                      paddingLeft: "20px",
-                      paddingTop: "15px",
-                      paddingBottom: "15px",
-                      display: "block",
-                    }}
-                  >
-                    <div
-                      style={{
-                        width: "100%",
-                        height: "auto",
-                        textAlign: "left",
-                        paddingLeft: "20px",
-                        paddingTop: "5px",
-                        paddingBottom: "15px",
-                        display: "flex",
-                      }}
-                    >
+                <div className="col-one">
+                  <div className="col-one-title">
+                    <div className="col-one-title-box">
                       <FontAwesomeIcon icon={faCcMastercard} size="2x" />
-                      <div
-                        style={{
-                          fontSize: "35px",
-                          fontFamily: "PT Sans, sans-serif",
-                          paddingLeft: "10px",
-                          paddingTop: "5px",
-                        }}
-                      >
+                      <div className="content-1">
                         HÓA ĐƠN CỦA {fakestate.user.userName}
                       </div>
                     </div>
                   </div>
 
-                  <div
-                    style={{
-                      width: "50%",
-                      height: "auto",
-                      textAlign: "right",
-                      display: "block",
-                      paddingRight: "20px",
-                      paddingTop: "15px",
-                      paddingBottom: "15px",
-                    }}
-                  >
-                    <div
-                      style={{
-                        width: "100%",
-                        height: "auto",
-                        display: "flex",
-                        textAlign: "right",
-                      }}
-                    >
+                  <div className="col-two-title">
+                    <div className="col-two-title-left">
                       <div
                         style={{
                           width: "100%",
                           display: "flex",
                         }}
                       >
-                        <div style={{ width: "60%" }}>
+                        <div className="col-two-title-left-icon">
                           <Popconfirm
                             title="BẠN CÓ CHẮC MUỐN TẢI HÓA ĐƠN NÀY VỀ MÁY KHÔNG?"
                             onConfirm={downloadSingleFiles}
@@ -322,27 +261,12 @@ function Invoiceone() {
                             <FontAwesomeIcon icon={faPrint} size="2x" />
                           </Popconfirm>
                         </div>
-                        <div
-                          style={{
-                            fontSize: "35px",
-                            fontFamily: "PT Sans, sans-serif",
-                            width: "40%",
-                          }}
-                        >
+                        <div className="col-two-title-left-content">
                           Hóa đơn số {fakestate.id}{" "}
                         </div>
                       </div>
                     </div>
-                    <div
-                      style={{
-                        fontSize: "25px",
-                        fontFamily: "PT Sans, sans-serif",
-                        width: "50%",
-                        float: "right",
-                        paddingTop: "15px",
-                        paddingBottom: "15px",
-                      }}
-                    >
+                    <div className="col-two-title-right">
                       <div
                         style={{
                           width: "100%",
@@ -352,13 +276,7 @@ function Invoiceone() {
                         <div style={{ width: "2%" }}>
                           <FontAwesomeIcon icon={faCalendarPlus} size="1x" />
                         </div>
-                        <div
-                          style={{
-                            fontSize: "20px",
-                            fontFamily: "PT Sans, sans-serif",
-                            width: "98%",
-                          }}
-                        >
+                        <div className="col-two-title-right-content">
                           {fakestate.createdDate}{" "}
                         </div>
                       </div>
@@ -380,14 +298,7 @@ function Invoiceone() {
                         justifyContent: "center",
                       }}
                     >
-                      <div
-                        style={{
-                          width: "90%",
-                          height: "auto",
-                          borderRadius: "8px",
-                          display: "block",
-                        }}
-                      >
+                      <div className="col-third-left">
                         <div
                           style={{
                             fontSize: "20px",
@@ -543,14 +454,7 @@ function Invoiceone() {
                         height: "auto",
                       }}
                     >
-                      <div
-                        style={{
-                          width: "90%",
-                          height: "auto",
-                          borderRadius: "8px",
-                          display: "block",
-                        }}
-                      >
+                      <div className="col-third-right">
                         <div
                           style={{
                             fontSize: "20px",
@@ -1050,144 +954,37 @@ function Invoiceone() {
                     paddingTop: "15px",
                   }}
                 >
-                  <div
-                    style={{
-                      width: "95%",
-                      height: "auto",
-                      backgroundColor: "#f0f3f4",
-                      borderRadius: "10px",
-                      display: "flex",
-                    }}
-                  >
-                    <div
-                      style={{
-                        width: "75%",
-                        height: "auto",
-                        display: "flex",
-                        paddingLeft: "10px",
-                        paddingTop: "10px",
-                        paddingBottom: "10px",
-                      }}
-                    >
-                      <div
-                        style={{
-                          width: "20%",
-                          height: "auto",
-                          display: "block",
-                          paddingLeft: "10px",
-                        }}
-                      >
-                        <div
-                          style={{
-                            width: "80%",
-                            height: "auto",
-                            fontSize: "20px",
-                            fontFamily: "PT Sans, sans-serif",
-                            textAlign: "left",
-                          }}
-                        >
+                  <div className="col-last">
+                    <div className="col-last-left">
+                      <div className="col-last-left-content">
+                        <div className="col-last-left-content-2">
                           Tổng tiền điện
                         </div>
-                        <div
-                          style={{
-                            width: "80%",
-                            height: "auto",
-                            fontSize: "20px",
-                            fontFamily: "PT Sans, sans-serif",
-                            textAlign: "left",
-                            paddingTop: "10px",
-                          }}
-                        >
+                        <div className="col-last-left-content-3">
                           {fakestate.electricityWater.totalElectricity}đ
                         </div>
                       </div>
-                      <div
-                        style={{
-                          width: "6%",
-                          height: "auto",
-                          display: "block",
-                          paddingLeft: "10px",
-                          textAlign: "left",
-                          paddingTop: "10px",
-                        }}
-                      >
+                      <div className="col-last-left-icon">
                         <FontAwesomeIcon icon={faPlus} size="2x" />
                       </div>
                       {/* Tổng thứ hai */}
-                      <div
-                        style={{
-                          width: "20%",
-                          height: "auto",
-                          display: "block",
-                          paddingLeft: "10px",
-                        }}
-                      >
-                        <div
-                          style={{
-                            width: "80%",
-                            height: "auto",
-                            fontSize: "20px",
-                            fontFamily: "PT Sans, sans-serif",
-                            textAlign: "left",
-                          }}
-                        >
+                      <div className="col-last-left-content">
+                        <div className="col-last-left-content-2">
                           Tổng tiền nước
                         </div>
-                        <div
-                          style={{
-                            width: "80%",
-                            height: "auto",
-                            fontSize: "20px",
-                            fontFamily: "PT Sans, sans-serif",
-                            textAlign: "left",
-                            paddingTop: "10px",
-                          }}
-                        >
+                        <div className="col-last-left-content-3">
                           {fakestate.electricityWater.totalWater}đ
                         </div>
                       </div>
-                      <div
-                        style={{
-                          width: "6%",
-                          height: "auto",
-                          display: "block",
-                          paddingLeft: "10px",
-                          textAlign: "left",
-                          paddingTop: "10px",
-                        }}
-                      >
+                      <div className="col-last-left-icon">
                         <FontAwesomeIcon icon={faPlus} size="2x" />
                       </div>
                       {/* Tổng thứ ba */}
-                      <div
-                        style={{
-                          width: "20%",
-                          height: "auto",
-                          display: "block",
-                          paddingLeft: "10px",
-                        }}
-                      >
-                        <div
-                          style={{
-                            width: "80%",
-                            height: "auto",
-                            fontSize: "20px",
-                            fontFamily: "PT Sans, sans-serif",
-                            textAlign: "left",
-                          }}
-                        >
+                      <div className="col-last-left-content">
+                        <div className="col-last-left-content-2">
                           Tổng tiền phòng
                         </div>
-                        <div
-                          style={{
-                            width: "80%",
-                            height: "auto",
-                            fontSize: "20px",
-                            fontFamily: "PT Sans, sans-serif",
-                            textAlign: "left",
-                            paddingTop: "10px",
-                          }}
-                        >
+                        <div className="col-last-left-content-3">
                           {sum(
                             fakestate.user.room.priceByFirstHour,
                             fakestate.user.room.priceByNextHour,
@@ -1198,37 +995,14 @@ function Invoiceone() {
                           đ
                         </div>
                       </div>
-                      <div
-                        style={{
-                          width: "19%",
-                          height: "auto",
-                          display: "block",
-                          paddingLeft: "10px",
-                          textAlign: "right",
-                          paddingTop: "10px",
-                        }}
-                      >
+                      <div className="col-last-left-icon">
                         <FontAwesomeIcon icon={faEquals} size="2x" />
                       </div>
                     </div>
-                    <div
-                      style={{
-                        width: "25%",
-                        height: "auto",
-                        backgroundColor: "#2d353c",
-                        borderRadius: "8px",
-                      }}
-                    >
+                    <div className="col-second-last">
                       {" "}
                       {/* Tổng thứ ba */}
-                      <div
-                        style={{
-                          width: "100%",
-                          height: "auto",
-                          display: "block",
-                          paddingLeft: "10px",
-                        }}
-                      >
+                      <div className="col-second-last-inner">
                         <div
                           style={{
                             width: "100%",
@@ -1252,6 +1026,7 @@ function Invoiceone() {
                             paddingTop: "10px",
                             float: "right",
                             color: "white",
+                            paddingBottom:"5%"
                           }}
                         >
                           {fakestate.total}đ
@@ -1265,7 +1040,7 @@ function Invoiceone() {
           </>
         )}
       </div>
-      <div>
+      <div style={{ paddingTop: "15vh", backgroundColor: "#f2f6fa" }}>
         <Footer />
       </div>
     </div>

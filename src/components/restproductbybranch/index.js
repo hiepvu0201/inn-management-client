@@ -8,7 +8,7 @@ function Rest(props) {
 
   return (
     <div>
-      <Row>
+      <Row className="full-width">
         <div
           style={{
             width: "100%",
@@ -17,13 +17,9 @@ function Rest(props) {
             justifyContent: "center",
           }}
         >
-          <div
-            style={{
-              width: "86%",
-              height: "auto",
-            }}
+          <div className="left-col"
           >
-            <Col lg={22} md={24}>
+            <Col lg={24} md={24}>
               <div
                 style={{
                   width: "100%",
@@ -38,12 +34,7 @@ function Rest(props) {
                 <div>
                   <img
                     src={`${props.images}`}
-                    style={{
-                      height: "auto",
-                      width: "100%",
-                      borderRadius: "8px",
-                     display: "inline-block", overflow: "hidden"
-                    }}
+                    className="img-rest"
                   />
                 </div>
                 {/* Branch  */}
@@ -156,7 +147,7 @@ function Rest(props) {
                       fontFamily: "PT Sans, sans-serif",
                     }}
                   >
-                    Vị trí:
+                   Số l:
                     {/* {props.position} */}
                   </div>
                   <div
@@ -168,7 +159,7 @@ function Rest(props) {
                     }}
                   >
                     {/* 001 */}
-                    {props.position}
+                    {props.floors}
                   </div>
                 </div>
                 {/* Loại phòng */}
@@ -361,30 +352,27 @@ function Rest(props) {
                   }}
                 >
                   {/* <Spin spinning={isloadingUpdate} size="large"> */}
-                    <Link
-                      to={{
-                        pathname: `${props.id}`,
-                        state: {
-                          id: props.id,
-                          roomNo: props.roomNo,
-                          position: props.position,
-                          facilities: props.facilities,
-                          branches: props.branches,
-                          images: props.images,
-                          roomType: props.roomType,
-                          price1: props.price1,
-                          price2: props.price2,
-                          price3: props.price3,
-                          price4: props.price4,
-                          price5: props.price5,
-                        },
-                      }}
-                    >
-                      <button className="btn-res">
-                        {" "}
-                        Xem chi tiết
-                      </button>
-                    </Link>
+                  <Link
+                    to={{
+                      pathname: `${props.id}`,
+                      state: {
+                        id: props.id,
+                        roomNo: props.roomNo,
+                        floors: props.floors,
+                        facilities: props.facilities,
+                        branches: props.branches,
+                        images: props.images,
+                        roomType: props.roomType,
+                        price1: props.price1,
+                        price2: props.price2,
+                        price3: props.price3,
+                        price4: props.price4,
+                        price5: props.price5,
+                      },
+                    }}
+                  >
+                    <button className="btn-res"> Xem chi tiết</button>
+                  </Link>
                   {/* </Spin> */}
                 </div>
               </div>

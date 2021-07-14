@@ -62,7 +62,7 @@
 .containercontainer{
     width: 100%;
     height: auto;
-    background-color: rgb(239, 239, 239);
+    background-color:#F8F8FF;
 }
 .input-details{
 }
@@ -121,31 +121,31 @@
   }
   .select-tenant{
       position:relative;
-    left:-40px;
+    left:-5px;
   }
   .select-owner{
     position:relative;
-    left:-70px;
+    left:-5px;
   }
   .input-voucher{
     position:relative;
-    left:-40px;
+    left:-5px;
   }
   .input-yearpicker{
     position: relative;
-    left:-64px;
+    left:-5px;
   }
   .input-stage-contract{
     position:relative;
-    left: -70px;
+    left: -5px;
   }
   .input-room-contract{
     position:relative;
-    left:-50px;
+    left:-5px;
   }
   .input-signDate{
     position:relative;
-    left:-55px;
+    left:5px;
   }
   .input-details{
     position: relative;

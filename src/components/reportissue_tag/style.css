@@ -1,54 +1,65 @@
 .title2{
-    width: 18%;
+    width: 20%;
     font-family: "PT Sans", sans-serif;
     font-weight: bold;
     font-size: 15px;
     text-align: left;
 }
 .prop-title{
-    width: 82%;
+    width: 80%;
     font-family: "PT Sans", sans-serif;
     font-size: 15px;
     text-align: left;
 }
 .description{
-        width: 18%;
+        width: 20%;
     font-family: "PT Sans", sans-serif;
     font-weight: bold;
     font-size: 15px;
     text-align: left;
 }
 .prop-description{
-        width: 82%;
+        width: 80%;
     font-family: "PT Sans", sans-serif;
     font-size: 15px;
     text-align: left;
 }
 .status{
-    width: 18%;
+    width: 20%;
     font-family: "PT Sans", sans-serif;
     font-weight: bold;
     font-size: 15px;
     text-align: left;
 }
 .prop-status{
-    width: 82%;
+    width: 80%;
     font-family: "PT Sans", sans-serif;
     font-size: 15px;
     text-align: left;
 }
 .admin{
-    width: 18%;
+    width: 20%;
     font-family: "PT Sans", sans-serif;
     font-weight: bold;
     font-size: 15px;
     text-align: left;
 }
 .prop-admin{
-    width: 82%;
+    width: 80%;
     font-family: "PT Sans", sans-serif;
     font-size: 15px;
     text-align: left;
+}
+.box-tag{
+        width: 100%;
+    height: auto;
+    display: block;
+    background-color: white;
+    box-shadow: rgb(0 0 0 / 12%) 0px 1px 10px 0px;
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 8px;
 }
 @media only screen and (max-width: 1026px) {
     .admin{
@@ -74,5 +85,11 @@
     }
     .prop-description{
         width:  60%;
+    }
+    .box-tag{
+        width: 95vw;
+    }
+    .title-form{
+        margin-left:2vw;
     }
 }

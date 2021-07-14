@@ -10,6 +10,7 @@ import {
 import Menu_AdminPage from "../../../components/menu_adminpage";
 import roomApi from "../../../api/roomApi";
 import branchesApi from "../../../api/branchesApi";
+import floorApi from "./../../../api/floorApi";
 import { UploadOutlined, WarningOutlined } from "@ant-design/icons";
 import {
   Table,
@@ -28,6 +29,7 @@ import {
 } from "antd";
 import facilitiesApi from "../../../api/facilitiesApi";
 import roomsApi from "../../../api/roomApi";
+import Footer from "./../../../components/footer"
 import {Link} from 'react-router-dom'
 const { Option } = Select;
 const { Search } = Input;
@@ -48,7 +50,7 @@ function Rooms(props) {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [isModalVisible_1, setIsModalVisible_1] = useState(false);
   const [state, setstate] = useState([]);
-
+  const [floorList, setfloorList] = useState([])
   const uploadimg = (info) => {
     console.log(">>>>info: ", info);
     console.log(fileList);
@@ -88,6 +90,15 @@ function Rooms(props) {
       console.log("Failed to fetch rooms list: ", error);
     }
   };
+  const fetchFloorList = async()=>{
+     try {
+      const response = await floorApi.getAll();
+      console.log("Fetch floor successfully: ", response.data);
+      setfloorList(response.data);
+    } catch (error) {
+      console.log("Failed to fetch floor list: ", error);
+    }
+  }
   const fetchBranchesList = async () => {
     try {
       const response = await branchesApi.getAll();
@@ -111,6 +122,7 @@ function Rooms(props) {
     fetchFacilitiesList();
     fetchBranchesList();
     fetchRoomList();
+    fetchFloorList();
   }, []);
   {
     facilitiesList.map((facilitiesid) =>
@@ -204,6 +216,9 @@ function Rooms(props) {
   function handleChange_1(value) {
     console.log(`selected facilities id ${value}`);
   }
+  function handleChange_2(value){
+    console.log(`Select number of floor id ${value}`)
+  }
   const check_price = (e) => {
     console.log("<<<", e.target.value);
     e.target.value >= 1000 ? (
@@ -235,17 +250,23 @@ function Rooms(props) {
       dataIndex: "roomNo",
       key: "roomNo",
     },
-    {
-      title: "Vị trí",
-      dataIndex: "position",
-      key: "position",
-    },
     // {
-    //   title: "Chi nhánh",
-    //   dataIndex: "branch",
-    //   key: "branch",
-    //   render: (branch) => <div>{branch.location}</div>,
+    //   title: "Vị trí",
+    //   dataIndex: "position",
+    //   key: "position",
     // },
+    {
+      title:"Lầu",
+      dataIndex:"floor",
+      key:"floor",
+      render:(floor)=><Tag color="#ecb38c">{floor.numberOfFloors}</Tag>
+    },
+    {
+      title: "Chi nhánh",
+      dataIndex: "branch",
+      key: "branch",
+      render: (branch) => <div>{branch.location}</div>,
+    },
     {
       title: "Thiết bị",
       dataIndex: "facilities",
@@ -454,119 +475,132 @@ function Rooms(props) {
         <Spin spinning={isloadingUpdate} size="large">
           <Form initialValues={{ remember: true }} onFinish={onFinish_edit}>
             <Form.Item label="Số phòng" name="roomNo" className="form-roomNo">
-                <Input className="input-roomNo" placeholder={rowEdit.roomNo} />
+              <Input className="input-roomNo" placeholder={rowEdit.roomNo} />
             </Form.Item>
-            <Form.Item label="Vị trí" name="position" className="form-postion">
-                <Input className="input-position" placeholder={rowEdit.position} />
+            {/* <Form.Item label="Vị trí" name="position" className="form-postion">
+              <Input
+                className="input-position"
+                placeholder={rowEdit.position}
+              />
+            </Form.Item> */}
+            <Form.Item label="Số lầu" name="floorId" className="form-floor">
+              <Select
+                onChange={handleChange}
+                style={{ width: 300 }}
+                className="select-floor"
+              >
+                {floorList.map((fi) => (
+                  <Option key={fi.id} value={fi.id}>
+                    {fi.numberOfFloors}
+                  </Option>
+                ))}
+              </Select>
             </Form.Item>
             <Form.Item
               label="Loại phòng"
               name="roomType"
               className="form-roomType"
             >
-                <Select
-                  style={{ width: 300 }}
-                  placeholder={rowEdit.month}
-                  onSelect={(value) => handleChange_roomType(value)}
-                  className="select-roomType"
-                >
-                  <Option value="0">Phòng theo giờ</Option>
-                  <Option value="1">Phòng theo ngày</Option>
-                  <Option value="2">Phòng theo tuần</Option>
-                  <Option value="3">Phòng theo tháng</Option>
-                </Select>
+              <Select
+                style={{ width: 300 }}
+                placeholder={rowEdit.month}
+                onSelect={(value) => handleChange_roomType(value)}
+                className="select-roomType"
+              >
+                <Option value="0">Phòng theo giờ</Option>
+                <Option value="1">Phòng theo ngày</Option>
+                <Option value="2">Phòng theo tuần</Option>
+                <Option value="3">Phòng theo tháng</Option>
+              </Select>
             </Form.Item>
             <Form.Item
               label="Giá phòng theo giờ 1"
               name="priceByFirstHour"
               className="form-pricebyfristhour"
             >
-                <Input
-                  className="input-priceByFirstHour"
-                  onChange={(priceByFirstHour) => check_price(priceByFirstHour)}
-                  style={{ width: 320 }}
-                  disabled={firstroom}
-                />
+              <Input
+                className="input-priceByFirstHour"
+                style={{ width: 320 }}
+                disabled={firstroom}
+              />
             </Form.Item>
             <Form.Item
               label="Giá phòng theo giờ 2"
               name="priceByNextHour"
               className="form-pricebynexthour"
             >
-                <Input
-                  className="input-priceByNextHour"
-                  style={{ width: 320 }}
-                  disabled={firstroom}
-                  onChange={(priceByNextHour) => check_price(priceByNextHour)}
-                />
+              <Input
+                className="input-priceByNextHour"
+                style={{ width: 320 }}
+                disabled={firstroom}
+              />
             </Form.Item>
             <Form.Item
               label="Giá phòng theo ngày"
               name="priceByDay"
               className="priceByDay"
             >
-                <Input
-                  className="input-priceByDay"
-                  style={{ width: 290 }}
-                  disabled={secondroom}
-                  onChange={(priceByDay) => check_price(priceByDay)}
-                />
+              <Input
+                className="input-priceByDay"
+                style={{ width: 290 }}
+                disabled={secondroom}
+              />
             </Form.Item>
             <Form.Item
               label="Giá phòng theo tuần"
               name="priceByWeek"
               className="pricebyweek"
             >
-                <Input
-                  className="input-pricebyWeek"
-                  style={{ width: 320 }}
-                  disabled={thirdroom}
-                  onChange={(priceByWeek) => check_price(priceByWeek)}
-                />
+              <Input
+                className="input-pricebyWeek"
+                style={{ width: 320 }}
+                disabled={thirdroom}
+              />
             </Form.Item>
             <Form.Item
               label="Giá phòng theo tháng"
               name="priceByMonth"
               className="pricebymonth"
             >
-                <Input
-                  className="input-priceByMonth"
-                  style={{ width: 320 }}
-                  disabled={fourthroom}
-                  onChange={(priceByMonth) => check_price(priceByMonth)}
-                />
+              <Input
+                className="input-priceByMonth"
+                style={{ width: 320 }}
+                disabled={fourthroom}
+              />
             </Form.Item>
             <Form.Item
               label="Chi nhánh"
               name="branchId"
               className="form-branches"
             >
-                <Select onChange={handleChange} className="select-branches"
-                style={{width:320}}
-                >
-                  {branchesList.map((branchesid) => (
-                    <Select.Option key={branchesid.id} value={branchesid.id}>
-                      {branchesid.location}
-                    </Select.Option>
-                  ))}
-                </Select>
+              <Select
+                onChange={handleChange}
+                className="select-branches-edit"
+                style={{ width: 240 }}
+              >
+                {branchesList.map((branchesid) => (
+                  <Select.Option key={branchesid.id} value={branchesid.id}>
+                    {branchesid.description}
+                  </Select.Option>
+                ))}
+              </Select>
             </Form.Item>
             <Form.Item
               label="Thiết bị"
               name="facilityIds"
-              className="form-facilityids"
+              className="form-facilityids-edit"
             >
-                <Select
-                  onChange={handleChange}
-                  allowClear
-                  className="select-facility"
-                  mode="multiple"
-                  style={{width:220}}
-                >
-                  {propsselect}
-                </Select>
+              <Select
+                onChange={handleChange}
+                allowClear
+                className="select-facility-edit"
+                mode="multiple"
+                style={{ width: 220 }}
+              >
+                {propsselect}
+              </Select>
             </Form.Item>
-            <Form.Item label="Hình" className="form-imageroom">
+            <Form.Item label="Hình" className="form-imageroom-edit">
               <Upload
                 {...propsimg}
                 action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
@@ -600,14 +634,7 @@ function Rooms(props) {
           </Form>
         </Spin>
       </Modal>
-      <div
-        className="boxroom"
-        // style={{
-        //   width: "100%",
-        //   height: "100vh",
-        //   backgroundColor: "#efefef",
-        // }}
-      >
+      <div className="boxroom">
         <div style={{ height: "100px" }}>
           <Menu_AdminPage />
         </div>
@@ -676,129 +703,147 @@ function Rooms(props) {
                       name="roomNo"
                       className="form-roomNo"
                     >
-                        <Input className="input-roomNo" />
+                      <Input className="input-roomNo" />
                     </Form.Item>
-                    <Form.Item
+                    {/* <Form.Item
                       label="Vị trí"
                       name="position"
                       className="form-postion"
                     >
-                        <Input className="input-position" />
+                      <Input className="input-position" />
+                    </Form.Item> */}
+                    <Form.Item
+                      label="Số lầu"
+                      name="floorId"
+                      className="form-floor"
+                    >
+                      <Select
+                        onChange={handleChange}
+                        style={{ width: 300 }}
+                        className="select-floor"
+                      >
+                        {floorList.map((fi) => (
+                          <Option key={fi.id} value={fi.id}>
+                            {fi.numberOfFloors}
+                          </Option>
+                        ))}
+                      </Select>
                     </Form.Item>
                     <Form.Item
                       label="Loại phòng"
                       name="roomType"
                       className="form-roomType"
                     >
-                        <Select
-                          style={{ width: 300 }}
-                          placeholder={rowEdit.month}
-                          onSelect={(value) => handleChange_roomType(value)}
-                          className="select-roomType"
-                        >
-                          <Option value="0">Phòng theo giờ</Option>
-                          <Option value="1">Phòng theo ngày</Option>
-                          <Option value="2">Phòng theo tuần</Option>
-                          <Option value="3">Phòng theo tháng</Option>
-                        </Select>
+                      <Select
+                        style={{ width: 300 }}
+                        placeholder={rowEdit.month}
+                        onSelect={(value) => handleChange_roomType(value)}
+                        className="select-roomType"
+                      >
+                        <Option value="0">Phòng theo giờ</Option>
+                        <Option value="1">Phòng theo ngày</Option>
+                        <Option value="2">Phòng theo tuần</Option>
+                        <Option value="3">Phòng theo tháng</Option>
+                      </Select>
                     </Form.Item>
                     <Form.Item
                       label="Giá phòng theo giờ 1"
                       name="priceByFirstHour"
                       className="form-pricebyfristhour"
                     >
-                        <Input
-                          className="input-priceByFirstHour"
-                          onChange={(priceByFirstHour) =>
-                            check_price(priceByFirstHour)
-                          }
-                          style={{ width: 320 }}
-                          disabled={firstroom}
-                        />
+                      <Input
+                        className="input-priceByFirstHour"
+                        // onChange={(priceByFirstHour) =>
+                        //   check_price(priceByFirstHour)
+                        // }
+                        style={{ width: 320 }}
+                        disabled={firstroom}
+                      />
                     </Form.Item>
                     <Form.Item
                       label="Giá phòng theo giờ 2"
                       name="priceByNextHour"
                       className="form-pricebynexthour"
                     >
-                        <Input
-                          className="input-priceByNextHour"
-                          style={{ width: 320 }}
-                          disabled={firstroom}
-                          onChange={(priceByNextHour) =>
-                            check_price(priceByNextHour)
-                          }
-                        />
+                      <Input
+                        className="input-priceByNextHour"
+                        style={{ width: 320 }}
+                        disabled={firstroom}
+                        // onChange={(priceByNextHour) =>
+                        //   check_price(priceByNextHour)
+                        // }
+                      />
                     </Form.Item>
                     <Form.Item
                       label="Giá phòng theo ngày"
                       name="priceByDay"
                       className="priceByDay"
                     >
-                        <Input
-                          className="input-priceByDay"
-                          style={{ width: 290 }}
-                          disabled={secondroom}
-                          onChange={(priceByDay) => check_price(priceByDay)}
-                        />
+                      <Input
+                        className="input-priceByDay"
+                        style={{ width: 290 }}
+                        disabled={secondroom}
+                        // onChange={(priceByDay) => check_price(priceByDay)}
+                      />
                     </Form.Item>
                     <Form.Item
                       label="Giá phòng theo tuần"
                       name="priceByWeek"
                       className="pricebyweek"
                     >
-                        <Input
-                          className="input-pricebyWeek"
-                          style={{ width: 320 }}
-                          disabled={thirdroom}
-                          onChange={(priceByWeek) => check_price(priceByWeek)}
-                        />
+                      <Input
+                        className="input-pricebyWeek"
+                        style={{ width: 320 }}
+                        disabled={thirdroom}
+                        // onChange={(priceByWeek) => check_price(priceByWeek)}
+                      />
                     </Form.Item>
                     <Form.Item
                       label="Giá phòng theo tháng"
                       name="priceByMonth"
                       className="pricebymonth"
                     >
-                        <Input
-                          className="input-priceByMonth"
-                          style={{ width: 320 }}
-                          disabled={fourthroom}
-                          onChange={(priceByMonth) => check_price(priceByMonth)}
-                        />
+                      <Input
+                        className="input-priceByMonth"
+                        style={{ width: 320 }}
+                        disabled={fourthroom}
+                        // onChange={(priceByMonth) => check_price(priceByMonth)}
+                      />
                     </Form.Item>
                     <Form.Item
                       label="Chi nhánh"
                       name="branchId"
                       className="form-branches"
-                      style={{width:320}}
                     >
-                        <Select
-                          onChange={handleChange}
-                          className="select-branches"
-                        >
-                          {branchesList.map((branchesid) => (
-                            <Select.Option
-                              key={branchesid.id}
-                              value={branchesid.id}
-                            >
-                              {branchesid.location}
-                            </Select.Option>
-                          ))}
-                        </Select>
+                      <Select
+                        onChange={handleChange}
+                        className="select-branches"
+                        style={{ width: 240 }}
+                      >
+                        {branchesList.map((branchesid) => (
+                          <Select.Option
+                            key={branchesid.id}
+                            value={branchesid.id}
+                          >
+                            {branchesid.description}
+                          </Select.Option>
+                        ))}
+                      </Select>
                     </Form.Item>
                     <Form.Item
                       label="Thiết bị"
                       name="facilityIds"
                       className="form-facilityids"
                     >
-                        <Select
-                          onChange={handleChange}
-                          allowClear
-                          className="select-facility"
-                          mode="multiple"
-                        >
-                          {propsselect}
-                        </Select>
+                      <Select
+                        onChange={handleChange}
+                        allowClear
+                        className="select-facility"
+                        mode="multiple"
+                        style={{ width: 220 }}
+                      >
+                        {propsselect}
+                      </Select>
                     </Form.Item>
                     <Form.Item label="Hình" className="form-imageroom">
                       <Upload
@@ -861,23 +906,10 @@ function Rooms(props) {
             fontSize: "12px",
             marginTop: "40px",
             textAlign: "left",
-            paddingLeft: "50px",
-            paddingBottom: "30vh",
+            paddingTop: "15vh",
           }}
         >
-          Thesis - Inn Management
-          <Link
-            to="/"
-            style={{
-              width: "100%",
-              height: "auto",
-              fontFamily: "PT Sans, sans-serif",
-              fontSize: "12px",
-              color: "#33404c",
-              paddingLeft: "10px",
-            }}
-          >
-          </Link>
+          <Footer />
         </div>
       </div>
     </div>

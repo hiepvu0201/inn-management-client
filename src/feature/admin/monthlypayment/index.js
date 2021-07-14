@@ -9,6 +9,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faSave } from "@fortawesome/free-regular-svg-icons";
 import Menu_AdminPage from "../../../components/menu_adminpage";
+import Footer from "./../../../components/footer";
 import {
   Table,
   Popconfirm,
@@ -135,10 +136,16 @@ function Monthlypayment(props) {
       key: "cost",
     },
     {
-      title: "Chi nhánh",
+      title: "Vị trí chi nhánh",
       dataIndex: "branch",
       key: "branch",
       render: (branch) => <div>{branch.location}</div>,
+    },
+     {
+      title: "Chi nhánh",
+      dataIndex: "branch",
+      key: "branch",
+      render: (branch) => <div>{branch.description}</div>,
     },
     {
       title: "",
@@ -272,9 +279,9 @@ function Monthlypayment(props) {
               className="form-branchId"
             >
                 <Select className="select-branch-id">
-                  {branchList.map((branchid) => (
+                 {branchList.map((branchid) => (
                     <Select.Option key={branchid.id} value={branchid.id}>
-                      {branchid.location}
+                      {branchid.description}
                     </Select.Option>
                   ))}
                 </Select>
@@ -392,7 +399,7 @@ function Monthlypayment(props) {
                               key={branchid.id}
                               value={branchid.id}
                             >
-                              {branchid.location}
+                              {branchid.description}
                             </Select.Option>
                           ))}
                         </Select>
@@ -438,23 +445,10 @@ function Monthlypayment(props) {
             fontSize: "12px",
             marginTop: "40px",
             textAlign: "left",
-            paddingLeft: "50px",
-            paddingBottom: "40vh",
+            paddingTop:"15vh"
           }}
         >
-          Thesis - Inn Management
-          <Link
-            to="/"
-            style={{
-              width: "100%",
-              height: "auto",
-              fontFamily: "PT Sans, sans-serif",
-              fontSize: "12px",
-              color: "#33404c",
-              paddingLeft: "10px",
-            }}
-          >
-          </Link>
+          <Footer/>
         </div>
       </div>
     </div>

@@ -28,6 +28,7 @@ import {
   notification,
 } from "antd";
 import { Link } from "react-router-dom";
+import Footer from "./../../../components/footer";
 const { Option } = Select;
 function ElectricityWaters(props) {
   const [roomList, setRoomList] = useState([]);
@@ -136,31 +137,31 @@ function ElectricityWaters(props) {
       key: "room",
       render: (room) => <div>{room.roomNo}</div>,
     },
-    // {
-    //   title: "Số điện cũ",
-    //   dataIndex: "numElectricOld",
-    //   key: "numElectricOld",
-    // },
-    // {
-    //   title: "Số điện mới",
-    //   dataIndex: "numElectricNew",
-    //   key: "numElectricNew",
-    // },
+    {
+      title: "Số điện cũ",
+      dataIndex: "numElectricOld",
+      key: "numElectricOld",
+    },
+    {
+      title: "Số điện mới",
+      dataIndex: "numElectricNew",
+      key: "numElectricNew",
+    },
     {
       title: "Số điện tiêu thụ",
       dataIndex: "numElectricConsump",
       key: "numElectricConsump",
     },
-    // {
-    //   title: "Số nước cũ",
-    //   dataIndex: "numWaterOld",
-    //   key: "numWaterOld",
-    // },
-    // {
-    //   title: "Số nước mới",
-    //   dataIndex: "numWaterNew",
-    //   key: "numWaterNew",
-    // },
+    {
+      title: "Số nước cũ",
+      dataIndex: "numWaterOld",
+      key: "numWaterOld",
+    },
+    {
+      title: "Số nước mới",
+      dataIndex: "numWaterNew",
+      key: "numWaterNew",
+    },
     {
       title: "Số nước tiêu thụ",
       dataIndex: "numElectricConsump",
@@ -172,16 +173,16 @@ function ElectricityWaters(props) {
       key: "month",
       render: (month) => <Tag color="cyan">{month}</Tag>,
     },
-    // {
-    //   title: "Giá điện",
-    //   dataIndex: "waterUnitPrice",
-    //   key: "waterUnitPrice",
-    // },
-    // {
-    //   title: "Giá nước",
-    //   dataIndex: "electricityUnitPrice",
-    //   key: "electricityUnitPrice",
-    // },
+    {
+      title: "Giá điện",
+      dataIndex: "waterUnitPrice",
+      key: "waterUnitPrice",
+    },
+    {
+      title: "Giá nước",
+      dataIndex: "electricityUnitPrice",
+      key: "electricityUnitPrice",
+    },
     {
       title: "Tổng giá điện",
       dataIndex: "totalElectricity",
@@ -196,13 +197,13 @@ function ElectricityWaters(props) {
       title: "Kiểm tra",
       dataIndex: "checked",
       key: "checked",
-     
+
       render: (checked) => (
         <>
           {checked === false ? (
-            <div>CHƯA THANH TOÁN</div>
+            <Tag color="#31a273">CHƯA THANH TOÁN</Tag>
           ) : (
-            <div>ĐÃ THANH TOÁN</div>
+            <Tag color="#ce560a">ĐÃ THANH TOÁN</Tag>
           )}
         </>
       ),
@@ -305,102 +306,106 @@ function ElectricityWaters(props) {
               name="numElectricOld"
               className="form-numElectricOld"
             >
-                <Input
-                  placeholder={rowEdit.numElectricOld}
-                  className="input-numElectricOld"
-                />
+              <Input
+                placeholder={rowEdit.numElectricOld}
+                className="input-numElectricOld"
+              />
             </Form.Item>
             <Form.Item
               label="Số điện mới"
               name="numElectricNew"
               className="form-numElectricNew"
             >
-                <Input
-                  placeholder={rowEdit.numElectricNew}
-                  className="input-numElectricNew"
-                />
+              <Input
+                placeholder={rowEdit.numElectricNew}
+                className="input-numElectricNew"
+              />
             </Form.Item>
             <Form.Item
               label="Số nước cũ"
               name="numWaterOld"
               className="form-numWaterOld"
             >
-                <Input
-                  className="input-numWaterOld"
-                  placeholder={rowEdit.numWaterOld}
-                />
+              <Input
+                className="input-numWaterOld"
+                placeholder={rowEdit.numWaterOld}
+              />
             </Form.Item>
             <Form.Item
               label="Số nước mới"
               name="numWaterNew"
               className="form-numWaterNew"
             >
-                <Input
-                  placeholder={rowEdit.numWaterNew}
-                  className="input-numWaterNew"
-                />
+              <Input
+                placeholder={rowEdit.numWaterNew}
+                className="input-numWaterNew"
+              />
             </Form.Item>
             <Form.Item
               label="Giá điện"
               name="electricityUnitPrice"
               className="form-electricityUnitPrice"
             >
-                <Input
-                  className="input-electricityUnitPrice"
-                  placeholder={rowEdit.electricityUnitPrice}
-                  onChange={(electricityUnitPrice) =>
-                    check(electricityUnitPrice)
-                  }
-                />
+              <Input
+                className="input-electricityUnitPrice"
+                placeholder={rowEdit.electricityUnitPrice}
+                // onChange={(electricityUnitPrice) =>
+                //   check(electricityUnitPrice)
+                // }
+              />
             </Form.Item>
             <Form.Item
               label="Giá nước"
               name="waterUnitPrice"
               className="form-waterUnitPrice"
             >
-                <Input
-                  className="input-waterUnit-Price"
-                  placeholder={rowEdit.waterUnitPrice}
-                  onChange={(waterUnitPrice) => check(waterUnitPrice)}
-                />
+              <Input
+                className="input-waterUnit-Price"
+                placeholder={rowEdit.waterUnitPrice}
+                // onChange={(waterUnitPrice) => check(waterUnitPrice)}
+              />
             </Form.Item>
             <Form.Item label="Tháng" name="month" className="form-month">
-                <Select
-                  style={{ width: 120 }}
-                  className="select-month"
-                  placeholder={rowEdit.month}
-                >
-                  <Option value="1">Tháng 1</Option>
-                  <Option value="2">Tháng 2</Option>
-                  <Option value="3">Tháng 3</Option>
-                  <Option value="4">Tháng 4</Option>
-                  <Option value="5">Tháng 5</Option>
-                  <Option value="6">Tháng 6</Option>
-                  <Option value="7">Tháng 7</Option>
-                  <Option value="8">Tháng 8</Option>
-                  <Option value="9">Tháng 9</Option>
-                  <Option value="10">Tháng 10</Option>
-                  <Option value="11">Tháng 11</Option>
-                  <Option value="12">Tháng 12</Option>
-                </Select>
+              <Select
+                style={{ width: 120 }}
+                className="select-month"
+                placeholder={rowEdit.month}
+              >
+                <Option value="1">Tháng 1</Option>
+                <Option value="2">Tháng 2</Option>
+                <Option value="3">Tháng 3</Option>
+                <Option value="4">Tháng 4</Option>
+                <Option value="5">Tháng 5</Option>
+                <Option value="6">Tháng 6</Option>
+                <Option value="7">Tháng 7</Option>
+                <Option value="8">Tháng 8</Option>
+                <Option value="9">Tháng 9</Option>
+                <Option value="10">Tháng 10</Option>
+                <Option value="11">Tháng 11</Option>
+                <Option value="12">Tháng 12</Option>
+              </Select>
             </Form.Item>
             <Form.Item label="Kiểm tra" name="checked" className="form-checked">
-                <Radio.Group
-                  placeholder={rowEdit.checked}
-                  className="radio-checked"
-                >
-                  <Radio value="true">True</Radio>
-                  <Radio value="false">False</Radio>
-                </Radio.Group>
+              <Radio.Group
+                placeholder={rowEdit.checked}
+                className="radio-checked"
+              >
+                <Radio value="true">True</Radio>
+                <Radio value="false">False</Radio>
+              </Radio.Group>
             </Form.Item>
             <Form.Item label="Phòng" name="roomId" className="form-roomid">
-                <Select onChange={handleChange} className="select-roomid" style={{width:320}}>
-                  {roomList.map((roomsid) => (
-                    <Select.Option key={roomsid.id} value={roomsid.id}>
-                      {roomsid.roomNo}
-                    </Select.Option>
-                  ))}
-                </Select>
+              <Select
+                onChange={handleChange}
+                className="select-roomid"
+                style={{ width: 320 }}
+              >
+                {roomList.map((roomsid) => (
+                  <Select.Option key={roomsid.id} value={roomsid.id}>
+                    {roomsid.roomNo}
+                  </Select.Option>
+                ))}
+              </Select>
             </Form.Item>
             <div style={{ display: "flex" }}>
               <Button type="primary" htmlType="submit">
@@ -419,7 +424,7 @@ function ElectricityWaters(props) {
         style={{
           width: "100%",
           height: "auto",
-          backgroundColor: "#efefef",
+          backgroundColor: "#F8F8FF",
         }}
       >
         <div style={{ height: "100px" }}>
@@ -483,115 +488,104 @@ function ElectricityWaters(props) {
                         name="numElectricOld"
                         className="form-numElectricOld"
                       >
-                          <Input
-                            className="input-numElectricOld"
-                          />
+                        <Input className="input-numElectricOld" />
                       </Form.Item>
                       <Form.Item
                         label="Số điện mới"
                         name="numElectricNew"
                         className="form-numElectricNew"
                       >
-                          <Input
-                            className="input-numElectricNew"
-                          />
+                        <Input className="input-numElectricNew" />
                       </Form.Item>
                       <Form.Item
                         label="Số nước cũ"
                         name="numWaterOld"
                         className="form-numWaterOld"
                       >
-                          <Input
-                            className="input-numWaterOld"
-                          />
+                        <Input className="input-numWaterOld" />
                       </Form.Item>
                       <Form.Item
                         label="Số nước mới"
                         name="numWaterNew"
                         className="form-numWaterNew"
                       >
-                          <Input
-                            className="input-numWaterNew"
-                          />
+                        <Input className="input-numWaterNew" />
                       </Form.Item>
                       <Form.Item
                         label="Giá điện"
                         name="electricityUnitPrice"
                         className="form-electricityUnitPrice"
                       >
-                          <Input
-                            className="input-electricityUnitPrice"
-                            onChange={(electricityUnitPrice) =>
-                              check(electricityUnitPrice)
-                            }
-                          />
+                        <Input
+                          className="input-electricityUnitPrice"
+                          // onChange={(electricityUnitPrice) =>
+                          //   check(electricityUnitPrice)
+                          // }
+                        />
                       </Form.Item>
                       <Form.Item
                         label="Giá nước"
                         name="waterUnitPrice"
                         className="form-waterUnitPrice"
                       >
-                          <Input
-                            className="input-waterUnit-Price"
-                            onChange={(waterUnitPrice) => check(waterUnitPrice)}
-                          />
+                        <Input
+                          className="input-waterUnit-Price"
+                          // onChange={(waterUnitPrice) => check(waterUnitPrice)}
+                        />
                       </Form.Item>
                       <Form.Item
                         label="Tháng"
                         name="month"
                         className="form-month"
                       >
-                          <Select
-                            style={{ width: 120 }}
-                            className="select-month"
-                            placeholder={rowEdit.month}
-                          >
-                            <Option value="1">Tháng 1</Option>
-                            <Option value="2">Tháng 2</Option>
-                            <Option value="3">Tháng 3</Option>
-                            <Option value="4">Tháng 4</Option>
-                            <Option value="5">Tháng 5</Option>
-                            <Option value="6">Tháng 6</Option>
-                            <Option value="7">Tháng 7</Option>
-                            <Option value="8">Tháng 8</Option>
-                            <Option value="9">Tháng 9</Option>
-                            <Option value="10">Tháng 10</Option>
-                            <Option value="11">Tháng 11</Option>
-                            <Option value="12">Tháng 12</Option>
-                          </Select>
+                        <Select
+                          style={{ width: 120 }}
+                          className="select-month"
+                          placeholder={rowEdit.month}
+                        >
+                          <Option value="1">Tháng 1</Option>
+                          <Option value="2">Tháng 2</Option>
+                          <Option value="3">Tháng 3</Option>
+                          <Option value="4">Tháng 4</Option>
+                          <Option value="5">Tháng 5</Option>
+                          <Option value="6">Tháng 6</Option>
+                          <Option value="7">Tháng 7</Option>
+                          <Option value="8">Tháng 8</Option>
+                          <Option value="9">Tháng 9</Option>
+                          <Option value="10">Tháng 10</Option>
+                          <Option value="11">Tháng 11</Option>
+                          <Option value="12">Tháng 12</Option>
+                        </Select>
                       </Form.Item>
                       <Form.Item
                         label="Kiểm tra"
                         name="checked"
                         className="form-checked"
                       >
-                          <Radio.Group
-                            placeholder={rowEdit.checked}
-                            className="radio-checked"
-                          >
-                            <Radio value="true">True</Radio>
-                            <Radio value="false">False</Radio>
-                          </Radio.Group>
+                        <Radio.Group
+                          placeholder={rowEdit.checked}
+                          className="radio-checked"
+                        >
+                          <Radio value="true">True</Radio>
+                          <Radio value="false">False</Radio>
+                        </Radio.Group>
                       </Form.Item>
                       <Form.Item
                         label="Phòng"
                         name="roomId"
                         className="form-roomid"
                       >
-                          <Select
-                            onChange={handleChange}
-                            className="select-roomid"
-                            style={{width:320}}
-                          >
-                            {roomList.map((roomsid) => (
-                              <Select.Option
-                                key={roomsid.id}
-                                value={roomsid.id}
-                              >
-                                {roomsid.roomNo}
-                              </Select.Option>
-                            ))}
-                          </Select>
+                        <Select
+                          onChange={handleChange}
+                          className="select-roomid"
+                          style={{ width: 320 }}
+                        >
+                          {roomList.map((roomsid) => (
+                            <Select.Option key={roomsid.id} value={roomsid.id}>
+                              {roomsid.roomNo}
+                            </Select.Option>
+                          ))}
+                        </Select>
                       </Form.Item>
                       <div style={{ display: "flex" }}>
                         <Button type="primary" htmlType="submit">
@@ -634,23 +628,10 @@ function ElectricityWaters(props) {
             fontSize: "12px",
             marginTop: "40px",
             textAlign: "left",
-            paddingLeft: "50px",
-            paddingBottom: "40vh",
+            paddingTop: "15vh",
           }}
         >
-          Thesis - Inn Management
-          <Link
-            to="/"
-            style={{
-              width: "100%",
-              height: "auto",
-              fontFamily: "PT Sans, sans-serif",
-              fontSize: "12px",
-              color: "#33404c",
-              paddingLeft: "10px",
-            }}
-          >
-          </Link>
+          <Footer/>
         </div>
       </div>
     </div>

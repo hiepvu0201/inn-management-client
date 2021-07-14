@@ -23,6 +23,7 @@ import {
   DatePicker,
   Spin,
 } from "antd";
+import Footer from "./../../../components/footer"
 import { Link } from "react-router-dom";
 const { Option } = Select;
 function Monthlyincome(props) {
@@ -131,10 +132,16 @@ function Monthlyincome(props) {
       key: "month",
     },
     {
-      title: "Chi nhánh",
+      title: "Vị trí chi nhánh",
       dataIndex: "branch",
       key: "branch",
       render: (branch) => <div>{branch.location}</div>,
+    },
+    {
+      title: "Chi nhánh",
+      dataIndex: "branch",
+      key: "branch",
+      render: (branch) => <div>{branch.description}</div>,
     },
     {
       title: "",
@@ -367,13 +374,13 @@ function Monthlyincome(props) {
                       name="branchId"
                       className="branchid-2"
                     >
-                        <Select className="select-branchid">
+                        <Select style={{width:250}} className="select-branchid">
                           {branchList.map((branchid) => (
                             <Select.Option
                               key={branchid.id}
                               value={branchid.id}
                             >
-                              {branchid.location}
+                              {branchid.description}
                             </Select.Option>
                           ))}
                         </Select>
@@ -419,23 +426,10 @@ function Monthlyincome(props) {
             fontSize: "12px",
             marginTop: "40px",
             textAlign: "left",
-            paddingLeft: "50px",
-            paddingBottom: "40vh",
+            paddingTop:"15vh"
           }}
         >
-          Thesis - Inn Management
-          <Link
-            to="/"
-            style={{
-              width: "100%",
-              height: "auto",
-              fontFamily: "PT Sans, sans-serif",
-              fontSize: "12px",
-              color: "#33404c",
-              paddingLeft: "10px",
-            }}
-          >
-          </Link>
+          <Footer/>
         </div>
       </div>
     </div>

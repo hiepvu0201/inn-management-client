@@ -64,7 +64,7 @@
 }
 .input-location-branches{
   margin-left:60px;
-  width:60%;
+  width:100%;
 }
 .input-floor{
   margin-left:48px;
@@ -86,11 +86,12 @@
 @media only screen and (max-width: 1026px) {
   .form-location{
     padding-left: 15px;
+    display:flex;
   }
   .input-location-branches{
     position:relative;
-    left:-55px;
-    width: 150px;
+    left:5px;
+    width:250px;
   }
   .form-description{
     padding-left: 15px;
@@ -104,32 +105,30 @@
   }
   .input-floor{
     position:relative;
-    left:-45px;
+    left:5px;
+    
   }
   .form-rooms{
     padding-left: 20px;
   }
   .input-room{
     position:relative;
-    left:-30px;
+    left:5px;
   }
   .form-id-facility{
     padding-left:20px
   }
   .input-facility2{
     position: relative;
-    left:-40px;
+    left:8px;
   }
   .form-user-2{
     padding-left:25px;
   }
   .input-user{
     position: relative;
-    left:-20px;
+    left:-4px;
   }
-
-
-
   .svg-inline--fa.fa-w-20 {
     width: 1.05em;
   }
@@ -140,7 +139,7 @@
     display: block;
   }
   .element-select1 {
-    width: 45%;
+    width: 27%;
     text-align: left;
     padding-left:10px;
   }
@@ -179,7 +178,7 @@
     padding-left: 20px;
   }
   .element-select {
-   width: 45%;
+   width: 27%;
     text-align: left;
     padding-left: 20px;
   }
