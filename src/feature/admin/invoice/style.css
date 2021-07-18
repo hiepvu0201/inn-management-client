@@ -72,10 +72,10 @@
 @media only screen and (max-width: 1026px) {
   .topic-right-invoice
   {
-      width: 60%;
+      width: 40%;
   }
   .topic-left-invoice{
-      width: 40%;
+      width: 60%;
   }
   .contentinvoices{
       font-size: 12px;

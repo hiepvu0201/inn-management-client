@@ -49,7 +49,10 @@ const usersApi = {
     const url = `/api/v1/users/userName/?userName=${params}`;
     return axiosClient.get(url);
   },
-  
+  checkrole(params){
+    const url = `/api/v1/users/search-by-rolename/?roleName=${params}`;
+    return axiosClient.get(url);
+  }
   
 };
 export default usersApi;

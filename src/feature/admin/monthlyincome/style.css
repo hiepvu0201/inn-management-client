@@ -77,7 +77,14 @@
 .select-branchid{
   margin-left:20px;
 }
+.searchachd{
+  padding-right: 10px;
+    width: 60%;
+}
 @media only screen and (max-width: 1026px) {
+  .searchachd{
+    width:30%;
+  }
   .containerincome {
     height: auto;
   }
@@ -128,7 +135,7 @@
   }
   .detailed-btn-income {
     font-size: 12px;
-    width: 30%;
+    width: 15%;
   }
   .rectanglemonthlyincome {
     width: 94%;

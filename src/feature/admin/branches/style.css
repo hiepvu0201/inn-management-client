@@ -10,13 +10,12 @@
 .topic-left-branches {
   float: left;
   display: flex;
-  width: 60%;
+  width: 70%;
   padding-left: 15px;
 }
 .topic-right-branches {
-  width: 40%;
+  width: 30%;
   display: flex;
-  /* padding-left: 230px; */
 }
 .contentbranches {
   font-size: 25px;
@@ -26,7 +25,8 @@
   padding-top: 5px;
 }
 .btn-right-branches {
-  width: 20%;
+  width: 40%;
+  margin-left:40px;
   height: auto;
 }
 .detailed-btn-branches {
@@ -136,15 +136,14 @@
     width:96%;
   }
   .cover-col{
-    display: block;
+    display: flex;
   }
   .element-select1 {
-    width: 27%;
+   width: 40%;
     text-align: left;
-    padding-left:10px;
   }
   .topic-right-branches {
-    width: 100%;
+    width: 40%;
     display: flex;
     height: auto;
     padding-left: 0px;
@@ -184,13 +183,15 @@
   }
 
   .btn-right-branches {
-  
+      width: 40%;
+    height: auto;
   }
   .detailed-btn-branches {
     font-size: 15px;
     font-family: "PT Sans, sans-serif";
     color: #007c7e;
-    width: 100%;
+   width: 80%;
+    margin-left: 5vw;
     padding-left: 0px;
   }
 }

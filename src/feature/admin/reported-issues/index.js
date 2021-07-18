@@ -379,15 +379,8 @@ function Reportedissues(props) {
                         name="status"
                         className="form-status-report"
                       >
-                        <Select
-                          style={{ width: 295 }}
-                          className="select-status-report"
-                        >
-                          <Option value="Chưa hoàn thành">
-                            Chưa hoàn thành
-                          </Option>
-                          <Option value="Đã hoàn thành">Đã hoàn thành</Option>
-                        </Select>
+                      <Input className="select-status-report"/>
+                       
                       </Form.Item>
 
                       <Form.Item
@@ -396,14 +389,19 @@ function Reportedissues(props) {
                         className="name-report-issue"
                       >
                         <Select className="select-report-issue">
-                          {usersList.map((reporterid) => (
-                            <Select.Option
+                          {usersList.map((reporterid) => 
+                            reporterid.roles[0].name==="ROLE_ADMIN"?(
+                               <Select.Option
                               key={reporterid.id}
                               value={reporterid.id}
                             >
                               {reporterid.userName}
                             </Select.Option>
-                          ))}
+                            ):(
+                              <>NULL</>
+                            )
+                  
+                          )}
                         </Select>
                       </Form.Item>
                       {/* <Form.Item></Form.Item> */}

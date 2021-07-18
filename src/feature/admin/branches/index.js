@@ -266,21 +266,22 @@ function Branches(props) {
     if (value === undefined) {
       setBranchList(nullstate);
     } else {
-      const newarr = faketable.filter((rs) => rs.location === value);
-      setBranchList(newarr);
-      console.log("<<a", newarr);
-      // const fetchGetallbranchesbyBranchLocation = async () => {
-      // try {
-      //   const response = await branchesApi.getallbranchesbyBranchLocation(value);
-      //   console.log(
-      //     "Fetch all branches name by branchlocation successfully: ",
-      //     response.data
-      //   );
-      // } catch (error) {
-      //   console.log("Failed to fetch by branchlocation list: ", error);
-      // }
-      // };
-      // fetchGetallbranchesbyBranchLocation();
+      // const newarr = faketable.filter((rs) => rs.location === value);
+      // setBranchList(newarr);
+      // console.log("<<a", newarr);
+      const fetchGetallbranchesbyBranchLocation = async () => {
+      try {
+        const response = await branchesApi.getallbranchesbyBranchLocation(value);
+        console.log(
+          "Fetch all branches name by branchlocation successfully: ",
+          response.data
+        );
+        setBranchList(response.data)
+      } catch (error) {
+        console.log("Failed to fetch by branchlocation list: ", error);
+      }
+      };
+      fetchGetallbranchesbyBranchLocation();
     }
   };
   return (
@@ -397,12 +398,12 @@ function Branches(props) {
                 <div className="contentbranches">QUẢN LÝ CHI NHÁNH NHÀ TRỌ</div>
               </div>
               <div className="topic-right-branches">
-                <div className="element-select">
+                {/* <div className="element-select">
                   <Select
                     allowClear
                     size="middle"
                     style={{ width: "200px" }}
-                    onChange={onSearch_2}
+                    onSelect={onSearch_2}
                   >
                     {branchList.map((branchid) => (
                       <Select.Option
@@ -413,7 +414,7 @@ function Branches(props) {
                       </Select.Option>
                     ))}
                   </Select>
-                </div>
+                </div> */}
                 <div className="element-select1">
                   <Select
                     allowClear

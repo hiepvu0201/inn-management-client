@@ -23,19 +23,19 @@
 .btn-right-flo{
     float:right;
     display: flex;
-    width: 40%;
+    width: 33%;
 }
 .detailed-btn-flo{
     font-size: 15px;
     font-family: "PT Sans, sans-serif";
-    width:40%;
+    width:30%;
     background-color: white;
     border-color: #007c7e;
     border-style: solid;
     height:auto;
     /* margin-right:20px; */
     border-radius:20px;
-    margin-left: 70px;
+    margin-left: 9vw;
 }
 .detailed-btn-flo:hover{
     background-color: #007c7e;
@@ -72,6 +72,8 @@
     }
     .btn-right-flo{
         width:60%;
+        margin-left: 15vw;
+
     }
     .detailed-select-flo{
         padding-left:15px;

@@ -299,7 +299,7 @@ function Monthlyincome(props) {
                 </div>
               </div>
               <div className="btn-right-income">
-                <div style={{ paddingRight: "10px", width: "60%" }}>
+                <div className="searchachd">
                   <Input.Search
                     placeholder="Tìm kiếm"
                     allowClear

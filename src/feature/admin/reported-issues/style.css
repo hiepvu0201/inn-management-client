@@ -56,7 +56,8 @@
   width:20vw;
 }
 .select-status-report{
-  margin-left:25px
+  margin-left:25px;
+  width:80%;
 }
 @media only screen and (max-width: 1026px) {
   .rectanglereportissue {
