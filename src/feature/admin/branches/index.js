@@ -355,11 +355,13 @@ function Branches(props) {
               {propsselect}
             </Select>
           </Form.Item>
-          <Form.Item label="Người dùng" name="userName" className="form-user-2">
+          <Form.Item label="Chủ trọ" name="userName" className="form-user-2">
             <Select
               onChange={handleChange_user}
               allowClear
               className="input-user"
+                                        style={{width:"80%"}}
+
               placeholder={rowEdit.userName}
             >
               <Select.Option value={Cookies.get("userName")}>
@@ -523,7 +525,7 @@ function Branches(props) {
                         </Select>
                       </Form.Item>
                       <Form.Item
-                        label="Người dùng"
+                        label="Chủ trọ"
                         name="userName"
                         className="form-user-2"
                       >
@@ -531,6 +533,7 @@ function Branches(props) {
                           onChange={handleChange_user}
                           allowClear
                           className="input-user"
+                          style={{width:"80%"}}
                         >
                           <Select.Option
                             key={Cookies.get("userName")}

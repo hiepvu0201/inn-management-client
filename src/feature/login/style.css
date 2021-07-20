@@ -153,7 +153,7 @@
 }
 @media only screen and (max-width: 1026px) {
   .form-box{
-      width: 80%;
+      width: 60%;
   }
   .box-btn{
       padding-right: initial;
@@ -174,7 +174,7 @@
     width: 100%;
   }
   .form-login{
-      height:auto
+      height:100vh
   }
   .input-username-login{
     position:relative;
@@ -188,6 +188,7 @@
     top:10px
   }
   .btn-login{
-    padding-left:20vw;
+    padding-left:15vw;
+    width:50vw;
   }
 }

@@ -77,9 +77,34 @@ const onFinish = (values) => {
                   placeholder="Nhập mật khẩu"
                 />
               </Form.Item>
-
-              {/* <div className="forgetPW">Quên mật khẩu</div> */}
               <div
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  display: "flex",
+                  justifyContent: "center",
+                  paddingTop: "10px",
+                  paddingRight: "15px",
+                  paddingBottom: "20px",
+                }}
+              >
+                <Button
+                  type="primary"
+                  htmlType="submit"
+                  style={{
+                    width: "90%",
+                    height: "auto",
+                    fontSize: "15px",
+                    backgroundColor: "#0c61f2",
+                    color: "white",
+                    fontFamily: "'Open Sans', sans-serif",
+                  }}
+                >
+                  ĐĂNG NHẬP
+                </Button>
+              </div>
+              {/* <div className="forgetPW">Quên mật khẩu</div> */}
+              {/* <div
                 style={{
                   width: "100%",
                   height: "auto",
@@ -106,7 +131,7 @@ const onFinish = (values) => {
                     ĐĂNG NHẬP
                   </Button>
                 </Form.Item>
-              </div>
+              </div> */}
             </Form>
 
             <div className="label-last">
@@ -115,7 +140,7 @@ const onFinish = (values) => {
                   fontSize: "15px",
                   color: "white",
                   fontFamily: "'Source Sans Pro', sans-serif",
-                  display:"flex"
+                  display: "flex",
                 }}
               >
                 <FontAwesomeIcon icon={faUserPlus} color="white" /> Bạn chưa có

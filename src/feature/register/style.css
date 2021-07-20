@@ -1,6 +1,6 @@
 .form-register {
   width: 100%;
-  height: auto;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -94,7 +94,7 @@
     padding-left: 18px;
   }
   .form-boxres {
-    width: 100%;
+    width: 60%;
   }
   .detailed-btn {
     width: 90%;
@@ -124,7 +124,7 @@
     width: 100%;
   }
   .form-register{
-    height:auto
+    height:100vh
   }
   .password-register{
     margin-left:30px
