@@ -22,7 +22,7 @@ function Error_client() {
           <img src={Images.COTON} style={{ width: "100%", height: "auto" }} />
           <div className="please">Xin vui lòng lấy làm tiếc</div>
           <div className="notfound">Trang bạn tìm kiếm không có</div>
-          <Link to="/" style={{ color: "white" }}>
+          <Link to="/home" style={{ color: "white" }}>
             <div style={{ backgroundColor: "white" }}>
               <button className="btn-notfound">Trở về Trang Chủ</button>
             </div>

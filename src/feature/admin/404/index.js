@@ -42,7 +42,7 @@ function Error() {
           >
             Trang bạn tìm kiếm không có
           </div>
-          <Link to="/" style={{ color: "white" }}>
+          <Link to="/home" style={{ color: "white" }}>
             <div style={{backgroundColor:"white"}}>
               <button
                 style={{

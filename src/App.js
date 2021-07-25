@@ -45,6 +45,7 @@ import Error_client from "./feature/client/404"
 import Error_admin from "./feature/admin/404"
 import Room_first from "./feature/room_client"
 import Map_login from "./feature/client/map"
+import Room_inner from "./feature/detailed";
 function App() {
   const Userlayout =()=>{
      return (
@@ -89,72 +90,17 @@ function App() {
   return (
     <div className="App">
       <Switch>
-        {/* <Route
-          exact={false}
-          path="*"
-          component={Error}
-        /> */}
-        {/* <Route exact path="/home" component={Room_client} /> */}
-        <Route
-          exact
-          path="/roomclient"
-          name="Room Page"
-          render={(props) => <Room_first {...props} />}
-        />
-        <Route
-          exact
-          path="/mapclient"
-          name="Map Page"
-          render={(props) => <Map {...props} />}
-        />
-        <Route
-          exact
-          path="/term"
-          name="Term Page"
-          render={(props) => <Term {...props} />}
-        />
-        <Route
-          exact
-          path="/privacy"
-          name="Privacy Page"
-          render={(props) => <Privacy {...props} />}
-        />
-        <Route
-          exact
-          path="/cooperation"
-          name="Cooperation Page"
-          render={(props) => <Cooperation {...props} />}
-        />
-        <Route
-          exact
-          path="/price"
-          name="Price Page"
-          render={(props) => <Price {...props} />}
-        />
-        <Route
-          exact
-          path="/"
-          name="HomeMain Page"
-          render={(props) => <Home {...props} />}
-        />
-        <Route
-          exact
-          path="/contact"
-          name="Contact Page"
-          render={(props) => <Contact {...props} />}
-        />
-        <Route
-          exact
-          path="/register"
-          name="Register Page"
-          render={(props) => <Register {...props} />}
-        />
-        <Route
-          exact
-          path="/login"
-          name="Login Page"
-          render={(props) => <Login {...props} />}
-        />
+        <Route path="/mapclient" component={Map} />
+        <Route path="/detailedroomclient" component={Room_inner} />
+        <Route path="/roomclient" component={Room_first} />
+        <Route path="/term" component={Term} />
+        <Route path="/privacy" component={Privacy} />
+        <Route path="/cooperation" component={Cooperation} />
+        <Route path="/price" component={Price} />
+        <Route exact path="/" component={Home} />
+        <Route path="/contact" component={Contact} />
+        <Route path="/register" component={Register} />
+        <Route path="/login" component={Login} />
         {Cookies.get("Bearer") ? (
           <Route
             path="/"

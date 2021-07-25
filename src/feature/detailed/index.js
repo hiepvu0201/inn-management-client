@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { Row, Col, Input, Form, Carousel } from "antd";
-import Menu_client from "./../../../components/menu_client";
-import Footer from "./../../../components/footer";
+import Menu_First from "../../components/menuFirst";
+import Footer from "../../components/footer";
 import { useLocation, useParams } from "react-router-dom";
-import { Images } from "./../../../config/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
-import Room_tag from "./../../../components/room_tag";
-import roomApi from "./../../../api/roomApi";
-import branchesApi from "./../../../api/branchesApi";
-import Rest from "./../../../components/restproductbybranch";
-import usersApi from "../../../api/usersApi";
+import Room_tag from "../../components/room_tag";
+import roomApi from "../../api/roomApi";
+import branchesApi from "../../api/branchesApi";
+import Selectbranch from "../../components/selectbranch";
+import usersApi from "../../api/usersApi";
 import './style.css'
-function Detail_room() {
+function Room_inner() {
   //   let location = useLocation();
   let location = useLocation();
   const [roomList, setIsRoomList] = useState([]);
@@ -36,7 +35,8 @@ function Detail_room() {
 
     const newarr = room.filter(
       (rs) =>
-        rs.branchId === location.state.branchId 
+        rs.branchId === location.state.branchId &&
+        rs.roomNo !== location.state.roomNo
     );
     let arr = [];
 
@@ -49,15 +49,15 @@ function Detail_room() {
     fetchBranchById();
   }, []);
   const [state, setstate] = useState([]);
-  const [state_us,setstate_us]=useState([])
+  const [state_us, setstate_us] = useState([]);
   const fetchBranchById = async () => {
     try {
       console.log("abcdd", location.state.branchId);
       const response = await branchesApi.getbyid(location.state.branchId);
       console.log("Fetch branch by id successfully: ", response.data);
       setstate(response.data);
-      setstate_us(response.data)
-      getalluserbyusername(response.data.userName)
+      setstate_us(response.data);
+      getalluserbyusername(response.data.userName);
       // setstate(response.data.userName)
       // setstate(response.data)
     } catch (error) {
@@ -66,7 +66,7 @@ function Detail_room() {
   };
   const getalluserbyusername = async (us) => {
     try {
-       console.log("abcddD", state_us.userName);
+      console.log("abcddD", state_us.userName);
       const response = await usersApi.getalluserbyusername(us);
       console.log("Fetch user by username successfully: ", response.data);
       setstate_us(response.data);
@@ -77,7 +77,7 @@ function Detail_room() {
   return (
     <div style={{ width: "100%", height: "auto", backgroundColor: "#f2f6fa" }}>
       <div style={{ height: "100px" }}>
-        <Menu_client />
+        <Menu_First />
       </div>
       <div>
         <div className="detailed-title">
@@ -354,7 +354,7 @@ function Detail_room() {
                   style={{ paddingTop: "55px" }}
                 >
                   {" "}
-                  <Rest
+                  <Selectbranch
                     id={detailid.id}
                     branches={detailid.branch.location}
                     facilities={detailid.facilities.map((us) => us.name) + " "}
@@ -380,5 +380,4 @@ function Detail_room() {
     </div>
   );
 }
-
-export default Detail_room;
+export default Room_inner;

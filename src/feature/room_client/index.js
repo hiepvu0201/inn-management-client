@@ -12,7 +12,7 @@ import {
   Select,
   Space,
 } from "antd";
-import Room_tag from "./../../components/room_tag";
+import TagClient from "../../components/tagclient";
 import { Images } from "./../../config/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import roomApi from "./../../api/roomApi";
@@ -232,7 +232,7 @@ function Room_first() {
                               paddingBottom: "35px",
                             }}
                           >
-                            <Room_tag
+                            <TagClient
                               id={roomId.id}
                               roomNo={roomId.roomNo}
                               floors={roomId.floor.numberOfFloors}
@@ -243,7 +243,7 @@ function Room_first() {
                               branches={roomId.branch.location}
                               branchId={roomId.branchId}
                               roomType={roomId.roomType}
-                              price1={roomId.priceByFirstHour}
+                              // price1={roomId.priceByFirstHour}
                               price2={roomId.priceByNextHour}
                               price3={roomId.priceByDay}
                               price4={roomId.priceByWeek}
