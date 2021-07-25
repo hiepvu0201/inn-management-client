@@ -4,6 +4,7 @@
   background-color: #f9f9f9;
   display: flex;
   justify-content: center;
+  border-radius: 8px;
 }
 .icon-hover-1 {
   border-radius: 50%;

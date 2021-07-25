@@ -38,7 +38,7 @@
   border-style: solid;
   height: auto;
   margin-right: 20px;
-  border-radius: 20px;
+  border-radius: 8px;
 }
 .detailed-btn-con:hover {
   background-color: #007c7e;
@@ -65,22 +65,28 @@
     background-color:#F8F8FF;
 }
 .input-details{
+  width:83%;
+  margin-left: 10px;
+  border-radius: 8px;
 }
 .input-signDate{
   margin-left: 58px;
 }
 .input-room-contract{
- margin-left:50px;
+ margin-left:55px;
+ border-radius: 8px;
 }
 .input-stage-contract{
-  margin-left:70px;
+  margin-left:74px;
+  border-radius: 8px;
 }
 .input-yearpicker{
-  margin-left:65px;
+  margin-left:85px;
 }
 .input-voucher{
   margin-left:40px;
   width:20vw;
+  border-radius: 8px;
 }
 .select-owner{
   margin-left:68px;

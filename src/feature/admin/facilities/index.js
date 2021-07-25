@@ -26,7 +26,7 @@ import {
 } from "antd";
 import branchesApi from "./../../../api/branchesApi";
 import { WarningOutlined } from "@ant-design/icons";
-import Footer from "./../../../components/footer"
+import Footer from "./../../../components/footer";
 import { Link } from "react-router-dom";
 import { text } from "@fortawesome/fontawesome-svg-core";
 const { Option } = Select;
@@ -252,52 +252,60 @@ function Facilities(props) {
               name="name"
               className="form-name-facility"
             >
-                <Input
-                  placeholder={rowEdit.name}
-                  className="input-name-facility"
-                />
+              <Input
+                placeholder={rowEdit.name}
+                className="input-name-facility"
+              />
             </Form.Item>
             <Form.Item
               label="Chất lượng"
               name="quality"
               className="form-quality"
             >
-                <Select
-                  style={{ width: 320 }}
-                  onChange={handleChange}
-                  placeholder={rowEdit.quality}
-                  className="select-quality"
-                >
-                  <Option value={1}>New</Option>
-                  <Option value={0}>Available</Option>
-                </Select>
+              <Select
+                style={{ width: 320 }}
+                onChange={handleChange}
+                placeholder={rowEdit.quality}
+                className="select-quality"
+              >
+                <Option value={1}>New</Option>
+                <Option value={0}>Available</Option>
+              </Select>
             </Form.Item>
             <Form.Item
               label="Số lượng"
               name="quantity"
               className="form-quantity"
             >
-                <Input
-                  placeholder={rowEdit.quantity}
-                  className="input-quantity"
-                />
+              <Input
+                placeholder={rowEdit.quantity}
+                className="input-quantity"
+              />
             </Form.Item>
             <Form.Item
               label="Đơn giá"
               name="unitPrice"
               className="form-unitPrice"
             >
-                <Input
-                  className="input-unitPrice"
-                  placeholder={rowEdit.unitPrice}
-                />
+              <Input
+                className="input-unitPrice"
+                placeholder={rowEdit.unitPrice}
+              />
             </Form.Item>
             <div style={{ display: "flex" }}>
-              <Button type="primary" htmlType="submit">
+              <Button
+                style={{ borderRadius: "8px" }}
+                type="primary"
+                htmlType="submit"
+              >
                 CHỈNH SỬA{" "}
               </Button>
               <div style={{ paddingLeft: "10px" }}>
-                <Button type="default" onClick={handleCancel_1}>
+                <Button
+                  style={{ borderRadius: "8px" }}
+                  type="default"
+                  onClick={handleCancel_1}
+                >
                   HỦY BỎ
                 </Button>
               </div>
@@ -305,9 +313,7 @@ function Facilities(props) {
           </Form>
         </Spin>
       </Modal>
-      <div
-        className="boxfacilities"
-      >
+      <div className="boxfacilities">
         <div style={{ height: "100px" }}>
           <Menu_AdminPage />
         </div>
@@ -371,44 +377,50 @@ function Facilities(props) {
                         name="name"
                         className="form-name-facility"
                       >
-                          <Input className="input-name-facility" />
+                        <Input className="input-name-facility" />
                       </Form.Item>
                       <Form.Item
                         label="Chất lượng"
                         name="quality"
                         className="form-quality"
                       >
-                          <Select
-                            style={{ width: 320 }}
-                            onChange={handleChange}
-                            className="select-quality"
-                          >
-                            <Option value={1}>NEW</Option>
-                            <Option value={0}>AVAILABLE</Option>
-                          </Select>
+                        <Select
+                          style={{ width: 320 }}
+                          onChange={handleChange}
+                          className="select-quality"
+                        >
+                          <Option value={1}>NEW</Option>
+                          <Option value={0}>AVAILABLE</Option>
+                        </Select>
                       </Form.Item>
                       <Form.Item
                         label="Số lượng"
                         name="quantity"
                         className="form-quantity"
                       >
-                          <Input className="input-quantity" />
+                        <Input className="input-quantity" />
                       </Form.Item>
                       <Form.Item
                         label="Đơn giá"
                         name="unitPrice"
                         className="form-unitPrice"
                       >
-                          <Input
-                            className="input-unitPrice"
-                            />
+                        <Input className="input-unitPrice" />
                       </Form.Item>
                       <div style={{ display: "flex" }}>
-                        <Button type="primary" htmlType="submit">
+                        <Button
+                          type="primary"
+                          style={{ borderRadius: "8px" }}
+                          htmlType="submit"
+                        >
                           THÊM MỚI{" "}
                         </Button>
                         <div style={{ paddingLeft: "10px" }}>
-                          <Button type="default" onClick={handleCancel}>
+                          <Button
+                            style={{ borderRadius: "8px" }}
+                            type="default"
+                            onClick={handleCancel}
+                          >
                             HỦY BỎ
                           </Button>
                         </div>
@@ -445,10 +457,10 @@ function Facilities(props) {
             fontSize: "12px",
             marginTop: "40px",
             textAlign: "left",
-            paddingTop:"15vh"
+            paddingTop: "15vh",
           }}
         >
-          <Footer/>
+          <Footer />
         </div>
       </div>
     </div>

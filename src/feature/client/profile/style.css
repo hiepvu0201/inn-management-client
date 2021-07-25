@@ -149,21 +149,31 @@
 }
 .row-address{
   margin-left: 40px;
+  width:54%;
+  border-radius: 8px;
 }
 .row-job{
   margin-left: 23px;
+  width: 55%;
+  border-radius: 8px;
 }
 .row-sex{
   margin-left:30px;
 }
 .row-id{
   margin-left:42px;
+  width:58%;
+  border-radius: 8px;
 }
 .row-full{
-  margin-left:25px
+  margin-left:25px;
+  width:60%;
+  border-radius:8px;
 }
 .row-email{
-  margin-left:49px
+  margin-left:49px;
+  border-radius:8px;
+  width:58%;
 }
 .row-user{
   margin-left: 23px;
@@ -178,6 +188,10 @@
     text-align: center;
     display: flex;
     justify-content: center;
+}
+.row-phone{
+  width:60%;
+  border-radius: 8px;
 }
 @media only screen and (max-width: 1026px) {
   .form-user{

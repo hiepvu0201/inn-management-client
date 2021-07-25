@@ -424,6 +424,7 @@ function Homepage_admin(props) {
                         justifyContent: "center",
                         paddingTop: "10px",
                         position: "relative",
+                        borderRadius: "8px",
                       }}
                     >
                       <div style={{ position: "absolute" }}>
@@ -497,6 +498,7 @@ function Homepage_admin(props) {
                         justifyContent: "center",
                         paddingTop: "10px",
                         position: "relative",
+                        borderRadius: "8px",
                       }}
                     >
                       <div style={{ position: "absolute" }}>
@@ -570,6 +572,7 @@ function Homepage_admin(props) {
                         justifyContent: "center",
                         paddingTop: "10px",
                         position: "relative",
+                        borderRadius: "8px",
                       }}
                     >
                       <div style={{ position: "absolute" }}>
@@ -639,6 +642,7 @@ function Homepage_admin(props) {
                         justifyContent: "center",
                         paddingTop: "10px",
                         position: "relative",
+                        borderRadius: "8px",
                       }}
                     >
                       <div style={{ position: "absolute" }}>
@@ -828,6 +832,7 @@ function Homepage_admin(props) {
                                 backgroundColor: "#007c7e",
                                 textAlign: "center",
                                 display: "block",
+                                borderRadius: "8px",
                               }}
                             >
                               <div style={{ paddingTop: "10px" }}>
@@ -864,6 +869,7 @@ function Homepage_admin(props) {
                                 backgroundColor: "#007c7e",
                                 textAlign: "center",
                                 display: "block",
+                                borderRadius: "8px",
                               }}
                             >
                               <div style={{ paddingTop: "10px" }}>
@@ -900,6 +906,7 @@ function Homepage_admin(props) {
                                 backgroundColor: "#007c7e",
                                 textAlign: "center",
                                 display: "block",
+                                borderRadius: "8px",
                               }}
                             >
                               <div style={{ paddingTop: "10px" }}>
@@ -939,6 +946,7 @@ function Homepage_admin(props) {
                                 backgroundColor: "#007c7e",
                                 textAlign: "center",
                                 display: "block",
+                                borderRadius: "8px",
                               }}
                             >
                               <div style={{ paddingTop: "10px" }}>
@@ -975,6 +983,7 @@ function Homepage_admin(props) {
                                 backgroundColor: "#007c7e",
                                 textAlign: "center",
                                 display: "block",
+                                borderRadius: "8px",
                               }}
                             >
                               <div style={{ paddingTop: "10px" }}>
@@ -1011,6 +1020,7 @@ function Homepage_admin(props) {
                                 backgroundColor: "#007c7e",
                                 textAlign: "center",
                                 display: "block",
+                                borderRadius: "8px",
                               }}
                             >
                               <div style={{ paddingTop: "10px" }}>
@@ -1050,6 +1060,7 @@ function Homepage_admin(props) {
                                 backgroundColor: "#007c7e",
                                 textAlign: "center",
                                 display: "block",
+                                borderRadius: "8px",
                               }}
                             >
                               <div style={{ paddingTop: "10px" }}>
@@ -1086,6 +1097,7 @@ function Homepage_admin(props) {
                                 backgroundColor: "#007c7e",
                                 textAlign: "center",
                                 display: "block",
+                                borderRadius: "8px",
                               }}
                             >
                               <div style={{ paddingTop: "10px" }}>
@@ -1122,6 +1134,7 @@ function Homepage_admin(props) {
                                 backgroundColor: "#007c7e",
                                 textAlign: "center",
                                 display: "block",
+                                borderRadius: "8px",
                               }}
                             >
                               <div style={{ paddingTop: "10px" }}>
@@ -1161,6 +1174,7 @@ function Homepage_admin(props) {
                                 backgroundColor: "#007c7e",
                                 textAlign: "center",
                                 display: "block",
+                                borderRadius: "8px",
                               }}
                             >
                               <div style={{ paddingTop: "10px" }}>
@@ -1197,6 +1211,7 @@ function Homepage_admin(props) {
                                 backgroundColor: "#007c7e",
                                 textAlign: "center",
                                 display: "block",
+                                borderRadius: "8px",
                               }}
                             >
                               <div style={{ paddingTop: "10px" }}>
@@ -1233,6 +1248,7 @@ function Homepage_admin(props) {
                                 backgroundColor: "#007c7e",
                                 textAlign: "center",
                                 display: "block",
+                                borderRadius: "8px",
                               }}
                             >
                               <div style={{ paddingTop: "10px" }}>
@@ -1271,6 +1287,7 @@ function Homepage_admin(props) {
                                 backgroundColor: "#007c7e",
                                 textAlign: "center",
                                 display: "block",
+                                borderRadius: "8px",
                               }}
                             >
                               <div style={{ paddingTop: "10px" }}>
@@ -1307,6 +1324,7 @@ function Homepage_admin(props) {
                                 backgroundColor: "#007c7e",
                                 textAlign: "center",
                                 display: "block",
+                                borderRadius: "8px",
                               }}
                             >
                               <div style={{ paddingTop: "10px" }}>
@@ -1341,7 +1359,14 @@ function Homepage_admin(props) {
           </Row>
         </div>
         <div style={{ paddingTop: "10px" }}>
-          <div style={{ width: "100%", height: "auto", display: "flex",paddingBottom:"20px" }}>
+          <div
+            style={{
+              width: "100%",
+              height: "auto",
+              display: "flex",
+              paddingBottom: "20px",
+            }}
+          >
             <div
               style={{
                 width: "70%",
@@ -1369,8 +1394,8 @@ function Homepage_admin(props) {
                 fontFamily: "Open Sans,sans-serif",
                 fontSize: "15px",
                 color: "white",
-                display:"flex",
-                marginRight:"3vw"
+                display: "flex",
+                marginRight: "3vw",
               }}
             >
               <div
@@ -1379,7 +1404,8 @@ function Homepage_admin(props) {
                   width: "50%",
                   height: "auto",
                   paddingRight: "40px",
-                  paddingTop:"5px"
+                  paddingTop: "5px",
+                  borderRadius: "8px",
                 }}
               >
                 Phòng đã checkin
@@ -1390,8 +1416,9 @@ function Homepage_admin(props) {
                   width: "50%",
                   height: "auto",
                   paddingRight: "60px",
-                  paddingTop:"5px",
-                  marginLeft:"20px"
+                  paddingTop: "5px",
+                  marginLeft: "20px",
+                  borderRadius: "8px",
                 }}
               >
                 Phòng trống
@@ -1414,7 +1441,7 @@ function Homepage_admin(props) {
                   fontWeight: "bold",
                   paddingTop: "5px",
                   paddingBottom: "5px",
-                  borderRadius:"8px"
+                  borderRadius: "8px",
                 }}
               >
                 {fb.floor}
@@ -1542,14 +1569,11 @@ function Homepage_admin(props) {
             fontSize: "12px",
             marginTop: "40px",
             textAlign: "left",
-         
           }}
         >
-          <Footer/>
-          
+          <Footer />
         </div>
       </div>
-      
     </div>
   );
 }

@@ -3,10 +3,11 @@ import LeftMenu_admin from "./LeftMenu";
 import "./style.css";
 import { Images } from "../../config/image";
 import { Link, Router } from "react-router-dom";
-import { Drawer, Button, Menu, Dropdown } from "antd";
+import { Drawer, Button, Menu, Dropdown, notification } from "antd";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserShield, faUnlockAlt, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 import Cookies from "js-cookie";
+import { CheckCircleFilled } from "@ant-design/icons";
 
 class Navbar_admin extends Component {
   state = {
@@ -29,6 +30,11 @@ class Navbar_admin extends Component {
     Cookies.remove('roles');
     Cookies.remove('userName');
     Cookies.remove('id');
+     notification.success({
+       message: "Đăng xuất thành công",
+       icon: <CheckCircleFilled style={{ color: "#20da9b" }} />,
+       placement: "topRight",
+     });
   }
 
   render() {

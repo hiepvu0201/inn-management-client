@@ -349,9 +349,6 @@ function ElectricityWaters(props) {
               <Input
                 className="input-electricityUnitPrice"
                 placeholder={rowEdit.electricityUnitPrice}
-                // onChange={(electricityUnitPrice) =>
-                //   check(electricityUnitPrice)
-                // }
               />
             </Form.Item>
             <Form.Item
@@ -362,12 +359,11 @@ function ElectricityWaters(props) {
               <Input
                 className="input-waterUnit-Price"
                 placeholder={rowEdit.waterUnitPrice}
-                // onChange={(waterUnitPrice) => check(waterUnitPrice)}
               />
             </Form.Item>
             <Form.Item label="Tháng" name="month" className="form-month">
               <Select
-                style={{ width: 120 }}
+                style={{ width: 300 }}
                 className="select-month"
                 placeholder={rowEdit.month}
               >
@@ -398,7 +394,7 @@ function ElectricityWaters(props) {
               <Select
                 onChange={handleChange}
                 className="select-roomid"
-                style={{ width: 320 }}
+                style={{ width: 300 }}
               >
                 {roomList.map((roomsid) => (
                   <Select.Option key={roomsid.id} value={roomsid.id}>
@@ -408,11 +404,19 @@ function ElectricityWaters(props) {
               </Select>
             </Form.Item>
             <div style={{ display: "flex" }}>
-              <Button type="primary" htmlType="submit">
+              <Button
+                type="primary"
+                htmlType="submit"
+                style={{ borderRadius: "8px" }}
+              >
                 CHỈNH SỬA{" "}
               </Button>
               <div style={{ paddingLeft: "10px" }}>
-                <Button type="default" onClick={handleCancel_1}>
+                <Button
+                  type="default"
+                  onClick={handleCancel_1}
+                  style={{ borderRadius: "8px" }}
+                >
                   HỦY BỎ
                 </Button>
               </div>
@@ -518,9 +522,6 @@ function ElectricityWaters(props) {
                       >
                         <Input
                           className="input-electricityUnitPrice"
-                          // onChange={(electricityUnitPrice) =>
-                          //   check(electricityUnitPrice)
-                          // }
                         />
                       </Form.Item>
                       <Form.Item
@@ -530,7 +531,6 @@ function ElectricityWaters(props) {
                       >
                         <Input
                           className="input-waterUnit-Price"
-                          // onChange={(waterUnitPrice) => check(waterUnitPrice)}
                         />
                       </Form.Item>
                       <Form.Item
@@ -539,7 +539,7 @@ function ElectricityWaters(props) {
                         className="form-month"
                       >
                         <Select
-                          style={{ width: 120 }}
+                          style={{ width: 300 }}
                           className="select-month"
                           placeholder={rowEdit.month}
                         >
@@ -578,7 +578,7 @@ function ElectricityWaters(props) {
                         <Select
                           onChange={handleChange}
                           className="select-roomid"
-                          style={{ width: 320 }}
+                          style={{ width: 300 }}
                         >
                           {roomList.map((roomsid) => (
                             <Select.Option key={roomsid.id} value={roomsid.id}>
@@ -588,11 +588,19 @@ function ElectricityWaters(props) {
                         </Select>
                       </Form.Item>
                       <div style={{ display: "flex" }}>
-                        <Button type="primary" htmlType="submit">
+                        <Button
+                          type="primary"
+                          htmlType="submit"
+                          style={{ borderRadius: "8px" }}
+                        >
                           THÊM MỚI{" "}
                         </Button>
                         <div style={{ paddingLeft: "10px" }}>
-                          <Button type="default" onClick={handleCancel}>
+                          <Button
+                            type="default"
+                            onClick={handleCancel}
+                            style={{ borderRadius: "8px" }}
+                          >
                             HỦY BỎ
                           </Button>
                         </div>
@@ -631,7 +639,7 @@ function ElectricityWaters(props) {
             paddingTop: "15vh",
           }}
         >
-          <Footer/>
+          <Footer />
         </div>
       </div>
     </div>

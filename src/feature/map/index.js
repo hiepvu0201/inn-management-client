@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Menu_client from "./../../components/menu_client";
+import Menu_first from "./../../components/menuFirst";
 import ReactMapGL, { Marker, Popup } from "react-map-gl";
 import mapApi from "./../../api/mapApi";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -15,7 +15,7 @@ import roomApi from "./../../api/roomApi";
 import branchesApi from "./../../api/branchesApi";
 import "./style.css";
 const { Option } = Select;
-function Map() {
+function Map_client() {
   const [state, setstate] = useState([]);
   const [branchesList, setbranchesList] = useState([]);
   const [state1, setstate1] = useState([]);
@@ -136,7 +136,7 @@ function Map() {
     <div>
       {/* <div>{arrloca[0].latitude}</div> */}
       <div>
-        <Menu_client />
+        <Menu_first />
       </div>
       <div
         style={{
@@ -432,4 +432,4 @@ function Map() {
     </div>
   );
 }
-export default Map;
+export default Map_client;

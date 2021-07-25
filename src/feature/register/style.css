@@ -88,7 +88,26 @@
   color: white;
   font-family: "Source Sans Pro", sans-serif;
 }
+.ant-input-affix-wrapper {
+    border-radius: 8px;
+}
+.ant-input{
 
+    border-radius: 8px;
+}
+.ant-notification-notice {
+    border-radius: 8px;
+}
+.btn-move1{
+  position: relative;
+    top: -120px;
+    font-family: Montserrat, sans-serif;
+    width: 100%;
+    height: auto;
+    display: flex;
+    padding-left: 42vw;
+    color: rgb(0, 124, 126);
+}
 @media only screen and (  max-width: 1026px) {
 .abc{
     padding-left: 18px;
@@ -128,5 +147,8 @@
   }
   .password-register{
     margin-left:30px
+  }
+  .btn-move1{
+    top:-80px
   }
 }

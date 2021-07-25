@@ -37,7 +37,7 @@
   border-style: solid;
   height: auto;
   margin-right: 20px;
-  border-radius: 20px;
+  border-radius: 8px;
 }
 .detailed-btn-elec:hover {
   background-color: #007c7e;
@@ -48,23 +48,33 @@
 }
 .input-numElectricOld {
   margin-left: 20px;
+    width:76%;
+    border-radius: 8px;
 }
 .input-numElectricNew {
   margin-left: 12px;
+    width:77%;
+    border-radius: 8px;
 }
 .input-numWaterOld {
   margin-left: 13px;
+    width:77%;
+    border-radius: 8px;
 }
 .input-numWaterNew {
   margin-left: 4px;
+  width:79%;
+    border-radius: 8px;
 }
 .input-electricityUnitPrice{
   margin-left: 33px;
   width:20vw;
+  border-radius: 8px;
 }
 .input-waterUnit-Price{
   margin-left: 27px;
-  width:20vw
+  width:20vw;
+  border-radius: 8px;
 }
 .select-month{
   margin-left: 45px;

@@ -172,21 +172,6 @@ function PasswordUs() {
                           onFinish={onFinish}
                         >
                           <div className="topi2c">THAY ĐỔI MẬT KHẨU</div>
-                          <div className="rowfirst-rightPW">
-                            <div className="labelPWUS">Username:</div>
-                            <div className="contentnamePWUS">
-                              <Form.Item>
-                                <Input
-                                  bordered={false}
-                                  value={statepww.userName}
-                                  disabled
-                                  className="input-us"
-                                >
-                                  {/* {userList.fullName} */}
-                                </Input>
-                              </Form.Item>
-                            </div>
-                          </div>
                           <div className="rowfirst-rightPW-2">
                             <div className="labelPWUS">Mật khẩu cũ:</div>
                             <div className="contentnamePWUS">

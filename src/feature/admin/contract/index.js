@@ -31,6 +31,7 @@ import usersApi from "../../../api/usersApi";
 import Footer from "./../../../components/footer";
 import contractsApi from "../../../api/contractApi";
 import { LocalDateTime } from "@js-joda/core";
+import Cookies from "js-cookie";
 import {Link} from 'react-router-dom';
 import roomApi from "../../../api/roomApi";
 const { Option } = Select;
@@ -91,10 +92,14 @@ function Contract(props) {
   const onFinish = (values) => {
     
     const dateTime = new Date();
+    const year=LocalDateTime.now();
+    // var dt=LocalDateTime.parse("year");
+    console.log("<<<Sonamhientai", dateTime.getFullYear());
     const dataCreate = {
       ...values,
-      signDate:dateTime.toISOString(),
-      year: values["year"].format("YYYY"),
+      signDate: dateTime.toISOString(),
+      year: dateTime.getFullYear(),
+      ownerId: Cookies.get("id"),
     };
     console.log("dataCreate", dataCreate);
 
@@ -106,7 +111,7 @@ function Contract(props) {
         console.log("DATA: ", response);
         setIsModalVisible(false);
       } catch (error) {
-        console.log("failed to create contract list: ", error);
+        console.log("failed to create contract list: ", error.response);
       }
     };
     fetchCreateContract();
@@ -354,18 +359,6 @@ function Contract(props) {
               <Input className="input-details" placeholder={rowEdit.details} />
             </Form.Item>
             <Form.Item
-              label="Ngày ký"
-              name="signDate"
-              className="form-signDate"
-            >
-              <DatePicker
-                showTime
-                format="YYYY-MM-DD HH:mm:ss"
-                className="input-signDate"
-                placeholder={rowEdit.signDate}
-              />
-            </Form.Item>
-            <Form.Item
               label="Số phòng"
               name="numberOfRooms"
               className="form-num-room"
@@ -383,13 +376,6 @@ function Contract(props) {
               <Input
                 className="input-stage-contract"
                 placeholder={rowEdit.numberOfStage}
-              />
-            </Form.Item>
-            <Form.Item label="Số năm" name="year" className="form-year">
-              <DatePicker
-                picker="year"
-                placeholder={rowEdit.year}
-                className="input-yearpicker"
               />
             </Form.Item>
             <Form.Item
@@ -438,11 +424,19 @@ function Contract(props) {
               </Select>
             </Form.Item>
             <div className="btbtncreate">
-              <Button type="primary" htmlType="submit">
+              <Button
+                type="primary"
+                htmlType="submit"
+                style={{ borderRadius: "8px" }}
+              >
                 CHỈNH SỬA
               </Button>
               <div style={{ paddingLeft: "10px" }}>
-                <Button type="default" onClick={handleCancel_1}>
+                <Button
+                  type="default"
+                  onClick={handleCancel_1}
+                  style={{ borderRadius: "8px" }}
+                >
                   HỦY BỎ
                 </Button>
               </div>
@@ -515,17 +509,6 @@ function Contract(props) {
                       <Input className="input-details" />
                     </Form.Item>
                     <Form.Item
-                      label="Ngày ký"
-                      name="signDate"
-                      className="form-signDate"
-                    >
-                      <DatePicker
-                        showTime
-                        format="YYYY-MM-DD HH:mm:ss"
-                        className="input-signDate"
-                      />
-                    </Form.Item>
-                    <Form.Item
                       label="Số phòng"
                       name="numberOfRooms"
                       className="form-num-room"
@@ -539,9 +522,6 @@ function Contract(props) {
                     >
                       <Input className="input-stage-contract" />
                     </Form.Item>
-                    <Form.Item label="Số năm" name="year" className="form-year">
-                      <DatePicker picker="year" className="input-yearpicker" />
-                    </Form.Item>
                     <Form.Item
                       label="Khuyến mãi"
                       name="voucher"
@@ -549,7 +529,7 @@ function Contract(props) {
                     >
                       <Input className="input-voucher" />
                     </Form.Item>
-                    <Form.Item
+                    {/* <Form.Item
                       label="Chủ trọ"
                       name="ownerId"
                       className="form-owner"
@@ -569,7 +549,7 @@ function Contract(props) {
                           )
                         )}
                       </Select>
-                    </Form.Item>
+                    </Form.Item> */}
                     <Form.Item
                       label="Người thuê"
                       name="tenantId"
@@ -592,11 +572,19 @@ function Contract(props) {
                       </Select>
                     </Form.Item>
                     <div className="btbtncreate">
-                      <Button type="primary" htmlType="submit">
+                      <Button
+                        type="primary"
+                        htmlType="submit"
+                        style={{ borderRadius: "8px" }}
+                      >
                         THÊM MỚI
                       </Button>
                       <div style={{ paddingLeft: "10px" }}>
-                        <Button type="default" onClick={handleCancel}>
+                        <Button
+                          type="default"
+                          onClick={handleCancel}
+                          style={{ borderRadius: "8px" }}
+                        >
                           HỦY BỎ
                         </Button>
                       </div>
@@ -632,10 +620,10 @@ function Contract(props) {
             fontSize: "12px",
             marginTop: "40px",
             textAlign: "left",
-            paddingTop:"15vh"
+            paddingTop: "15vh",
           }}
         >
-          <Footer/>
+          <Footer />
         </div>
       </div>
     </div>

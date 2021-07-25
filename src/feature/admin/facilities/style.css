@@ -44,7 +44,7 @@
   border-style: solid;
   height: auto;
   margin-right: 20px;
-  border-radius: 20px;
+  border-radius: 8px;
 }
 .detailed-btn-faci:hover {
   background-color: #007c7e;
@@ -58,15 +58,19 @@
 }
 .input-name-facility{
   margin-left: 20px;
-  width:90%;
+  width:86%;
+  border-radius: 8px;
 }
 .input-quantity{
   margin-left:40px;
-  width:22vw;
+  width:22vw;  border-radius: 8px;
+
 }
 .input-unitPrice{
   margin-left:48px;
    width:22vw;
+     border-radius: 8px;
+
 }
 @media only screen and (max-width: 1026px) {
   .boxfacilities {

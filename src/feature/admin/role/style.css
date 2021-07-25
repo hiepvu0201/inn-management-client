@@ -34,7 +34,7 @@
     border-style: solid;
     height:auto;
     margin-right:20px;
-    border-radius:20px;
+    border-radius:8px;
 }
 .detailed-btn:hover{
     background-color: #007c7e;

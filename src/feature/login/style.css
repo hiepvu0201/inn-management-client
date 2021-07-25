@@ -151,6 +151,16 @@
   width: 90%;
   margin-top:10px;
 }
+.btn-move{
+  position: relative;
+    top: -180px;
+    font-family: Montserrat, sans-serif;
+    width: 100%;
+    height: auto;
+    display: flex;
+    padding-left: 42vw;
+    color: rgb(0, 124, 126);
+}
 @media only screen and (max-width: 1026px) {
   .form-box{
       width: 60%;
@@ -190,5 +200,8 @@
   .btn-login{
     padding-left:15vw;
     width:50vw;
+  }
+  .btn-move{
+    top:-160px
   }
 }

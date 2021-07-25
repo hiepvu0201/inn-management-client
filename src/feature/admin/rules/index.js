@@ -209,27 +209,32 @@ function Rules(props) {
         <Spin spinning={isloadingUpdate} size="large">
           <Form initialValues={{ remember: true }} onFinish={onFinish_edit}>
             <Form.Item label="Tên" name="name" className="name-rules">
-                <Input
-                  placeholder={rowEdit.name}
-                  className="rules-input-name"
-                />
+              <Input placeholder={rowEdit.name} className="rules-input-name" />
             </Form.Item>
             <Form.Item
               label="Mô tả"
               name="description"
               className="name-description-rules"
             >
-                <Input
-                  className="input-description-rules"
-                  placeholder={rowEdit.description}
-                />
+              <Input
+                className="input-description-rules"
+                placeholder={rowEdit.description}
+              />
             </Form.Item>
             <div style={{ display: "flex" }}>
-              <Button type="primary" htmlType="submit">
+              <Button
+                type="primary"
+                htmlType="submit"
+                style={{ borderRadius: "8px" }}
+              >
                 CHỈNH SỬA{" "}
               </Button>
               <div style={{ paddingLeft: "10px" }}>
-                <Button type="default" onClick={handleCancel_1}>
+                <Button
+                  type="default"
+                  onClick={handleCancel_1}
+                  style={{ borderRadius: "8px" }}
+                >
                   HỦY BỎ
                 </Button>
               </div>
@@ -305,11 +310,19 @@ function Rules(props) {
                         <Input className="input-description-rules" />
                       </Form.Item>
                       <div className="btncreaterules">
-                        <Button type="primary" htmlType="submit">
+                        <Button
+                          type="primary"
+                          htmlType="submit"
+                          style={{ borderRadius: "8px" }}
+                        >
                           THÊM MỚI
                         </Button>
                         <div style={{ paddingLeft: "10px" }}>
-                          <Button type="default" onClick={handleCancel}>
+                          <Button
+                            type="default"
+                            onClick={handleCancel}
+                            style={{ borderRadius: "8px" }}
+                          >
                             HỦY BỎ
                           </Button>
                         </div>
@@ -346,10 +359,10 @@ function Rules(props) {
             fontSize: "12px",
             marginTop: "40px",
             textAlign: "left",
-            paddingTop:"15vh"
+            paddingTop: "15vh",
           }}
         >
-          <Footer/>
+          <Footer />
         </div>
       </div>
     </div>

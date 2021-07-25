@@ -127,10 +127,12 @@
 }
 .box-last {
   width: 80%;
-  height: 210px;
+  height: auto;
   background-color: #007c7e;
   display: "flex";
   justify-content: center;
+  border-radius: 8px;
+  padding-bottom: 20px;
 }
 .icon-hover-2 {
   border-radius: 50%;

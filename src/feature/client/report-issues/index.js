@@ -14,6 +14,7 @@ import {
   faTrash,
   faEdit,
 } from "@fortawesome/free-solid-svg-icons";
+import Cookies from "js-cookie";
 import { faSave } from "@fortawesome/free-regular-svg-icons";
 import './style.css'
 function Reportissues_client() {
@@ -44,6 +45,7 @@ function Reportissues_client() {
   const onFinish = (values) => {
     const create_value = {
       ...values,
+      reporterId: Cookies.get("id"),
     };
     console.log("<<", create_value);
     const fetchCreateReportedissues = async () => {
@@ -135,38 +137,27 @@ function Reportissues_client() {
                   name="description"
                   className="title-form"
                 >
-                  <Input className="item-description" />
+                  <Input className="item-description23" />
                 </Form.Item>
                 <Form.Item
                   label="Tình trạng"
                   name="status"
                   className="title-form"
                 >
-                  <Input className="item-status" />
+                  <Input className="item-status23" />
                 </Form.Item>
-                <Form.Item label="Người báo cáo" name="reporterId" className="title-form">
-                  <Select>
-                    {usersList.map((reporterid) =>
-                      reporterid.roles[0].name === "ROLE_USER" ? (
-                        <Select.Option
-                          key={reporterid.id}
-                          value={reporterid.id}
-                        >
-                          {reporterid.userName}
-                        </Select.Option>
-                      ) : (
-                        <>Null</>
-                      )
-                    )}
-                  </Select>
-                </Form.Item>
-                {/* <Form.Item></Form.Item> */}
                 <div style={{ display: "flex" }}>
-                  <Button type="primary" htmlType="submit">
+                  <Button
+                    type="primary"
+                    htmlType="submit"
+                    style={{ borderRadius: "8px" }}
+                  >
                     THÊM MỚI
                   </Button>
                   <div style={{ paddingLeft: "10px" }}>
-                    <Button type="default">HỦY BỎ</Button>
+                    <Button type="default" style={{ borderRadius: "8px" }}>
+                      HỦY BỎ
+                    </Button>
                   </div>
                 </div>
               </Form>

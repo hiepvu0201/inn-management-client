@@ -42,7 +42,7 @@
     border-style: solid;
     height:auto;
     margin-right:20px;
-    border-radius:20px;
+    border-radius:8px;
 }
 .detailed-btnCSN{
     font-size: 15px;
@@ -54,7 +54,7 @@
     border-style: solid;
     height:auto;
     margin-right:20px;
-    border-radius:20px;
+    border-radius:8px;
     display: flex;
     justify-content: center;
 }

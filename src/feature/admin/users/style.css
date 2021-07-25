@@ -14,10 +14,12 @@
   width: 77%;
 }
 .topic-right-user {
-  width: 23%;
+  width: 14%;
   display: flex;
 }
-
+.ant-upload-list-picture .ant-upload-list-item-error, .ant-upload-list-picture-card .ant-upload-list-item-error {
+    border-radius: 8px;
+}
 .contentusers {
   font-size: 20px;
   font-family: "PT Sans, sans-serif";
@@ -81,7 +83,8 @@ width: 40%;
 
 }
 .input-userName12{
-  margin-left:20px;
+  margin-left:2px;
+  border-radius: 8px;
 }
 .input-password12{
   margin-left:25px;
@@ -90,21 +93,30 @@ width: 40%;
 .input-email12{
   margin-left: 50px;
   width:20vw;
+  border-radius: 8px;
 }
 .input-fullName12{
-  margin-left:25px
+  margin-left:25px;
+  width:74%;
+  border-radius:8px;
 }
 .radio-sex12{
   margin-left:28px;
 }
 .input-job12{
   margin-left:20px;
+  width: 75%;
+  border-radius: 8px;
 }
 .input-address12{
   margin-left:40px;
   width: 20vw;
+  border-radius: 8px;
 }
 .input-phoneno12{
+  border-radius: 8px;
+  width: 72%;
+  margin-left: 40px;
 }
 .select-roleid12{
   margin-left: 40px;
@@ -112,6 +124,7 @@ width: 40%;
  .btn-updae-us12{
    margin-left: 54px; 
    width: 70%;
+   border-radius: 8px;
   }
   .datepicker-checkindate{
     margin-left: 20px;
@@ -137,6 +150,9 @@ width: 40%;
     width:20vw;
 
   }
+  .btn-existed{
+    border-radius: 8px;
+  }
   .select-roomNo{
     margin-left:60px;
     width:20vw;
@@ -148,7 +164,7 @@ width: 40%;
   .form-userName-2{
   }
   .element-btn{
-    padding-left: 35px;
+    padding-left: 10px;
     width: 20%;
   }
 @media only screen and (max-width: 1026px) {

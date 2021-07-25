@@ -23,7 +23,11 @@ const LeftMenu_admin = () => {
   const { md } = useBreakpoint();
   return (
     <Menu mode={md ? "horizontal" : "inline"}>
-      <Menu.Item key="home" className="hostmenu">
+      <Menu.Item
+        key="home"
+        className="hostmenu"
+        style={{ borderRadius: "8px" }}
+      >
         <div className="menuone">
           <FontAwesomeIcon
             icon={faChartBar}
@@ -47,6 +51,7 @@ const LeftMenu_admin = () => {
             </a>{" "}
           </div>
         }
+        style={{ borderRadius: "8px" }}
       >
         <Menu.Item
           key="brand"
@@ -154,6 +159,7 @@ const LeftMenu_admin = () => {
             </a>{" "}
           </div>
         }
+        style={{ borderRadius: "8px" }}
       >
         <Menu.Item
           key="monthlyincome"
@@ -217,6 +223,7 @@ const LeftMenu_admin = () => {
             </a>{" "}
           </div>
         }
+        style={{ borderRadius: "8px" }}
       >
         <Menu.Item
           key="contract"
@@ -279,6 +286,7 @@ const LeftMenu_admin = () => {
             </a>{" "}
           </div>
         }
+        style={{ borderRadius: "8px" }}
       >
         <Menu.Item
           key="rules"

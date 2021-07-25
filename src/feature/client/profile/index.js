@@ -218,9 +218,7 @@ function Profile() {
                           <Tag color="#108ee9">{userList.roles[0].name}</Tag>{" "}
                         </div>
                       </div>
-                      <div
-                       className="element-sax"
-                      >
+                      <div className="element-sax">
                         <button className="btnupdate">
                           <div className="fontawesome">
                             <FontAwesomeIcon icon={faSave} size="1x" />
@@ -259,20 +257,6 @@ function Profile() {
                               onFinish={onFinish_edit}
                               onFinishFailed={handleCancel}
                             >
-                              <Form.Item
-                                label="Tài khoản"
-                                name="userName"
-                                value="userName"
-                                className="form-user"
-                              >
-                                <div style={{ width: "90%" }}>
-                                  <Input
-                                    placeholder={userList.userName}
-                                    disabled
-                                    className="row-user"
-                                  />
-                                </div>
-                              </Form.Item>
                               <Form.Item
                                 label="email"
                                 name="email"
@@ -324,50 +308,30 @@ function Profile() {
                                 name="job"
                                 className="form-job"
                               >
-                                <div style={{ width: "90%" }}>
                                   <Input
                                     placeholder={userList.job}
                                     className="row-job"
                                   />
-                                </div>
                               </Form.Item>
                               <Form.Item
                                 label="Địa chỉ"
                                 name="address"
                                 className="form-address"
                               >
-                                <div style={{ width: "90%" }}>
                                   <Input
                                     placeholder={userList.address}
                                     className="row-address"
                                   />
-                                </div>
                               </Form.Item>
                               <Form.Item
                                 label="Số điện thoại"
                                 name="phoneNo"
                                 className="form-phone"
                               >
-                                <div style={{ width: "90%" }}>
                                   <Input
                                     placeholder={userList.phoneNo}
                                     className="row-phone"
                                   />
-                                </div>
-                              </Form.Item>
-                              <Form.Item label="Quyền" name="roleIds" className="form-select">
-                                <div style={{ width: "90%" }}>
-                                  <Select
-                                    onChange={handleChange}
-                                    allowClear
-                                    mode="multiple"
-                                    disabled
-                                    placeholder={userList.roles[0].name}
-                                    className="row-select"
-                                  >
-                                    {propsselect}
-                                  </Select>
-                                </div>
                               </Form.Item>
                               <Form.Item label="Hình" className="form-img">
                                 <div style={{ width: "90%" }}>
@@ -384,7 +348,11 @@ function Profile() {
                                       <Button
                                         onClick={uploadimg}
                                         icon={<UploadOutlined />}
-                                        style={{ marginLeft: "54px",width:"90%",borderRadius:"8px" }}
+                                        style={{
+                                          marginLeft: "54px",
+                                          width: "90%",
+                                          borderRadius: "8px",
+                                        }}
                                         className="row-img"
                                       >
                                         Upload
@@ -394,11 +362,19 @@ function Profile() {
                                 </div>
                               </Form.Item>
                               <div style={{ display: "flex" }}>
-                                <Button type="primary" htmlType="submit">
+                                <Button
+                                  type="primary"
+                                  htmlType="submit"
+                                  style={{ borderRadius: "8px" }}
+                                >
                                   CHỈNH SỬA{" "}
                                 </Button>
                                 <div style={{ paddingLeft: "10px" }}>
-                                  <Button type="default" onClick={handleCancel}>
+                                  <Button
+                                    type="default"
+                                    onClick={handleCancel}
+                                    style={{ borderRadius: "8px" }}
+                                  >
                                     HỦY BỎ
                                   </Button>
                                 </div>

@@ -2,7 +2,7 @@ import React from "react";
 import "./style.css";
 import { Row, Col, Button } from "antd";
 import { Images } from "./../../config/image";
-import Menu_client from "../../components/menu_client";
+import MenuFirst from "./../../components/menuFirst";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./demo-files/demo.css";
 import "./ie7/ie7.css";
@@ -27,6 +27,7 @@ import {
   faUserPlus,
   faPhoneAlt
 } from "@fortawesome/free-solid-svg-icons";
+import {Link} from "react-router-dom";
 import {
   faMoneyBillAlt,
   faHandshake,
@@ -45,7 +46,7 @@ function Home() {
   return (
     <div>
       <div className="height-open">
-        <Menu_client />
+        <MenuFirst />
       </div>
       <div className="partII">
         <Row>
@@ -139,9 +140,11 @@ function Home() {
                 <img src={Images.ICON} className="img-ele3" />
               </div>
               <div className="btnfree">
-                <button className="button-free">
-                  DÙNG THỬ MIỄN PHÍ <FontAwesomeIcon icon={faChevronRight} />
-                </button>
+                <Link to="/login">
+                  <button className="button-free">
+                    DÙNG THỬ MIỄN PHÍ <FontAwesomeIcon icon={faChevronRight} />
+                  </button>
+                </Link>
               </div>
             </div>
           </Col>
@@ -502,7 +505,9 @@ function Home() {
               <div className="civ-civ">
                 <div className="topic">
                   <div className="circle-topic"></div>
-                  <div className="why-room">Các lợi ích khi lựa chọn nhà trọ này</div>
+                  <div className="why-room">
+                    Các lợi ích khi lựa chọn nhà trọ này
+                  </div>
                 </div>
               </div>
               <div style={{ display: "flex", justifyContent: "center" }}>
@@ -570,7 +575,7 @@ function Home() {
                 <div className="topic">
                   <div className="circle-topic"></div>
                   <div style={{ position: "relative", bottom: "10px" }}>
-                   Việc thiết kế{" "}
+                    Việc thiết kế{" "}
                   </div>
                 </div>
               </div>
@@ -861,7 +866,7 @@ function Home() {
                     className="content-partIX"
                     // style={{ position: "relative", bottom: "10px" }}
                   >
-                    Quy trình mua Phần mềm 
+                    Quy trình mua Phần mềm
                   </div>
                 </div>
               </div>
@@ -1343,7 +1348,7 @@ function Home() {
                       }}
                     >
                       <div className="topic-com-4">
-                        Email: nduy9744@gmail.com
+                         nduy9744@gmail.com
                       </div>
                     </div>
                     <div

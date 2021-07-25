@@ -257,31 +257,6 @@ function Info() {
                                 onFinish={onFinish_edit}
                                 onFinishFailed={handleCancel}
                               >
-                                <div style={{ display: "flex", width: "100%" }}>
-                                  <Form.Item
-                                    label="Tài khoản"
-                                    name="userName"
-                                    value="userName"
-                                    className="form-userName"
-                                  >
-                                    <Input
-                                      className="input-userName"
-                                      placeholder={userList.userName}
-                                      disabled
-                                    />
-                                  </Form.Item>
-                                </div>
-                                {/* <Form.Item
-                                  label="Mật khẩu"
-                                  name="password"
-                                  className="form-password"
-                                >
-                                  <Input.Password
-                                    placeholder={userList.password}
-                                    disabled
-                                    className="input-password"
-                                  />
-                                </Form.Item> */}
                                 <Form.Item
                                   label="Email"
                                   name="email"
@@ -318,8 +293,8 @@ function Info() {
                                   className="form1-sex1"
                                 >
                                   <Radio.Group className="radio-sex">
-                                    <Radio value="female">Female</Radio>
-                                    <Radio value="male">Male</Radio>
+                                    <Radio value="Nữ">Nữ</Radio>
+                                    <Radio value="Nam">Nam</Radio>
                                   </Radio.Group>
                                 </Form.Item>
                                 <Form.Item
@@ -352,7 +327,7 @@ function Info() {
                                     className="input-phoneno"
                                   />
                                 </Form.Item>
-                                <Form.Item
+                                {/* <Form.Item
                                   label="Quyền"
                                   name="roleIds"
                                   className="form-roleid"
@@ -374,7 +349,7 @@ function Info() {
                                       )
                                     )}
                                   </Select>
-                                </Form.Item>
+                                </Form.Item> */}
                                 <Form.Item label="Hình" className="form-img-us">
                                   <Upload
                                     {...propsimg}
@@ -388,6 +363,7 @@ function Info() {
                                     {state?.fileList.length < 1 && (
                                       <Button
                                         className="btn-updae-us"
+                                        style={{ borderRadius: "8px" }}
                                         onClick={uploadimg}
                                         icon={<UploadOutlined />}
                                       >
@@ -397,12 +373,17 @@ function Info() {
                                   </Upload>
                                 </Form.Item>
                                 <div style={{ display: "flex" }}>
-                                  <Button type="primary" htmlType="submit">
+                                  <Button
+                                    type="primary"
+                                    htmlType="submit"
+                                    style={{ borderRadius: "8px" }}
+                                  >
                                     CHỈNH SỬA{" "}
                                   </Button>
                                   <div style={{ paddingLeft: "10px" }}>
                                     <Button
                                       type="default"
+                                      style={{ borderRadius: "8px" }}
                                       onClick={handleCancel}
                                     >
                                       HỦY BỎ
@@ -429,11 +410,10 @@ function Info() {
               fontSize: "12px",
               marginTop: "90px",
               textAlign: "left",
-              paddingTop:"15vh"
+              paddingTop: "15vh",
             }}
           >
-            <Footer/>
-           
+            <Footer />
           </div>
         </div>
       </div>

@@ -38,7 +38,7 @@
   border-style: solid;
   height: auto;
   margin-right: 20px;
-  border-radius: 20px;
+  border-radius: 8px;
 }
 .detailed-btn-income:hover {
   background-color: #007c7e;
@@ -71,8 +71,8 @@
 }
 .input-earnIncome{
   margin-left:15px;
-  width:60%;
-
+  width:65%;
+  border-radius: 8px;
 }
 .select-branchid{
   margin-left:20px;
@@ -80,6 +80,12 @@
 .searchachd{
   padding-right: 10px;
     width: 60%;
+}
+.ant-input-search > .ant-input-group > .ant-input-group-addon:last-child .ant-input-search-button {
+    border-radius: 8px
+}
+.ant-input-search .ant-input-group .ant-input-affix-wrapper:not(:last-child) {
+    border-radius: 8px;
 }
 @media only screen and (max-width: 1026px) {
   .searchachd{

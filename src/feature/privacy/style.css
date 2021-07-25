@@ -1,0 +1,154 @@
+.height-privacy{
+    height:100px;
+}
+.container-privacy{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+}
+.min-width-privacy{
+    width: 80%;
+    height: auto;
+}
+.topic-privacy{
+  font-size: 30px;
+  padding-top: 10px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-left: 30vw;
+}
+.circle-topic-privacy {
+  width: 3rem;
+  height: 3rem;
+  background-color: #007c7e;
+  left: 25px;
+  bottom: 15px;
+  position: relative;
+  border-radius: 50%;
+}
+.content-privacy222{
+  position: relative;
+  bottom: 4px;
+}
+.title-privacy{
+    width: 100%;
+    height: auto;
+    text-align: left;
+    font-weight: bold;
+    color: black;
+    font-family: "Open Sans", sans-serif;
+    font-size: 15px;
+}
+.content-privacy{
+     width: 100%;
+    height: auto;
+    text-align: left;
+    color: black;
+    font-family: "Open Sans", sans-serif;
+    font-size: 15px;
+}
+.left-content-privacy{
+    width: 2%;
+    height: auto;
+    text-align: left;
+    color: black;
+    font-family: "Open Sans", sans-serif;
+        font-size: 15px;
+    font-style: italic;
+}
+.right-content-privacy{
+    width: 98%;
+    height: auto;
+    text-align: left;
+    color: black;
+    font-family: "Open Sans", sans-serif;
+        font-size: 15px;
+    font-style: italic;
+    text-decoration:underline ;
+}
+.content-privacy222{
+    width: 100%;
+    height: auto;
+    text-align: left;
+    color: black;
+    font-family: "Open Sans", sans-serif;
+    font-size: 30px;
+    position: relative;
+    left: 5px;
+}
+.topic-privacy-2 {
+  font-size: 30px;
+  padding-top: 10px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.circle-privacy-2{
+  width: 3rem;
+  height: 3rem;
+  background-color: #007c7e;
+  left: 25px;
+  bottom: 15px;
+  position: relative;
+  border-radius: 50%;
+}
+.content-circle-XIII-privacy2 {
+  position: relative;
+  bottom: 10px;
+  font-size: 21px;
+  padding-top: 5px;
+}
+.content2-circle-XIII-privacy3 {
+  font-size: 15px;
+  width: 80%;
+  height: auto;
+  font-family: "PT Sans, sans-serif";
+  padding-top: 5px;
+}
+.box-last-privacy {
+  width: 80%;
+  height: 230px;
+  background-color: #007c7e;
+  display: "flex";
+  justify-content: center;
+  border-radius: 8px;
+}
+.icon-hover-privacy {
+  border-radius: 50%;
+  background-color: white;
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.topic-com-4-privacy {
+  width: 80%;
+  height: auto;
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+  font-family: "PT Sans", sans-serif;
+}
+.content-com-4-privacy {
+  width: 80%;
+  height: auto;
+  font-size: 15px;
+  color: white;
+  font-family: "PT Sans", sans-serif;
+}
+@media only screen and (max-width: 1026px) {
+  .row-privacy{
+    padding-left: 5vw;
+    width: 100vw;
+  }
+}

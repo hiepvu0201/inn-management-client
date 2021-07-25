@@ -24,7 +24,7 @@ const LeftMenu = () => {
           </Link>
         </a>
       </Menu.Item> */}
-      <Menu.Item key="home">
+      {/* <Menu.Item key="home">
         <a
           style={{
             color: "Black",
@@ -35,7 +35,7 @@ const LeftMenu = () => {
         >
           <Link to="/">Trang chủ</Link>
         </a>
-      </Menu.Item>
+      </Menu.Item> */}
       <Menu.Item key="room">
         <a
           style={{
@@ -45,7 +45,7 @@ const LeftMenu = () => {
           }}
           href=""
         >
-          <Link to="/roomUsers">Phòng trọ</Link>
+          <Link to="/home">Phòng trọ</Link>
         </a>
       </Menu.Item>
       <Menu.Item key="rules">
@@ -70,6 +70,18 @@ const LeftMenu = () => {
           href=""
         >
           <Link to="/report-issueUsers">Báo cáo đề mục</Link>
+        </a>
+      </Menu.Item>
+      <Menu.Item key="map">
+        <a
+          style={{
+            color: "Black",
+            fontFamily: "Kaushan Script, cursive",
+            fontSize: "20px",
+          }}
+          href=""
+        >
+          <Link to="/map">Bản đồ</Link>
         </a>
       </Menu.Item>
     </Menu>

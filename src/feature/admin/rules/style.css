@@ -39,7 +39,7 @@
     border-style: solid;
     height:auto;
     margin-right:20px;
-    border-radius:20px;
+    border-radius:8px;
 }
 .detailed-btn-rules:hover{
     background-color: #007c7e;
@@ -55,9 +55,13 @@
 }
 .rules-input-name{
     margin-left:20px;
+     width:59%;
+    border-radius: 8px;
 }
 .input-description-rules{
     margin-left: 10px;
+    width:60%;
+    border-radius: 8px;
 }
 @media only screen and (max-width: 1026px) {
   .containercontainerrules{

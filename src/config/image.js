@@ -20,6 +20,9 @@ export const Images = {
   IMG_ROOM: IMAGE_URL + "/img/ads-3-min.png",
   IMG_ROOM_1: IMAGE_URL + "/img/ads-4-min.png",
   IMG_ROOM_2: IMAGE_URL + "/img/img_room.jpg",
-  DETAIL_ROOM:IMAGE_URL+"/img/detairoom.jpg",
-  AVATAR_USER:IMAGE_URL+"/img/avatar.png",
+  DETAIL_ROOM: IMAGE_URL + "/img/detairoom.jpg",
+  AVATAR_USER: IMAGE_URL + "/img/avatar.png",
+  COTON: IMAGE_URL + "/img/dribbble_1.gif",
+  FACE_2: IMAGE_URL + "/img/client-nguyen-van-thanh-80x80.jpg",
+  FACE_3: IMAGE_URL + "/img/2-150x150.jpg",
 };

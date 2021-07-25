@@ -198,7 +198,7 @@ function Room_client() {
                             color: "#59d49a",
                           }}
                         >
-                          <Link
+                          {/* <Link
                             to="/map"
                             style={{
                               width: "100%",
@@ -215,7 +215,7 @@ function Room_client() {
                               <FontAwesomeIcon icon={faMapMarkerAlt} />
                             </div>
                             Tìm theo bản đồ
-                          </Link>
+                          </Link> */}
                         </div>
                       </div>
                     </div>

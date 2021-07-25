@@ -38,7 +38,7 @@
   border-style: solid;
   height: auto;
   margin-right: 20px;
-  border-radius: 20px;
+  border-radius: 8px;
 }
 .detailed-btn-report:hover {
   background-color: #007c7e;
@@ -50,14 +50,17 @@
 .input-item-report{
   margin-left:44px;
   width:20vw;
+  border-radius: 8px;
 }
 .input-description-report{
   margin-left:55px;
   width:20vw;
+    border-radius: 8px;
 }
 .select-status-report{
   margin-left:25px;
-  width:80%;
+  width:76%;
+    border-radius: 8px;
 }
 @media only screen and (max-width: 1026px) {
   .rectanglereportissue {

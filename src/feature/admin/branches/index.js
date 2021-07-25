@@ -313,7 +313,10 @@ function Branches(props) {
         {/* <Spin spinning={isloadingUpdate} size="large"> */}
         <Form initialValues={{ remember: true }} onFinish={onFinish_edit}>
           <Form.Item label="Vị trí" name="location" className="form-location">
-            <Input className="input-location-branches" />
+            <Input
+              className="input-location-branches"
+              style={{ borderRadius: "8px" }}
+            />
           </Form.Item>
           <Form.Item
             label="Tên chi nhánh"
@@ -323,6 +326,7 @@ function Branches(props) {
             <Input
               className="input-description"
               placeholder={rowEdit.description}
+              style={{ borderRadius: "8px" }}
             />
           </Form.Item>
           <Form.Item
@@ -330,15 +334,22 @@ function Branches(props) {
             name="numberOfStages"
             className="form-stages"
           >
-            {" "}
-            <Input className="input-floor" />
+            <Input
+              className="input-floor"
+              placeholder={rowEdit.numberOfStages}
+              style={{ borderRadius: "8px" }}
+            />
           </Form.Item>
           <Form.Item
             label="Số phòng"
             name="numberOfRooms"
             className="form-rooms"
           >
-            <Input className="input-room" placeholder={rowEdit.numberOfRooms} />
+            <Input
+              className="input-room"
+              style={{ borderRadius: "8px" }}
+              placeholder={rowEdit.numberOfRooms}
+            />
           </Form.Item>
           <Form.Item
             label="Thiết bị"
@@ -355,26 +366,20 @@ function Branches(props) {
               {propsselect}
             </Select>
           </Form.Item>
-          <Form.Item label="Chủ trọ" name="userName" className="form-user-2">
-            <Select
-              onChange={handleChange_user}
-              allowClear
-              className="input-user"
-                                        style={{width:"80%"}}
-
-              placeholder={rowEdit.userName}
-            >
-              <Select.Option value={Cookies.get("userName")}>
-                {Cookies.get("userName")}
-              </Select.Option>
-            </Select>
-          </Form.Item>
           <div className="btncreatebranches">
-            <Button type="primary" htmlType="submit">
+            <Button
+              type="primary"
+              htmlType="submit"
+              style={{ borderRadius: "8px" }}
+            >
               CHỈNH SỬA
             </Button>
             <div style={{ paddingLeft: "10px" }}>
-              <Button type="default" onClick={handleCancel_1}>
+              <Button
+                type="default"
+                onClick={handleCancel_1}
+                style={{ borderRadius: "8px" }}
+              >
                 HỦY BỎ
               </Button>
             </div>
@@ -400,23 +405,6 @@ function Branches(props) {
                 <div className="contentbranches">QUẢN LÝ CHI NHÁNH NHÀ TRỌ</div>
               </div>
               <div className="topic-right-branches">
-                {/* <div className="element-select">
-                  <Select
-                    allowClear
-                    size="middle"
-                    style={{ width: "200px" }}
-                    onSelect={onSearch_2}
-                  >
-                    {branchList.map((branchid) => (
-                      <Select.Option
-                        key={branchid.location}
-                        value={branchid.location}
-                      >
-                        {branchid.description}
-                      </Select.Option>
-                    ))}
-                  </Select>
-                </div> */}
                 <div className="element-select1">
                   <Select
                     allowClear
@@ -438,7 +426,6 @@ function Branches(props) {
                     )}
                   </Select>
                 </div>
-
                 <div className="btn-right-branches">
                   <button className="detailed-btn-branches" onClick={showModal}>
                     THÊM MỚI
@@ -481,28 +468,40 @@ function Branches(props) {
                         name="location"
                         className="form-location"
                       >
-                        <Input className="input-location-branches" />
+                        <Input
+                          className="input-location-branches"
+                          style={{ borderRadius: "8px" }}
+                        />
                       </Form.Item>
                       <Form.Item
                         label="Tên chi nhánh"
                         name="description"
                         className="form-description"
                       >
-                        <Input className="input-description" />
+                        <Input
+                          className="input-description"
+                          style={{ borderRadius: "8px" }}
+                        />
                       </Form.Item>
                       <Form.Item
                         label="Số lầu"
                         name="numberOfStages"
                         className="form-stages"
                       >
-                        <Input className="input-floor" />
+                        <Input
+                          className="input-floor"
+                          style={{ borderRadius: "8px" }}
+                        />
                       </Form.Item>
                       <Form.Item
                         label="Số phòng"
                         name="numberOfRooms"
                         className="form-rooms"
                       >
-                        <Input className="input-room" />
+                        <Input
+                          className="input-room"
+                          style={{ borderRadius: "8px" }}
+                        />
                       </Form.Item>
                       <Form.Item
                         label="Thiết bị"
@@ -524,32 +523,21 @@ function Branches(props) {
                           ))}
                         </Select>
                       </Form.Item>
-                      <Form.Item
-                        label="Chủ trọ"
-                        name="userName"
-                        className="form-user-2"
-                      >
-                        <Select
-                          onChange={handleChange_user}
-                          allowClear
-                          className="input-user"
-                          style={{width:"80%"}}
-                        >
-                          <Select.Option
-                            key={Cookies.get("userName")}
-                            value={Cookies.get("userName")}
-                          >
-                            {Cookies.get("userName")}
-                          </Select.Option>
-                        </Select>
-                      </Form.Item>
                       {/* <Form.Item></Form.Item> */}
                       <div className="btncreatebranches">
-                        <Button type="primary" htmlType="submit">
+                        <Button
+                          type="primary"
+                          htmlType="submit"
+                          style={{ borderRadius: "8px" }}
+                        >
                           THÊM MỚI
                         </Button>
                         <div style={{ paddingLeft: "10px" }}>
-                          <Button type="default" onClick={handleCancel}>
+                          <Button
+                            type="default"
+                            onClick={handleCancel}
+                            style={{ borderRadius: "8px" }}
+                          >
                             HỦY BỎ
                           </Button>
                         </div>

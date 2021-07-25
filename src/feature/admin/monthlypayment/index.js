@@ -251,47 +251,55 @@ function Monthlypayment(props) {
         <Spin spinning={isloadingUpdate} size="large">
           <Form initialValues={{ remember: true }} onFinish={onFinish_edit}>
             <Form.Item label="Tháng" name="month" className="form-monthPayment">
-                <Select
-                  style={{ width: 120 }}
-                  className="select-monthPay"
-                  placeholder={rowEdit.month}
-                >
-                  <Option value="1">Tháng 1</Option>
-                  <Option value="2">Tháng 2</Option>
-                  <Option value="3">Tháng 3</Option>
-                  <Option value="4">Tháng 4</Option>
-                  <Option value="5">Tháng 5</Option>
-                  <Option value="6">Tháng 6</Option>
-                  <Option value="7">Tháng 7</Option>
-                  <Option value="8">Tháng 8</Option>
-                  <Option value="9">Tháng 9</Option>
-                  <Option value="10">Tháng 10</Option>
-                  <Option value="11">Tháng 11</Option>
-                  <Option value="12">Tháng 12</Option>
-                </Select>
+              <Select
+                style={{ width: 300 }}
+                className="select-monthPay"
+                placeholder={rowEdit.month}
+              >
+                <Option value="1">Tháng 1</Option>
+                <Option value="2">Tháng 2</Option>
+                <Option value="3">Tháng 3</Option>
+                <Option value="4">Tháng 4</Option>
+                <Option value="5">Tháng 5</Option>
+                <Option value="6">Tháng 6</Option>
+                <Option value="7">Tháng 7</Option>
+                <Option value="8">Tháng 8</Option>
+                <Option value="9">Tháng 9</Option>
+                <Option value="10">Tháng 10</Option>
+                <Option value="11">Tháng 11</Option>
+                <Option value="12">Tháng 12</Option>
+              </Select>
             </Form.Item>
             <Form.Item label="Số tiền chi" name="cost" className="form-cost">
-                <Input className="input-cost" placeholder={rowEdit.cost} />
+              <Input className="input-cost" placeholder={rowEdit.cost} />
             </Form.Item>
             <Form.Item
               label="Chi nhánh"
               name="branchId"
               className="form-branchId"
             >
-                <Select className="select-branch-id">
-                 {branchList.map((branchid) => (
-                    <Select.Option key={branchid.id} value={branchid.id}>
-                      {branchid.description}
-                    </Select.Option>
-                  ))}
-                </Select>
+              <Select className="select-branch-id" style={{width:300}}>
+                {branchList.map((branchid) => (
+                  <Select.Option key={branchid.id} value={branchid.id}>
+                    {branchid.description}
+                  </Select.Option>
+                ))}
+              </Select>
             </Form.Item>
             <div style={{ display: "flex" }}>
-              <Button type="primary" htmlType="submit">
+              <Button
+                type="primary"
+                htmlType="submit"
+                style={{ borderRadius: "8px" }}
+              >
                 CHỈNH SỬA{" "}
               </Button>
               <div style={{ paddingLeft: "10px" }}>
-                <Button type="default" onClick={handleCancel_1}>
+                <Button
+                  type="default"
+                  onClick={handleCancel_1}
+                  style={{ borderRadius: "8px" }}
+                >
                   HỦY BỎ
                 </Button>
               </div>
@@ -305,9 +313,7 @@ function Monthlypayment(props) {
         </div>
         <div className="rectanglemonthlypayment">
           <div style={{ display: "block", width: "100%" }}>
-            <div
-              className="boxpayment"
-            >
+            <div className="boxpayment">
               <div className="topic-left-payment">
                 <FontAwesomeIcon icon={faSitemap} size="2x" color="#007c7e" />
                 <div className="contentmonthlypayment">
@@ -363,53 +369,58 @@ function Monthlypayment(props) {
                       name="month"
                       className="form-monthPayment"
                     >
-                        <Select
-                          style={{ width: 120 }}
-                          className="select-monthPay"
-                        >
-                          <Option value="1">Tháng 1</Option>
-                          <Option value="2">Tháng 2</Option>
-                          <Option value="3">Tháng 3</Option>
-                          <Option value="4">Tháng 4</Option>
-                          <Option value="5">Tháng 5</Option>
-                          <Option value="6">Tháng 6</Option>
-                          <Option value="7">Tháng 7</Option>
-                          <Option value="8">Tháng 8</Option>
-                          <Option value="9">Tháng 9</Option>
-                          <Option value="10">Tháng 10</Option>
-                          <Option value="11">Tháng 11</Option>
-                          <Option value="12">Tháng 12</Option>
-                        </Select>
+                      <Select
+                        style={{ width: 300 }}
+                        className="select-monthPay"
+                      >
+                        <Option value="1">Tháng 1</Option>
+                        <Option value="2">Tháng 2</Option>
+                        <Option value="3">Tháng 3</Option>
+                        <Option value="4">Tháng 4</Option>
+                        <Option value="5">Tháng 5</Option>
+                        <Option value="6">Tháng 6</Option>
+                        <Option value="7">Tháng 7</Option>
+                        <Option value="8">Tháng 8</Option>
+                        <Option value="9">Tháng 9</Option>
+                        <Option value="10">Tháng 10</Option>
+                        <Option value="11">Tháng 11</Option>
+                        <Option value="12">Tháng 12</Option>
+                      </Select>
                     </Form.Item>
                     <Form.Item
                       label="Số tiền chi"
                       name="cost"
                       className="form-cost"
                     >
-                        <Input className="input-cost" />
+                      <Input className="input-cost" />
                     </Form.Item>
                     <Form.Item
                       label="Chi nhánh"
                       name="branchId"
                       className="form-branchId"
                     >
-                        <Select className="select-branch-id">
-                          {branchList.map((branchid) => (
-                            <Select.Option
-                              key={branchid.id}
-                              value={branchid.id}
-                            >
-                              {branchid.description}
-                            </Select.Option>
-                          ))}
-                        </Select>
+                      <Select className="select-branch-id" style={{width:300}}>
+                        {branchList.map((branchid) => (
+                          <Select.Option key={branchid.id} value={branchid.id}>
+                            {branchid.description}
+                          </Select.Option>
+                        ))}
+                      </Select>
                     </Form.Item>
                     <div className="btncreatepayment">
-                      <Button type="primary" htmlType="submit">
+                      <Button
+                        type="primary"
+                        htmlType="submit"
+                        style={{ borderRadius: "8px" }}
+                      >
                         THÊM MỚI
                       </Button>
                       <div style={{ paddingLeft: "10px" }}>
-                        <Button type="default" onClick={handleCancel}>
+                        <Button
+                          type="default"
+                          onClick={handleCancel}
+                          style={{ borderRadius: "8px" }}
+                        >
                           HỦY BỎ
                         </Button>
                       </div>
@@ -445,10 +456,10 @@ function Monthlypayment(props) {
             fontSize: "12px",
             marginTop: "40px",
             textAlign: "left",
-            paddingTop:"15vh"
+            paddingTop: "15vh",
           }}
         >
-          <Footer/>
+          <Footer />
         </div>
       </div>
     </div>

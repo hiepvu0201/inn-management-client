@@ -18,7 +18,9 @@ import {
   Tag,
   Popconfirm,
   message,
+  notification
 } from "antd";
+import { WarningOutlined, CheckOutlined } from "@ant-design/icons";
 import invoicesApi from "./../../../api/invoicesApi";
 import usersApi from "./../../../api/usersApi";
 import Cookies from "js-cookie";
@@ -74,13 +76,28 @@ function Invoiceone() {
   const fetchhgetInvoicebyUsername = async (values) => {
     try {
       const response = await invoicesApi.create(values);
-      console.log("Fetch invoices successfully: ", response.data);
+      console.log("Fetch invoices successfully: ", response);
       setfakestate(response.data);
       fetchgetInvoicebyid(response.data.id);
       setIsModalVisible(false);
       console.log("<<", stateinvoice);
+       if (response.status ===200) {
+         notification.success({
+           icon: <CheckOutlined style={{ color: "#20da9b" }} />,
+           message: `Tạo hóa đơn thành công`,
+           placement: "topRight",
+         });
+       }
     } catch (error) {
-      console.log("Failed to create invoices list: ", error);
+      console.log("Failed to create invoices list: ", error.response);
+      if (error.response.data.status === 500) {
+        notification.success({
+          icon: <WarningOutlined style={{ color: "#f26051" }} />,
+          message: `Tạo hóa đơn thất bại`,
+          description: `Vui lòng liên lạc với chủ trọ tạo hợp đồng trước`,
+          placement: "topRight",
+        });
+      }
     }
   };
   const onFinish = (values) => {
@@ -141,26 +158,20 @@ function Invoiceone() {
           onFinish={onFinish}
           // onFinishFailed={onFinishFailed}
         >
-          <Form.Item label="Khách trọ" name="userName" className="form-create">
-            <Select placeholder={userList.userName} disabled className="select-invoice">
-              <Select.Option key={userList.userName} value={userList.userName}>
-                {userList.userName}
-              </Select.Option>
-            </Select>
-          </Form.Item>
-          <Form.Item
-            label="Ngày tạo hóa đơn"
-            name="paymentDate"
-            className="form-create"
-          >
-            <DatePicker showTime format="YYYY-MM-DD HH:mm:ss" disabled />
-          </Form.Item>
           <div style={{ display: "flex" }}>
-            <Button type="primary" htmlType="submit">
+            <Button
+              type="primary"
+              htmlType="submit"
+              style={{ borderRadius: "8px" }}
+            >
               THÊM MỚI
             </Button>
             <div style={{ paddingLeft: "10px" }}>
-              <Button type="default" onClick={handleCancel}>
+              <Button
+                type="default"
+                onClick={handleCancel}
+                style={{ borderRadius: "8px" }}
+              >
                 HỦY BỎ
               </Button>
             </div>
@@ -1026,7 +1037,7 @@ function Invoiceone() {
                             paddingTop: "10px",
                             float: "right",
                             color: "white",
-                            paddingBottom:"5%"
+                            paddingBottom: "5%",
                           }}
                         >
                           {fakestate.total}đ

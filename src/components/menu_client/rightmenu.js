@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Menu, Grid, Tabs, Dropdown, Row, Col } from "antd";
+import { Menu, Grid, Tabs, Dropdown, Row, Col, notification } from "antd";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBell } from "@fortawesome/free-regular-svg-icons";
 import { faUserTag, faFileInvoiceDollar, faUserEdit, faLock, faSignOutAlt,faMapMarkedAlt } from "@fortawesome/free-solid-svg-icons";
-
+import { CheckCircleFilled } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 import Cookies from "js-cookie";
 
@@ -18,6 +18,11 @@ const handleLogOut = () => {
   Cookies.remove('roles');
   Cookies.remove('userName');
   Cookies.remove('id');
+   notification.success({
+     message: "Đăng xuất thành công",
+     icon: <CheckCircleFilled style={{ color: "#20da9b" }} />,
+     placement: "topRight",
+   });
 }
 
 const RightMenu = () => {

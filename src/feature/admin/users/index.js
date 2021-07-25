@@ -11,6 +11,7 @@ import {
   faEdit,
   faMapMarkerAlt,
   faSignOutAlt,
+  faUserEdit
 } from "@fortawesome/free-solid-svg-icons";
 import Footer from "./../../../components/footer";
 import { faSave } from "@fortawesome/free-regular-svg-icons";
@@ -51,7 +52,7 @@ function Users(props) {
   //spin
   const [isloadingUpdate, setIsloadingUpdate] = useState(false);
   //
-  const [rowEdit, setRowEdit] = useState({});
+  const [rowEdit, setRowEdit] = useState({ roles: [{ name: "" }] });
   const [rowEditcheck, setRowEditcheck] = useState({});
   const [rowEditcheckout, setRowEditcheckout] = useState({});
   //api
@@ -129,9 +130,9 @@ function Users(props) {
       const response = await usersApi.getAll();
       console.log("Fetch getAll users successfully: ", response.data);
       setIsusersList(response.data);
-      setselectus(response.data)
+      setselectus(response.data);
       setstatesea(response.data);
-      setstatesea12(response.data)
+      setstatesea12(response.data);
       // dataTable([...userList, response.data]);
       // console.log("response.data.roleIds[0] >>", response.data[0].roleIds);
       setIsloadingUpdate(false);
@@ -181,6 +182,16 @@ function Users(props) {
       )
     );
   }
+  var prop2332=[];
+  {
+    roleList.map((us)=>
+      us.name==="ROLE_USER"?(
+        prop2332.push(us.id)
+      ):(
+        <></>
+      )
+    )
+  }
   //form
   const [table, setTable] = useState([]);
   //create
@@ -188,7 +199,7 @@ function Users(props) {
     console.log("Value", values);
     const dataCreate = {
       ...values,
-      // roleIds: idSelected,
+      roleIds:prop2332
     };
     console.log("<<<", dataCreate);
     var myJSON = JSON.stringify(dataCreate);
@@ -248,6 +259,8 @@ function Users(props) {
       ...values,
       userName: rowEdit.userName,
       password: rowEdit.password,
+      roleIds: prop2332
+
     };
     console.log("<<<", dataUpdate);
     var myJSONupdate = JSON.stringify(dataUpdate);
@@ -387,7 +400,7 @@ function Users(props) {
   }
   const columns = [
     {
-      title: "Tài khoản",
+      title: "Tên tài khoản",
       dataIndex: "userName",
       key: "userName",
     },
@@ -415,11 +428,6 @@ function Users(props) {
       title: "Địa chỉ",
       dataIndex: "address",
       key: "address",
-    },
-    {
-      title: "Công việc",
-      dataIndex: "job",
-      key: "job",
     },
     {
       title: "Ngày checkin",
@@ -548,7 +556,7 @@ function Users(props) {
     setIsModalVisible_1(false);
   };
   const [statesea, setstatesea] = useState([]);
-    const [statesea12, setstatesea12] = useState([]);
+  const [statesea12, setstatesea12] = useState([]);
 
   const [check12, setcheck12] = useState({});
   const onSearch_1 = (value) => {
@@ -570,7 +578,7 @@ function Users(props) {
     }
   };
   const onSelect123 = (values) => {
-    console.log("value",values)
+    console.log("value", values);
     if (values === undefined) {
       setIsusersList(statesea12);
     } else {
@@ -618,7 +626,7 @@ function Users(props) {
             onFinish={onFinish_checkin}
             onFinishFailed={handleCancel_Checkin}
           >
-            <Form.Item
+            {/* <Form.Item
               label="Ngày checkin"
               name="checkInDate"
               className="form-checkindate"
@@ -628,8 +636,8 @@ function Users(props) {
                 format="YYYY-MM-DD HH:mm:ss"
                 className="datepicker-checkindate"
               />
-            </Form.Item>
-            <Form.Item
+            </Form.Item> */}
+            {/* <Form.Item
               label="Khách trọ"
               name="userName"
               value="userName"
@@ -640,7 +648,7 @@ function Users(props) {
                 disabled
                 className="input-username-223"
               />
-            </Form.Item>
+            </Form.Item> */}
             <Form.Item label="Phòng" name="roomNo" className="form-roomnous2">
               <Select className="select-roomNo12" style={{ width: 320 }}>
                 {roomList.map((roomid) => (
@@ -651,11 +659,19 @@ function Users(props) {
               </Select>
             </Form.Item>
             <div style={{ display: "flex" }}>
-              <Button type="primary" htmlType="submit">
+              <Button
+                type="primary"
+                htmlType="submit"
+                style={{ borderRadius: "8px" }}
+              >
                 CẬP NHẬT{" "}
               </Button>
               <div style={{ paddingLeft: "10px" }}>
-                <Button type="default" onClick={handleCancel_Checkin}>
+                <Button
+                  type="default"
+                  onClick={handleCancel_Checkin}
+                  style={{ borderRadius: "8px" }}
+                >
                   HỦY BỎ
                 </Button>
               </div>
@@ -694,7 +710,7 @@ function Users(props) {
             onFinish={onFinish_checkout}
             onFinishFailed={handleCancel_Checkin}
           >
-            <Form.Item
+            {/* <Form.Item
               label="Khách trọ"
               name="userName"
               value="userName"
@@ -705,8 +721,8 @@ function Users(props) {
                 placeholder={rowEditcheckout.userName}
                 disabled
               />
-            </Form.Item>
-            <Form.Item
+            </Form.Item> */}
+            {/* <Form.Item
               className="form-checkoutdate"
               label="Ngày checkout"
               name="checkOutDate"
@@ -716,13 +732,21 @@ function Users(props) {
                 showTime
                 format="YYYY-MM-DD HH:mm:ss"
               />
-            </Form.Item>
+            </Form.Item> */}
             <div style={{ display: "flex" }}>
-              <Button type="primary" htmlType="submit">
+              <Button
+                type="primary"
+                htmlType="submit"
+                style={{ borderRadius: "8px" }}
+              >
                 CẬP NHẬT{" "}
               </Button>
               <div style={{ paddingLeft: "10px" }}>
-                <Button type="default" onClick={handleCancel_Checkout}>
+                <Button
+                  type="default"
+                  onClick={handleCancel_Checkout}
+                  style={{ borderRadius: "8px" }}
+                >
                   HỦY BỎ
                 </Button>
               </div>
@@ -757,110 +781,147 @@ function Users(props) {
       >
         <Spin spinning={isloadingUpdate} size="large">
           <Form initialValues={{ remember: true }} onFinish={onFinish_edit}>
-            <div style={{ display: "flex", width: "100%" }}>
-              <Form.Item
-                label="Tài khoản"
-                name="userName"
-                value="userName"
-                className="form-userName"
-              >
-                <Input
-                  className="input-userName12"
-                  placeholder={rowEdit.userName}
-                  disabled
-                />
-              </Form.Item>
-              <div className="element-btn">
-                <Button
-                  className="btn-existed"
-                  onClick={() => fetchcheckusername()}
+            {rowEdit.roles[0].name === "ROLE_ADMIN" ? (
+              <div style={{ display: "block", paddingBottom: "20px" }}>
+                <div
+                  style={{
+                    paddingBottom: "10px",
+                    fontSize: "35px",
+                    fontFamily: "'Festive', cursive",
+                    display: "flex",
+                    color: "#708090",
+                    fontWeight: "bold",
+                  }}
                 >
-                  Kiểm tra trùng
-                </Button>
+                  Vui long bấm vào icon chuyển tới trang thông tin cá nhân
+                </div>
+                <div>
+                  <Link to="/info">
+                    <FontAwesomeIcon
+                      icon={faUserEdit}
+                      size="3x"
+                      color="#8FBC8F"
+                    />
+                  </Link>
+                </div>
               </div>
-            </div>
-            <Form.Item
-              label="Mật khẩu"
-              name="password"
-              className="form-password"
-            >
-              <Input.Password
-                placeholder={rowEdit.password}
-                disabled
-                className="input-password12"
-              />
-            </Form.Item>
-            <Form.Item label="Email" name="email" className="form-email">
-              <Input placeholder={rowEdit.email} className="input-email12" />
-            </Form.Item>
-            <Form.Item
-              label="Họ và tên"
-              name="fullName"
-              className="form-fullName"
-            >
-              <Input
-                placeholder={rowEdit.fullName}
-                className="input-fullName12"
-              />
-            </Form.Item>
-            <Form.Item label="Giới tính" name="sex" className="form1-sex1">
-              <Radio.Group className="radio-sex12">
-                <Radio value="female">Female</Radio>
-                <Radio value="male">Male</Radio>
-              </Radio.Group>
-            </Form.Item>
-            <Form.Item label="Công việc" name="job" className="form-job">
-              <Input placeholder={rowEdit.job} className="input-job12" />
-            </Form.Item>
-            <Form.Item label="Địa chỉ" name="address" className="form-address">
-              <Input
-                placeholder={rowEdit.address}
-                className="input-address12"
-              />
-            </Form.Item>
-            <Form.Item label="Số ĐT" name="phoneNo" className="form-phoneno">
-              <Input
-                placeholder={rowEdit.phoneNo}
-                className="input-phoneno12"
-              />
-            </Form.Item>
-            <Form.Item label="Quyền" name="roleIds" className="form-roleid">
-              <Select
-                onChange={handleChange}
-                allowClear
-                className="select-roleid12"
-                style={{ width: 320 }}
-              >
-                {propsselect}
-              </Select>
-            </Form.Item>
-            <Form.Item label="Hình" className="form-img-us">
-              <Upload
-                {...propsimg}
-                action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
-                listType="picture"
-                defaultFileList={[...fileList]}
-                onPreview={handlePreview}
-                onChange={handleChangeimg}
-                fileList={state.fileList}
-              >
-                {state?.fileList.length < 1 && (
-                  <Button
-                    className="btn-updae-us12"
-                    onClick={uploadimg}
-                    icon={<UploadOutlined />}
+            ) : (
+              <div>
+                {/* <div style={{ display: "flex", width: "100%" }}>
+                  <Form.Item
+                    label="Tên tài khoản"
+                    name="userName"
+                    value="userName"
+                    className="form-userName"
                   >
-                    Upload
-                  </Button>
-                )}
-              </Upload>
-            </Form.Item>
+                    <Input
+                      className="input-userName12"
+                      placeholder={rowEdit.userName}
+                      disabled
+                    />
+                  </Form.Item>
+                  <div className="element-btn">
+                    <Button
+                      className="btn-existed"
+                      onClick={() => fetchcheckusername()}
+                    >
+                      Kiểm tra
+                    </Button>
+                  </div>
+                </div> */}
+                <Form.Item label="Email" name="email" className="form-email">
+                  <Input
+                    placeholder={rowEdit.email}
+                    className="input-email12"
+                  />
+                </Form.Item>
+                <Form.Item
+                  label="Họ và tên"
+                  name="fullName"
+                  className="form-fullName"
+                >
+                  <Input
+                    placeholder={rowEdit.fullName}
+                    className="input-fullName12"
+                  />
+                </Form.Item>
+                <Form.Item label="Giới tính" name="sex" className="form1-sex1">
+                  <Radio.Group className="radio-sex12">
+                    <Radio value="Nam">Nam</Radio>
+                    <Radio value="Nữ">Nữ</Radio>
+                  </Radio.Group>
+                </Form.Item>
+                <Form.Item label="Công việc" name="job" className="form-job">
+                  <Input placeholder={rowEdit.job} className="input-job12" />
+                </Form.Item>
+                <Form.Item
+                  label="Địa chỉ"
+                  name="address"
+                  className="form-address"
+                >
+                  <Input
+                    placeholder={rowEdit.address}
+                    className="input-address12"
+                  />
+                </Form.Item>
+                <Form.Item
+                  label="Số ĐT"
+                  name="phoneNo"
+                  className="form-phoneno"
+                >
+                  <Input
+                    placeholder={rowEdit.phoneNo}
+                    className="input-phoneno12"
+                  />
+                </Form.Item>
+                {/* <Form.Item label="Quyền" name="roleIds" className="form-roleid">
+                  <Select
+                    onChange={handleChange}
+                    allowClear
+                    className="select-roleid12"
+                    style={{ width: 320 }}
+                  >
+                    {propsselect}
+                  </Select>
+                </Form.Item> */}
+                <Form.Item label="Hình" className="form-img-us">
+                  <Upload
+                    {...propsimg}
+                    action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+                    listType="picture"
+                    defaultFileList={[...fileList]}
+                    onPreview={handlePreview}
+                    onChange={handleChangeimg}
+                    fileList={state.fileList}
+                  >
+                    {state?.fileList.length < 1 && (
+                      <Button
+                        className="btn-updae-us12"
+                        onClick={uploadimg}
+                        icon={<UploadOutlined />}
+                      >
+                        Upload
+                      </Button>
+                    )}
+                  </Upload>
+                </Form.Item>
+              </div>
+            )}
+
             <div style={{ display: "flex" }}>
-              <Button type="primary" htmlType="submit">
+              <Button
+                type="primary"
+                htmlType="submit"
+                style={{ borderRadius: "8px" }}
+              >
                 CHỈNH SỬA{" "}
               </Button>
               <div style={{ paddingLeft: "10px" }}>
-                <Button type="default" onClick={handleCancel_1}>
+                <Button
+                  type="default"
+                  onClick={handleCancel_1}
+                  style={{ borderRadius: "8px" }}
+                >
                   HỦY BỎ
                 </Button>
               </div>
@@ -904,9 +965,9 @@ function Users(props) {
                   </Select>
                 </div>
                 <div className="btn-right-user">
-                  <button className="detailed-btn-user" onClick={showModal}>
+                  {/* <button className="detailed-btn-user" onClick={showModal}>
                     THÊM MỚI
-                  </button>
+                  </button> */}
                   <Modal
                     title={
                       <div style={{ display: "flex" }}>
@@ -942,7 +1003,7 @@ function Users(props) {
                     >
                       <div style={{ display: "flex", width: "100%" }}>
                         <Form.Item
-                          label="Tài khoản"
+                          label="Tên tài khoản"
                           name="userName"
                           value="userName"
                           className="form-userName"
@@ -954,17 +1015,10 @@ function Users(props) {
                             className="btn-existed"
                             onClick={() => fetchcheckusername()}
                           >
-                            Kiểm tra trùng
+                            Kiểm tra
                           </Button>
                         </div>
                       </div>
-                      <Form.Item
-                        label="Mật khẩu"
-                        name="password"
-                        className="form-password"
-                      >
-                        <Input.Password disabled className="input-password12" />
-                      </Form.Item>
                       <Form.Item
                         label="Email"
                         name="email"
@@ -985,8 +1039,8 @@ function Users(props) {
                         className="form1-sex1"
                       >
                         <Radio.Group className="radio-sex12">
-                          <Radio value="female">Female</Radio>
-                          <Radio value="male">Male</Radio>
+                          <Radio value="female">Nữ</Radio>
+                          <Radio value="male">Nam</Radio>
                         </Radio.Group>
                       </Form.Item>
                       <Form.Item
@@ -1010,20 +1064,6 @@ function Users(props) {
                       >
                         <Input className="input-phoneno12" />
                       </Form.Item>
-                      <Form.Item
-                        label="Quyền"
-                        name="roleIds"
-                        className="form-roleid"
-                      >
-                        <Select
-                          onChange={handleChange}
-                          allowClear
-                          className="select-roleid12"
-                          style={{ width: 320 }}
-                        >
-                          {propsselect}
-                        </Select>
-                      </Form.Item>
                       <Form.Item label="Hình" className="form-img-us">
                         <Upload
                           {...propsimg}
@@ -1046,11 +1086,19 @@ function Users(props) {
                         </Upload>
                       </Form.Item>
                       <div style={{ display: "flex" }}>
-                        <Button type="primary" htmlType="submit">
+                        <Button
+                          type="primary"
+                          htmlType="submit"
+                          style={{ borderRadius: "8px" }}
+                        >
                           THÊM MỚI{" "}
                         </Button>
                         <div style={{ paddingLeft: "10px" }}>
-                          <Button type="default" onClick={handleCancel}>
+                          <Button
+                            type="default"
+                            onClick={handleCancel}
+                            style={{ borderRadius: "8px" }}
+                          >
                             HỦY BỎ
                           </Button>
                         </div>

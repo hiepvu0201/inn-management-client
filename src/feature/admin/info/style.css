@@ -52,6 +52,7 @@
   box-shadow: 0 2px 3px 2px rgb(0 0 0 / 3%);
   text-align: center;
   padding-top: 30px;
+  border-radius: 8px;
 }
 .innercolRight-us {
   width: 95%;
@@ -63,9 +64,14 @@
   border-bottom: 1px solid #eef1f5;
   padding-left: 5px;
   padding-bottom: 2%;
+  border-radius: 8px;
 }
 .iconUser {
   width: 3%;
+}
+.input-phoneno{
+  width:80%;
+  border-radius:8px;
 }
 .titleUser {
   width: 97%;
@@ -165,22 +171,26 @@
 }
 .input-email{
   margin-left: 50px;
-  width:20vw;
+  width:70%;
+  border-radius: 8px;
 }
 .input-fullName{
-  margin-left:25px;
-  width:80%;
+  margin-left:23px;
+  width:75%;
+  border-radius: 8px;
 }
 .radio-sex{
   margin-left:28px;
 }
 .input-job{
   margin-left:20px;
-  width:80%;
+  width:75%;
+  border-radius: 8px;
 }
 .input-address{
   margin-left:40px;
   width: 20vw;
+  border-radius:8px;
 }
 .select-roleid{
   margin-left: 40px;
@@ -191,7 +201,8 @@
   }
   .input-idNo{
     margin-left:43px;
-    width:80%;
+    width:72%;
+    border-radius: 8px;
   }
 @media only screen and (max-width: 1026px) {
   .rowfirst-rightus{

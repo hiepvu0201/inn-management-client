@@ -1,0 +1,38 @@
+.please{
+    font-family: "Roboto Mono", monospace;
+    font-size: 45px;
+    position: relative;
+    background-color: white;
+    top: -150vh;
+}
+.notfound{
+    font-family: "Dancing Script", cursive;
+    font-size: 40px;
+    position: relative;
+    background-color: white;
+    top: -145vh;
+}
+.btn-notfound{
+    position: relative;
+    top: -140vh;
+    background-color: rgb(57, 172, 48);
+    border-radius: 8px;
+    font-family: "Yomogi, cursive";
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+}
+            
+@media only screen and (max-width: 1026px) {
+    .please{
+        position: relative;
+        top: -130vh;
+    }
+    .notfound{
+        top: -125vh;
+    }
+    .btn-notfound{
+        top: -120vh;
+    }
+}

@@ -38,7 +38,7 @@
     border-style: solid;
     height:auto;
     margin-right:20px;
-    border-radius:20px;
+    border-radius:8px;
 }
 .detailed-btn-noti:hover{
     background-color: #007c7e;
@@ -49,6 +49,14 @@
 }
 .input-name-info{
     margin-left: 10px;
+}
+.input-description-info{
+    width:60%;
+    border-radius: 8px;
+}
+.input-name-info{
+    width:59%;
+    border-radius: 8px;
 }
 @media only screen and (max-width: 1026px) {
   .topic-left-noti{

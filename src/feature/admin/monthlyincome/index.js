@@ -245,39 +245,55 @@ function Monthlyincome(props) {
         <Spin spinning={isloadingUpdate} size="large">
           <Form initialValues={{ remember: true }} onFinish={onFinish_edit}>
             <Form.Item label="Tháng" name="month" className="form-monthIncome">
-                <Select style={{ width: 120 }} className="input-month" placeholder={rowEdit.month}>
-                  <Option value="1">Tháng 1</Option>
-                  <Option value="2">Tháng 2</Option>
-                  <Option value="3">Tháng 3</Option>
-                  <Option value="4">Tháng 4</Option>
-                  <Option value="5">Tháng 5</Option>
-                  <Option value="6">Tháng 6</Option>
-                  <Option value="7">Tháng 7</Option>
-                  <Option value="8">Tháng 8</Option>
-                  <Option value="9">Tháng 9</Option>
-                  <Option value="10">Tháng 10</Option>
-                  <Option value="11">Tháng 11</Option>
-                  <Option value="12">Tháng 12</Option>
-                </Select>
+              <Select
+                style={{ width: 255 }}
+                className="input-month"
+                placeholder={rowEdit.month}
+              >
+                <Option value="1">Tháng 1</Option>
+                <Option value="2">Tháng 2</Option>
+                <Option value="3">Tháng 3</Option>
+                <Option value="4">Tháng 4</Option>
+                <Option value="5">Tháng 5</Option>
+                <Option value="6">Tháng 6</Option>
+                <Option value="7">Tháng 7</Option>
+                <Option value="8">Tháng 8</Option>
+                <Option value="9">Tháng 9</Option>
+                <Option value="10">Tháng 10</Option>
+                <Option value="11">Tháng 11</Option>
+                <Option value="12">Tháng 12</Option>
+              </Select>
             </Form.Item>
             <Form.Item label="Số tiền thu" name="earn" className="earn-income">
-                <Input className="input-earnIncome" placeholder={rowEdit.earn} />
+              <Input className="input-earnIncome" placeholder={rowEdit.earn} />
             </Form.Item>
             <Form.Item label="Chi nhánh" name="branchId" className="branchid-2">
-                <Select className="select-branchid" placeholder={rowEdit.branchId}>
-                  {branchList.map((branchid) => (
-                    <Select.Option key={branchid.id} value={branchid.id}>
-                      {branchid.location}
-                    </Select.Option>
-                  ))}
-                </Select>
+              <Select
+                className="select-branchid"
+                placeholder={rowEdit.branchId}
+                style={{ width: 250 }}
+              >
+                {branchList.map((branchid) => (
+                  <Select.Option key={branchid.id} value={branchid.id}>
+                    {branchid.location}
+                  </Select.Option>
+                ))}
+              </Select>
             </Form.Item>
             <div style={{ display: "flex" }}>
-              <Button type="primary" htmlType="submit">
+              <Button
+                type="primary"
+                htmlType="submit"
+                style={{ borderRadius: "8px" }}
+              >
                 CHỈNH SỬA
               </Button>
               <div style={{ paddingLeft: "10px" }}>
-                <Button type="default" onClick={handleCancel_1}>
+                <Button
+                  type="default"
+                  onClick={handleCancel_1}
+                  style={{ borderRadius: "8px" }}
+                >
                   HỦY BỎ
                 </Button>
               </div>
@@ -347,50 +363,58 @@ function Monthlyincome(props) {
                       name="month"
                       className="form-monthIncome"
                     >
-                        <Select style={{ width: 120 }} className="input-month">
-                          <Option value="1">Tháng 1</Option>
-                          <Option value="2">Tháng 2</Option>
-                          <Option value="3">Tháng 3</Option>
-                          <Option value="4">Tháng 4</Option>
-                          <Option value="5">Tháng 5</Option>
-                          <Option value="6">Tháng 6</Option>
-                          <Option value="7">Tháng 7</Option>
-                          <Option value="8">Tháng 8</Option>
-                          <Option value="9">Tháng 9</Option>
-                          <Option value="10">Tháng 10</Option>
-                          <Option value="11">Tháng 11</Option>
-                          <Option value="12">Tháng 12</Option>
-                        </Select>
+                      <Select style={{ width: 255 }} className="input-month">
+                        <Option value="1">Tháng 1</Option>
+                        <Option value="2">Tháng 2</Option>
+                        <Option value="3">Tháng 3</Option>
+                        <Option value="4">Tháng 4</Option>
+                        <Option value="5">Tháng 5</Option>
+                        <Option value="6">Tháng 6</Option>
+                        <Option value="7">Tháng 7</Option>
+                        <Option value="8">Tháng 8</Option>
+                        <Option value="9">Tháng 9</Option>
+                        <Option value="10">Tháng 10</Option>
+                        <Option value="11">Tháng 11</Option>
+                        <Option value="12">Tháng 12</Option>
+                      </Select>
                     </Form.Item>
                     <Form.Item
                       label="Số tiền thu"
                       name="earn"
                       className="earn-income"
                     >
-                        <Input className="input-earnIncome" />
+                      <Input className="input-earnIncome" />
                     </Form.Item>
                     <Form.Item
                       label="Chi nhánh"
                       name="branchId"
                       className="branchid-2"
                     >
-                        <Select style={{width:250}} className="select-branchid">
-                          {branchList.map((branchid) => (
-                            <Select.Option
-                              key={branchid.id}
-                              value={branchid.id}
-                            >
-                              {branchid.description}
-                            </Select.Option>
-                          ))}
-                        </Select>
+                      <Select
+                        style={{ width: 250 }}
+                        className="select-branchid"
+                      >
+                        {branchList.map((branchid) => (
+                          <Select.Option key={branchid.id} value={branchid.id}>
+                            {branchid.description}
+                          </Select.Option>
+                        ))}
+                      </Select>
                     </Form.Item>
                     <div style={{ display: "flex" }}>
-                      <Button type="primary" htmlType="submit">
+                      <Button
+                        type="primary"
+                        htmlType="submit"
+                        style={{ borderRadius: "8px" }}
+                      >
                         THÊM MỚI
                       </Button>
                       <div style={{ paddingLeft: "10px" }}>
-                        <Button type="default" onClick={handleCancel}>
+                        <Button
+                          type="default"
+                          onClick={handleCancel}
+                          style={{ borderRadius: "8px" }}
+                        >
                           HỦY BỎ
                         </Button>
                       </div>
@@ -426,10 +450,10 @@ function Monthlyincome(props) {
             fontSize: "12px",
             marginTop: "40px",
             textAlign: "left",
-            paddingTop:"15vh"
+            paddingTop: "15vh",
           }}
         >
-          <Footer/>
+          <Footer />
         </div>
       </div>
     </div>

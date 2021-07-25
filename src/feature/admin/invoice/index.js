@@ -106,7 +106,6 @@ function Invoices() {
       console.log("Download many file successfully", response);
       const urldown = `https://inn-server.herokuapp.com/api/v1/invoices/download/`;
       window.open(urldown, "_blank");
-      // setdownsingle(response.data);
     } catch (error) {
       console.log("Failed to download one file", error.response);
     }
@@ -343,7 +342,6 @@ function Invoices() {
                     <Form
                       initialValues={{ remember: true }}
                       onFinish={onFinish}
-                      // onFinishFailed={onFinishFailed}
                     >
                       <Form.Item
                         label="Khách trọ"
@@ -352,6 +350,7 @@ function Invoices() {
                       >
                         <Select
                           onChange={handleChange}
+                          style={{ width: 300 }}
                           className="select-us-invoices"
                         >
                           {usersList.map((ownerid) =>
@@ -368,23 +367,20 @@ function Invoices() {
                           )}
                         </Select>
                       </Form.Item>
-                      <Form.Item
-                        label="Khách trọ"
-                        name="paymentDate"
-                        className="item-paymentDate"
-                      >
-                        <DatePicker
-                          showTime
-                          format="YYYY-MM-DD HH:mm:ss"
-                          disabled
-                        />
-                      </Form.Item>
                       <div style={{ display: "flex" }}>
-                        <Button type="primary" htmlType="submit">
+                        <Button
+                          type="primary"
+                          htmlType="submit"
+                          style={{ borderRadius: "8px" }}
+                        >
                           THÊM MỚI
                         </Button>
                         <div style={{ paddingLeft: "10px" }}>
-                          <Button type="default" onClick={handleCancel}>
+                          <Button
+                            type="default"
+                            onClick={handleCancel}
+                            style={{ borderRadius: "8px" }}
+                          >
                             HỦY BỎ
                           </Button>
                         </div>
@@ -420,10 +416,10 @@ function Invoices() {
             fontSize: "12px",
             marginTop: "40px",
             textAlign: "left",
-            paddingTop:"15vh"
+            paddingTop: "15vh",
           }}
         >
-          <Footer/>
+          <Footer />
         </div>
       </div>
     </div>

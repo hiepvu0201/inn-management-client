@@ -1,0 +1,229 @@
+.height-cooperation {
+  height: 100px;
+}
+.coopXIII {
+  width: 100%;
+  height: auto;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  display: flex;
+  justify-content: center;
+}
+.topiccoop {
+  font-size: 30px;
+  padding-top: 10px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.topiccoop-2 {
+  font-size: 30px;
+  padding-top: 10px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.topiccoop-3 {
+  font-size: 30px;
+  padding-top: 10px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.content-coop-XIII {
+  position: relative;
+  bottom: 10px;
+}
+.circle-coop {
+  width: 3rem;
+  height: 3rem;
+  background-color: #007c7e;
+  left: 25px;
+  bottom: 15px;
+  position: relative;
+  border-radius: 50%;
+}
+.circle-coop-2 {
+  width: 3rem;
+  height: 3rem;
+  background-color: #007c7e;
+  left: 25px;
+  bottom: 15px;
+  position: relative;
+  border-radius: 50%;
+}
+.circle-coop-3 {
+  width: 3rem;
+  height: 3rem;
+  background-color: #007c7e;
+  left: 25px;
+  bottom: 15px;
+  position: relative;
+  border-radius: 50%;
+}
+.content2-circle-coop {
+  font-size: 15px;
+  width: 80%;
+  height: auto;
+  font-family: "PT Sans, sans-serif";
+  padding-top: 5px;
+}
+.content2-circle-coop-2 {
+  font-size: 15px;
+  width: 80%;
+  height: auto;
+  font-family: "PT Sans, sans-serif";
+  padding-top: 5px;
+}
+.content2-circle-coop-3 {
+  font-size: 15px;
+  width: 80%;
+  height: auto;
+  font-family: "PT Sans, sans-serif";
+  padding-top: 5px;
+}
+.icon-hover-coop {
+  border-radius: 50%;
+  background-color: white;
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon-hover-coop-2 {
+  border-radius: 50%;
+  background-color: #007c7e;
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title-coop {
+  width: 90%;
+  height: auto;
+  font-size: 18px;
+  color: white;
+  font-weight: bold;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-family: "PT Sans", sans-serif;
+}
+.title-coop-2 {
+  width: 90%;
+  height: auto;
+  font-size: 18px;
+  color: #007c7e;
+  font-weight: bold;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-family: "PT Sans", sans-serif;
+}
+.detailed-title-coop {
+  width: 90%;
+  height: auto;
+  font-size: 15px;
+  color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-family: "PT Sans", sans-serif;
+}
+.detailed-title-coop-2 {
+  width: 90%;
+  height: auto;
+  font-size: 15px;
+  color: black;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-family: "PT Sans", sans-serif;
+}
+.boss-two-coop {
+  width: 100%;
+  height: auto;
+  background-color: #efefef;
+}
+.boss-three-coop {
+  width: 100%;
+  height: auto;
+  background-color: white;
+}
+.max-width-coop {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+.min-width-coop {
+  width: 80%;
+  height: auto;
+}
+.btn-signup-coop {
+  width: 20%;
+  height: 40px;
+  font-size: 14px;
+  font-family: "PT Sans", sans-serif;
+  background-color: #007c7e;
+  border-radius: 10px;
+  color: white;
+}
+.btn-signup-coop:hover {
+  background-color: #eb2f5b;
+}
+.box-last-coop {
+  width: 80%;
+  height: 230px;
+  background-color: #007c7e;
+  display: "flex";
+  justify-content: center;
+  border-radius: 8px;
+}
+.icon-hover-coop-last {
+  border-radius: 50%;
+  background-color: white;
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.topic-com-coop {
+  width: 80%;
+  height: auto;
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+  font-family: "PT Sans", sans-serif;
+}
+.content-com-coop {
+  width: 80%;
+  height: auto;
+  font-size: 15px;
+  color: white;
+  font-family: "PT Sans", sans-serif;
+}
+.row-coop{
+  padding-top: 20px;
+    padding-bottom: 20px;
+}
+@media only screen and (max-width: 1026px) {
+  .circle-coop{
+    left: 45px;
+  }
+  .btn-signup-coop{
+        width: 30%;
+  }
+  .row-coop{
+    padding-left: 10vw;
+    width: 100vw;
+  }
+}

@@ -26,7 +26,7 @@ import {
 } from "antd";
 import Footer from "./../../../components/footer";
 import floorApi from "./../../../api/floorApi";
-import branchesApi from "./../../../api/branchesApi"
+import branchesApi from "./../../../api/branchesApi";
 import { Link } from "react-router-dom";
 
 function Floor(props) {
@@ -37,13 +37,13 @@ function Floor(props) {
   const [floorList, setFloorList] = useState([]);
   const [rowEdit, setRowedit] = useState({});
   const [branchesList, setbranchesList] = useState([]);
-  const [currentState, setcurrentState] = useState([])
+  const [currentState, setcurrentState] = useState([]);
   const fetchFloorList = async () => {
     try {
       const response = await floorApi.getAll();
       console.log("Fetch floor successfully: ", response.data);
       setFloorList(response.data);
-      setcurrentState(response.data)
+      setcurrentState(response.data);
       setIsloadingUpdate(false);
       setIsModalVisible_1(false);
     } catch (error) {
@@ -95,10 +95,7 @@ function Floor(props) {
       const ChangeLocaiton = async () => {
         try {
           const response = await floorApi.getLocation(value);
-          console.log(
-            "Fetch FLOOR BY BRANCH successfully: ",
-            response.data
-          );
+          console.log("Fetch FLOOR BY BRANCH successfully: ", response.data);
           // setIsstateInput(response.data);
           setFloorList(response.data);
         } catch (error) {
@@ -152,7 +149,7 @@ function Floor(props) {
   }
   const columns = [
     {
-      title: "Số Lầu",
+      title: "Lầu",
       dataIndex: "numberOfFloors",
       key: "numberOfFloors",
     },
@@ -204,9 +201,9 @@ function Floor(props) {
   const handleCancel = () => {
     setIsModalVisible(false);
   };
-   const handleCance_1 = () => {
-     setIsModalVisible_1(false);
-   };
+  const handleCance_1 = () => {
+    setIsModalVisible_1(false);
+  };
   const [isModalVisible_1, setIsModalVisible_1] = useState(false);
 
   const showModal_1 = (values) => {
@@ -255,10 +252,13 @@ function Floor(props) {
               name="numberOfFloors"
               className="roles-us2"
             >
-              <Input placeholder={rowEdit.numberOfFloors} className="input-flo" />
+              <Input
+                placeholder={rowEdit.numberOfFloors}
+                className="input-flo"
+              />
             </Form.Item>
             <Form.Item label="Chi nhánh" name="branchId" className="roles-us2">
-              <Select>
+              <Select style={{width:295,marginLeft:"15px"}}>
                 {branchesList.map((branchid) => (
                   <Select.Option key={branchid.id} value={branchid.id}>
                     {branchid.description}
@@ -267,11 +267,19 @@ function Floor(props) {
               </Select>
             </Form.Item>
             <div style={{ display: "flex" }}>
-              <Button type="primary" htmlType="submit">
+              <Button
+                type="primary"
+                htmlType="submit"
+                style={{ borderRadius: "8px" }}
+              >
                 LƯU LẠI
               </Button>
               <div style={{ paddingLeft: "10px" }}>
-                <Button type="default" onClick={handleCancel_1}>
+                <Button
+                  type="default"
+                  onClick={handleCancel_1}
+                  style={{ borderRadius: "8px" }}
+                >
                   HỦY BỎ
                 </Button>
               </div>
@@ -358,7 +366,7 @@ function Floor(props) {
                     onFinishFailed={onFinishFailed}
                   >
                     <Form.Item
-                      label="Số lầu"
+                      label="Lầu"
                       name="numberOfFloors"
                       className="roles-us2"
                     >
@@ -369,7 +377,7 @@ function Floor(props) {
                       name="branchId"
                       className="roles-us2"
                     >
-                      <Select>
+                      <Select style={{width:300}}>
                         {branchesList.map((branchid) => (
                           <Select.Option key={branchid.id} value={branchid.id}>
                             {branchid.description}
@@ -379,11 +387,19 @@ function Floor(props) {
                     </Form.Item>
                     {/* <Form.Item></Form.Item> */}
                     <div style={{ display: "flex" }}>
-                      <Button type="primary" htmlType="submit">
+                      <Button
+                        type="primary"
+                        htmlType="submit"
+                        style={{ borderRadius: "8px" }}
+                      >
                         THÊM MỚI
                       </Button>
                       <div style={{ paddingLeft: "10px" }}>
-                        <Button type="default" onClick={handleCancel}>
+                        <Button
+                          type="default"
+                          onClick={handleCancel}
+                          style={{ borderRadius: "8px" }}
+                        >
                           HỦY BỎ
                         </Button>
                       </div>
@@ -419,10 +435,10 @@ function Floor(props) {
               fontSize: "12px",
               marginTop: "40px",
               textAlign: "left",
-              paddingTop:"15vh"
+              paddingTop: "15vh",
             }}
           >
-            <Footer/>
+            <Footer />
           </div>
         </div>
       </div>

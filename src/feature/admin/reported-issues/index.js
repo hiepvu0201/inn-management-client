@@ -27,7 +27,8 @@ import {
 } from "antd";
 import Footer from "./../../../components/footer";
 import usersApi from "../../../api/usersApi";
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import Cookies from "js-cookie";
 import ReportedissuesApi from "../../../api/reportedissuesApi";
 const { Option } = Select;
 
@@ -70,6 +71,7 @@ function Reportedissues(props) {
   const onFinish = (values) => {
     const create_value = {
       ...values,
+      reporterId: Cookies.get("id"),
       // "createdDate": values["createdDate"].format("YYYY-MM-DD HH:mm:ss"),
       // "solvedDate": values["solvedDate"].format("YYYY-MM-DD HH:mm:ss"),
     };
@@ -95,7 +97,6 @@ function Reportedissues(props) {
     try {
       const response = await ReportedissuesApi.updateReportedissues(values);
       console.log("Fetch update reported-issues successfully", response);
-      console.log("edit data", values);
       fetchReportedissuesList();
     } catch (error) {
       console.log("Failed to update rules", error);
@@ -119,7 +120,11 @@ function Reportedissues(props) {
   //form_edit
   const onFinish_edit = (values) => {
     console.log("Success", values);
-    const data_update = { id: rowEdit.id, data: values };
+    const editvalue={
+      ...values,
+            reporterId: Cookies.get("id"),
+    }
+    const data_update = { id: rowEdit.id, data: editvalue };
     fetchUpdateReportedissues(data_update);
   };
   //select
@@ -264,30 +269,22 @@ function Reportedissues(props) {
               className="form-status-report"
               placeholder={rowEdit.status}
             >
-              <Select style={{ width: 295 }} className="select-status-report">
-                <Option value="Chưa hoàn thành">Chưa hoàn thành</Option>
-                <Option value="Đã hoàn thành">Đã hoàn thành</Option>
-              </Select>
-            </Form.Item>
-            <Form.Item
-              label="Người báo cáo"
-              name="reporterId"
-              className="name-report-issue"
-            >
-              <Select className="select-report-issue">
-                {usersList.map((reporterid) => (
-                  <Select.Option key={reporterid.id} value={reporterid.id}>
-                    {reporterid.userName}
-                  </Select.Option>
-                ))}
-              </Select>
+              <Input  className="select-status-report"/>
             </Form.Item>
             <div style={{ display: "flex" }}>
-              <Button type="primary" htmlType="submit">
+              <Button
+                type="primary"
+                htmlType="submit"
+                style={{ borderRadius: "8px" }}
+              >
                 CHỈNH SỬA{" "}
               </Button>
               <div style={{ paddingLeft: "10px" }}>
-                <Button type="default" onClick={handleCancel_1}>
+                <Button
+                  type="default"
+                  onClick={handleCancel_1}
+                  style={{ borderRadius: "8px" }}
+                >
                   HỦY BỎ
                 </Button>
               </div>
@@ -379,38 +376,22 @@ function Reportedissues(props) {
                         name="status"
                         className="form-status-report"
                       >
-                      <Input className="select-status-report"/>
-                       
+                        <Input className="select-status-report" />
                       </Form.Item>
-
-                      <Form.Item
-                        label="Người báo cáo"
-                        name="reporterId"
-                        className="name-report-issue"
-                      >
-                        <Select className="select-report-issue">
-                          {usersList.map((reporterid) => 
-                            reporterid.roles[0].name==="ROLE_ADMIN"?(
-                               <Select.Option
-                              key={reporterid.id}
-                              value={reporterid.id}
-                            >
-                              {reporterid.userName}
-                            </Select.Option>
-                            ):(
-                              <>NULL</>
-                            )
-                  
-                          )}
-                        </Select>
-                      </Form.Item>
-                      {/* <Form.Item></Form.Item> */}
                       <div className="btnbtncreatereport">
-                        <Button type="primary" htmlType="submit">
+                        <Button
+                          type="primary"
+                          htmlType="submit"
+                          style={{ borderRadius: "8px" }}
+                        >
                           THÊM MỚI
                         </Button>
                         <div style={{ paddingLeft: "10px" }}>
-                          <Button type="default" onClick={handleCancel}>
+                          <Button
+                            type="default"
+                            onClick={handleCancel}
+                            style={{ borderRadius: "8px" }}
+                          >
                             HỦY BỎ
                           </Button>
                         </div>
@@ -442,10 +423,10 @@ function Reportedissues(props) {
             fontSize: "12px",
             marginTop: "40px",
             textAlign: "left",
-            paddingTop:"15vh"
+            paddingTop: "15vh",
           }}
         >
-          <Footer/>
+          <Footer />
         </div>
       </div>
     </div>

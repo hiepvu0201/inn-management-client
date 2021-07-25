@@ -13,7 +13,7 @@ import {
   faLinkedinIn,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import {Link} from "react-router-dom"
 function Footer() {
   return (
     <div>
@@ -155,7 +155,9 @@ function Footer() {
                   >
                     Website:
                   </strong>
-                  <div className="email">https://inn-app.herokuapp.com/login</div>
+                  <div className="email">
+                    https://inn-app.herokuapp.com/login
+                  </div>
                 </div>
                 <div
                   style={{
@@ -184,13 +186,30 @@ function Footer() {
                   <div className="char"></div>
                   <div className="content-title2">Liên kết</div>
                 </div>
-                <div className="href-page">Trang Chủ</div>
-                <div className="href-page">Hợp Tác</div>
-                <div className="href-page">Khuyến Mại</div>
-                <div className="href-page">Tin Tức</div>
-                <div className="href-page">Liên Hệ</div>
-                <div className="href-page">Điều Khoản Sử Dụng</div>
-                <div className="href-page">Chính Sách Bảo Mật</div>
+                <Link to="/client">
+                  <div className="href-page">Trang Chủ</div>
+                </Link>
+                <Link to="/roomclient">
+                  <div className="href-page">Phòng trọ</div>
+                </Link>
+                <Link to="/mapclient">
+                  <div className="href-page">Vị trí chi nhánh trọ</div>
+                </Link>
+                <Link to="/price">
+                  <div className="href-page">Bảng giá</div>
+                </Link>
+                <Link to="/cooperation">
+                  <div className="href-page">Hợp tác</div>
+                </Link>
+                <Link to="/contact">
+                  <div className="href-page">Liên Hệ</div>
+                </Link>
+                <Link to="/term">
+                  <div className="href-page">Điều Khoản Sử Dụng</div>
+                </Link>
+                <Link to="/privacy">
+                  <div className="href-page">Chính Sách Bảo Mật</div>
+                </Link>
               </div>
             </Col>
           </Row>

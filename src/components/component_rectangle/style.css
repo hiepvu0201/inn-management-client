@@ -7,6 +7,7 @@
     box-sizing: border-box;
     margin-bottom: 35px;
     box-shadow: 10px 20px 0px 0px #007c7e ;
+    border-radius: 8px;
 }
 .rectangle-box:hover{
     box-shadow:  20px 40px 0px 5px #007c7e ;

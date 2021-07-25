@@ -9,9 +9,9 @@ import {
   faPlus,
   faTrash,
   faEdit,
-  faRestroom
+  faRestroom,
 } from "@fortawesome/free-solid-svg-icons";
-import Footer from "./../../../components/footer"
+import Footer from "./../../../components/footer";
 import { faSave } from "@fortawesome/free-regular-svg-icons";
 import Menu_AdminPage from "./../../../components/menu_adminpage";
 import {
@@ -207,14 +207,25 @@ function Role(props) {
               name="name"
               className="roles-us2"
             >
-              <Input placeholder={rowEdit.name} />
+              <Input
+                placeholder={rowEdit.name}
+                style={{ borderRadius: "8px", width: "80%" }}
+              />
             </Form.Item>
             <div style={{ display: "flex" }}>
-              <Button type="primary" htmlType="submit">
+              <Button
+                type="primary"
+                htmlType="submit"
+                style={{ borderRadius: "8px" }}
+              >
                 LƯU LẠI
               </Button>
               <div style={{ paddingLeft: "10px" }}>
-                <Button type="default" onClick={handleCancel}>
+                <Button
+                  type="default"
+                  onClick={handleCancel}
+                  style={{ borderRadius: "8px" }}
+                >
                   HỦY BỎ
                 </Button>
               </div>
@@ -289,18 +300,27 @@ function Role(props) {
                       name="name"
                       className="roles-us2"
                     >
-                      <div style={{ width: "90%" }}>
-                        <Input className="input-role" />
-                      </div>
+                      <Input
+                        className="input-role"
+                        style={{ borderRadius: "8px", width: "80%" }}
+                      />
                     </Form.Item>
 
                     {/* <Form.Item></Form.Item> */}
                     <div style={{ display: "flex" }}>
-                      <Button type="primary" htmlType="submit">
+                      <Button
+                        type="primary"
+                        htmlType="submit"
+                        style={{ borderRadius: "8px" }}
+                      >
                         THÊM MỚI
                       </Button>
                       <div style={{ paddingLeft: "10px" }}>
-                        <Button type="default" onClick={handleCancel}>
+                        <Button
+                          type="default"
+                          onClick={handleCancel}
+                          style={{ borderRadius: "8px" }}
+                        >
                           HỦY BỎ
                         </Button>
                       </div>
@@ -336,10 +356,10 @@ function Role(props) {
               fontSize: "12px",
               marginTop: "40px",
               textAlign: "left",
-              paddingTop:"15vh"
+              paddingTop: "15vh",
             }}
           >
-            <Footer/>
+            <Footer />
           </div>
         </div>
       </div>
