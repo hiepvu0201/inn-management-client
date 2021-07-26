@@ -37,6 +37,7 @@ function Rooms(props) {
   const [roomList, setRoomList] = useState([]);
   const [branchesList, setBranchesList] = useState([]);
   const [facilitiesList, setFacilitiesList] = useState([]);
+    const [branchList, setBranchList] = useState([]);
   const [isloadingUpdate, setIsloadingUpdate] = useState(false);
   const [rowEdit, setRowEdit] = useState({});
   const [fileList, setfileList] = useState([]);
@@ -70,6 +71,7 @@ function Rooms(props) {
     console.log(">>fileList", fileList);
     console.log(">>originFileObj", imgfile);
   };
+  
   const handlePreview = (file) => {
     setstateimg({
       ...stateimg,
@@ -108,6 +110,16 @@ function Rooms(props) {
       console.log("Failed to fetch branches list: ", error);
     }
   };
+  const fetchBranchList = async () => {
+    try {
+      const response = await branchesApi.getAll();
+      console.log("Fetch branch successfully: ", response.data);
+      setBranchList(response.data);
+      setIsModalVisible_1(false);
+    } catch (error) {
+      console.log("Failed to fetch branch list: ", error);
+    }
+  };
   const fetchFacilitiesList = async () => {
     try {
       const response = await facilitiesApi.getAll();
@@ -120,6 +132,7 @@ function Rooms(props) {
 
   useEffect(() => {
     fetchFacilitiesList();
+    fetchBranchList();
     fetchBranchesList();
     fetchRoomList();
     fetchFloorList();
@@ -394,7 +407,7 @@ function Rooms(props) {
   };
   const onSearch_1 = (value) => {
     console.log("<<VALUE", value);
-    if (value === "") {
+    if (value === undefined) {
       setRoomList(state);
     } else {
       const SearchRoombyBranch = async () => {
@@ -614,7 +627,7 @@ function Rooms(props) {
             <div className="btnbtncrateroom">
               <Button
                 style={{ borderRadius: "8px" }}
-                 type="primary"
+                type="primary"
                 htmlType="submit"
               >
                 CHỈNH SỬA
@@ -653,11 +666,20 @@ function Rooms(props) {
               </div>
               <div className="btn-right-rooms">
                 <div style={{ paddingRight: "10px", width: "60%" }}>
-                  <Search
-                    placeholder="Tìm kiếm"
+                  <Select
                     allowClear
-                    onSearch={onSearch_1}
-                  />
+                    style={{ width: 200, marginRight: "10px" }}
+                    onChange={onSearch_1}
+                  >
+                    {branchList.map((branchid) => (
+                      <Select.Option
+                        key={branchid.location}
+                        value={branchid.location}
+                      >
+                        {branchid.description}
+                      </Select.Option>
+                    ))}
+                  </Select>
                 </div>
 
                 <button className="detailed-btnroom" onClick={showModal}>

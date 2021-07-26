@@ -198,7 +198,7 @@ function Monthlyincome(props) {
 
    const onSearch_1 = (value) => {
      console.log("<<VALUE", value);
-     if (value === "") {
+     if (value === undefined) {
        setMonthlyincomeList(state);
      } else {
        const fetchSearchIncomebyBranch = async () => {
@@ -275,7 +275,7 @@ function Monthlyincome(props) {
               >
                 {branchList.map((branchid) => (
                   <Select.Option key={branchid.id} value={branchid.id}>
-                    {branchid.location}
+                    {branchid.description}
                   </Select.Option>
                 ))}
               </Select>
@@ -316,15 +316,31 @@ function Monthlyincome(props) {
               </div>
               <div className="btn-right-income">
                 <div className="searchachd">
-                  <Input.Search
+                  {/* <Input.Search
                     placeholder="Tìm kiếm"
                     allowClear
                     onSearch={onSearch_1}
-                  />
+                  /> */}
+                  <Select
+                    allowClear
+                    style={{ width: 200 }}
+                    onChange={onSearch_1}
+                  >
+                    {branchList.map((branchid) => (
+                      <Select.Option
+                        key={branchid.location}
+                        value={branchid.location}
+                      >
+                        {branchid.description}
+                      </Select.Option>
+                    ))}
+                  </Select>
                 </div>
-                <button className="detailed-btn-income" onClick={showModal}>
-                  THÊM MỚI
-                </button>
+                <div className="cover-btnincome">
+                  <button className="detailed-btn-income" onClick={showModal}>
+                    THÊM MỚI
+                  </button>
+                </div>
                 <Modal
                   title={
                     <div style={{ display: "flex" }}>

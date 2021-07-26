@@ -201,7 +201,7 @@ function Monthlypayment(props) {
 
   const onSearch_1 = (value) => {
     console.log("<<VALUE", value);
-    if (value === "") {
+    if (value === undefined) {
       setMonthlypaymentList(state);
     } else {
       const fetchSearchPaymentbyBranch = async () => {
@@ -278,7 +278,7 @@ function Monthlypayment(props) {
               name="branchId"
               className="form-branchId"
             >
-              <Select className="select-branch-id" style={{width:300}}>
+              <Select className="select-branch-id" style={{ width: 300 }}>
                 {branchList.map((branchid) => (
                   <Select.Option key={branchid.id} value={branchid.id}>
                     {branchid.description}
@@ -321,16 +321,28 @@ function Monthlypayment(props) {
                 </div>
               </div>
               <div className="btn-right-payment">
-                <div className="btnbtnpayment">
-                  <Input.Search
-                    placeholder="Tìm kiếm"
+                <div className="searchpay">
+                  <Select
                     allowClear
-                    onSearch={onSearch_1}
-                  />
+                    style={{ width: 200, marginRight: "10px" }}
+                    onChange={onSearch_1}
+                  >
+                    {branchList.map((branchid) => (
+                      <Select.Option
+                        key={branchid.location}
+                        value={branchid.location}
+                      >
+                        {branchid.description}
+                      </Select.Option>
+                    ))}
+                  </Select>
                 </div>
-                <button className="detailed-btn-payment" onClick={showModal}>
-                  THÊM MỚI
-                </button>
+                <div className="cover-btnpay">
+                  <button className="detailed-btn-payment" onClick={showModal}>
+                    THÊM MỚI
+                  </button>
+                </div>
+
                 <Modal
                   title={
                     <div style={{ display: "flex" }}>
@@ -399,7 +411,10 @@ function Monthlypayment(props) {
                       name="branchId"
                       className="form-branchId"
                     >
-                      <Select className="select-branch-id" style={{width:300}}>
+                      <Select
+                        className="select-branch-id"
+                        style={{ width: 300 }}
+                      >
                         {branchList.map((branchid) => (
                           <Select.Option key={branchid.id} value={branchid.id}>
                             {branchid.description}

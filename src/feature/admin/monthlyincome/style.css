@@ -9,11 +9,11 @@
 .topic-left-income {
   float: left;
   display: flex;
-  width: 40%;
+  width: 70%;
   padding-left: 15px;
 }
 .topic-right-income {
-  width: 60%;
+  width: 40%;
 }
 .contentmonthlyincome {
   font-size: 20px;
@@ -27,6 +27,12 @@
 .btn-right-income {
   float: right;
   display: flex;
+  width: 30%;
+}
+.cover-btnincome{
+  width:30%;
+  height: auto;
+      padding-left: 60px;
 }
 .detailed-btn-income {
   font-size: 15px;
@@ -78,8 +84,8 @@
   margin-left:20px;
 }
 .searchachd{
-  padding-right: 10px;
     width: 60%;
+    padding-left: 100px;
 }
 .ant-input-search > .ant-input-group > .ant-input-group-addon:last-child .ant-input-search-button {
     border-radius: 8px
@@ -90,6 +96,7 @@
 @media only screen and (max-width: 1026px) {
   .searchachd{
     width:30%;
+    padding-left: 0px;
   }
   .containerincome {
     height: auto;
@@ -141,7 +148,8 @@
   }
   .detailed-btn-income {
     font-size: 12px;
-    width: 15%;
+        width: 70%;
+
   }
   .rectanglemonthlyincome {
     width: 94%;
@@ -158,5 +166,8 @@
   .btncreate {
     width: 100%;
     padding-left: 160px;
+  }
+  .cover-btnincome{
+    padding-left: 0px;
   }
 }
