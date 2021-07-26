@@ -139,7 +139,7 @@ class Navbar_admin extends Component {
     return (
       <nav className="menuBaradmin">
         <div className="logoadmin">
-          <Link to="/" >
+          <Link to="/home" >
             <img
               className="middle-img"
               src={Images.LOGIN}

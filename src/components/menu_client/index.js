@@ -34,7 +34,7 @@ class Navbar extends Component {
           >
             Clothes Shop
           </a> */}
-          <Link to="/">
+          <Link to="/home">
             <FontAwesomeIcon icon={faHouseUser} size="2x" color="#007c7e" />
           </Link>
         </div>

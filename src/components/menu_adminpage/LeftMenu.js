@@ -35,7 +35,7 @@ const LeftMenu_admin = () => {
             size="1x"
             style={{ marginRight: "10px" }}
           />{" "}
-          <Link to="/" style={{ color: "white" }}>
+          <Link to="/home" style={{ color: "white" }}>
             Trang chủ
           </Link>
         </div>
