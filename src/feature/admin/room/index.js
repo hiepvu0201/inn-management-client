@@ -39,7 +39,7 @@ function Rooms(props) {
   const [facilitiesList, setFacilitiesList] = useState([]);
     const [branchList, setBranchList] = useState([]);
   const [isloadingUpdate, setIsloadingUpdate] = useState(false);
-  const [rowEdit, setRowEdit] = useState({});
+  const [rowEdit, setRowEdit] = useState({floor:{numberOfFloors:""},branch:{description:""},facilities:[{name:""}]});
   const [fileList, setfileList] = useState([]);
   const [imgfile, setimgfile] = useState(null);
   const [firstroom, setFirstroom] = useState(true);
@@ -272,13 +272,14 @@ function Rooms(props) {
       title:"Lầu",
       dataIndex:"floor",
       key:"floor",
-      render:(floor)=><Tag color="#ecb38c">{floor.numberOfFloors}</Tag>
+      render:(floor)=><div>{floor.numberOfFloors}</div>
+      // render:(floor)=><Tag color="#ecb38c">{floor.numberOfFloors}</Tag>
     },
     {
       title: "Chi nhánh",
       dataIndex: "branch",
       key: "branch",
-      render: (branch) => <div>{branch.location}</div>,
+      render: (branch) => <div>{branch.description}</div>,
     },
     {
       title: "Thiết bị",
@@ -292,68 +293,68 @@ function Rooms(props) {
       title: "Loại phòng",
       dataIndex: "roomType",
       key: "roomType",
-      render: (roomType) =>
-        roomType === null ? (
-          <Tag color="magenta" className="tagcolor">{roomType}</Tag>
-        ) : (
-          <Tag color="geekblue">{roomType}</Tag>
-        ),
+      // render: (roomType) =>
+      //   roomType === null ? (
+      //     <Tag color="magenta" className="tagcolor">{roomType}</Tag>
+      //   ) : (
+      //     <Tag color="geekblue">{roomType}</Tag>
+      //   ),
     },
-    // {
-    //   title: "Giá phòng theo giờ đầu",
-    //   dataIndex: "priceByFirstHour",
-    //   key: "priceByFirstHour",
-    //   render: (priceByFirstHour) =>
-    //     priceByFirstHour === 0 ? (
-    //       <Tag color="magenta">{priceByFirstHour}</Tag>
-    //     ) : (
-    //       <Tag color="geekblue">{priceByFirstHour}</Tag>
-    //     ),
-    // },
-    // {
-    //   title: "Giá phòng theo giờ sau",
-    //   dataIndex: "priceByNextHour",
-    //   key: "priceByNextHour",
-    //   render: (priceByNextHour) =>
-    //     priceByNextHour === 0 ? (
-    //       <Tag color="magenta">{priceByNextHour}</Tag>
-    //     ) : (
-    //       <Tag color="geekblue">{priceByNextHour}</Tag>
-    //     ),
-    // },
-    // {
-    //   title: "Giá phòng theo ngày",
-    //   dataIndex: "priceByDay",
-    //   key: "priceByDay",
-    //   render: (priceByDay) =>
-    //     priceByDay === 0 ? (
-    //       <Tag color="magenta">{priceByDay}</Tag>
-    //     ) : (
-    //       <Tag color="geekblue">{priceByDay}</Tag>
-    //     ),
-    // },
-    // {
-    //   title: "Giá phòng theo tuần",
-    //   dataIndex: "priceByWeek",
-    //   key: "priceByWeek",
-    //   render: (priceByWeek) =>
-    //     priceByWeek === 0 ? (
-    //       <Tag color="magenta">{priceByWeek}</Tag>
-    //     ) : (
-    //       <Tag color="geekblue">{priceByWeek}</Tag>
-    //     ),
-    // },
-    // {
-    //   title: "Giá phòng theo tháng",
-    //   dataIndex: "priceByMonth",
-    //   key: "priceByMonth",
-    //   render: (priceByMonth) =>
-    //     priceByMonth === 0 ? (
-    //       <Tag color="magenta">{priceByMonth}</Tag>
-    //     ) : (
-    //       <Tag color="geekblue">{priceByMonth}</Tag>
-    //     ),
-    // },
+    {
+      title: "Giá phòng theo giờ đầu",
+      dataIndex: "priceByFirstHour",
+      key: "priceByFirstHour",
+      // render: (priceByFirstHour) =>
+      //   priceByFirstHour === 0 ? (
+      //     <Tag color="magenta">{priceByFirstHour}</Tag>
+      //   ) : (
+      //     <Tag color="geekblue">{priceByFirstHour}</Tag>
+      //   ),
+    },
+    {
+      title: "Giá phòng theo giờ sau",
+      dataIndex: "priceByNextHour",
+      key: "priceByNextHour",
+      // render: (priceByNextHour) =>
+      //   priceByNextHour === 0 ? (
+      //     <Tag color="magenta">{priceByNextHour}</Tag>
+      //   ) : (
+      //     <Tag color="geekblue">{priceByNextHour}</Tag>
+      //   ),
+    },
+    {
+      title: "Giá phòng theo ngày",
+      dataIndex: "priceByDay",
+      key: "priceByDay",
+      // render: (priceByDay) =>
+      //   priceByDay === 0 ? (
+      //     <Tag color="magenta">{priceByDay}</Tag>
+      //   ) : (
+      //     <Tag color="geekblue">{priceByDay}</Tag>
+      //   ),
+    },
+    {
+      title: "Giá phòng theo tuần",
+      dataIndex: "priceByWeek",
+      key: "priceByWeek",
+      // render: (priceByWeek) =>
+      //   priceByWeek === 0 ? (
+      //     <Tag color="magenta">{priceByWeek}</Tag>
+      //   ) : (
+      //     <Tag color="geekblue">{priceByWeek}</Tag>
+      //   ),
+    },
+    {
+      title: "Giá phòng theo tháng",
+      dataIndex: "priceByMonth",
+      key: "priceByMonth",
+      // render: (priceByMonth) =>
+      //   priceByMonth === 0 ? (
+      //     <Tag color="magenta">{priceByMonth}</Tag>
+      //   ) : (
+      //     <Tag color="geekblue">{priceByMonth}</Tag>
+      //   ),
+    },
     {
       title: "",
       dataIndex: "",
@@ -501,6 +502,7 @@ function Rooms(props) {
                 onChange={handleChange}
                 style={{ width: 300 }}
                 className="select-floor"
+                placeholder={rowEdit.floor.numberOfFloors}
               >
                 {floorList.map((fi) => (
                   <Option key={fi.id} value={fi.id}>
@@ -516,9 +518,9 @@ function Rooms(props) {
             >
               <Select
                 style={{ width: 300 }}
-                placeholder={rowEdit.month}
                 onSelect={(value) => handleChange_roomType(value)}
                 className="select-roomType"
+                placeholder={rowEdit.roomType}
               >
                 <Option value="0">Phòng theo giờ</Option>
                 <Option value="1">Phòng theo ngày</Option>
@@ -533,14 +535,20 @@ function Rooms(props) {
                   name="priceByFirstHour"
                   className="form-pricebyfristhour"
                 >
-                  <Input className="input-priceByFirstHour" />
+                  <Input
+                    className="input-priceByFirstHour"
+                    placeholder={rowEdit.priceByFirstHour}
+                  />
                 </Form.Item>
                 <Form.Item
                   label="Giá phòng theo giờ 2"
                   name="priceByNextHour"
                   className="form-pricebynexthour"
                 >
-                  <Input className="input-priceByNextHour" />
+                  <Input
+                    className="input-priceByNextHour"
+                    placeholder={rowEdit.priceByNextHour}
+                  />
                 </Form.Item>
               </>
             )}
@@ -550,7 +558,11 @@ function Rooms(props) {
                 name="priceByDay"
                 className="priceByDay"
               >
-                <Input className="input-priceByDay" disabled={secondroom} />
+                <Input
+                  className="input-priceByDay"
+                  disabled={secondroom}
+                  placeholder={rowEdit.priceByDay}
+                />
               </Form.Item>
             )}
             {thirdroom || (
@@ -559,7 +571,11 @@ function Rooms(props) {
                 name="priceByWeek"
                 className="pricebyweek"
               >
-                <Input className="input-pricebyWeek" disabled={thirdroom} />
+                <Input
+                  className="input-pricebyWeek"
+                  disabled={thirdroom}
+                  placeholder={rowEdit.priceByWeek}
+                />
               </Form.Item>
             )}
             {fourthroom || (
@@ -568,7 +584,11 @@ function Rooms(props) {
                 name="priceByMonth"
                 className="pricebymonth"
               >
-                <Input className="input-priceByMonth" disabled={fourthroom} />
+                <Input
+                  className="input-priceByMonth"
+                  disabled={fourthroom}
+                  placeholder={rowEdit.priceByMonth}
+                />
               </Form.Item>
             )}
             <Form.Item
@@ -580,6 +600,7 @@ function Rooms(props) {
                 onChange={handleChange}
                 className="select-branches-edit"
                 style={{ width: 300 }}
+                placeholder={rowEdit.branch.description}
               >
                 {branchesList.map((branchesid) => (
                   <Select.Option key={branchesid.id} value={branchesid.id}>
@@ -599,6 +620,7 @@ function Rooms(props) {
                 className="select-facility-edit"
                 mode="multiple"
                 style={{ width: 300 }}
+                placeholder={rowEdit.facilities[0].name}
               >
                 {propsselect}
               </Select>

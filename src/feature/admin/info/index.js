@@ -258,16 +258,6 @@ function Info() {
                                 onFinishFailed={handleCancel}
                               >
                                 <Form.Item
-                                  label="Email"
-                                  name="email"
-                                  className="form-email"
-                                >
-                                  <Input
-                                    placeholder={userList.email}
-                                    className="input-email"
-                                  />
-                                </Form.Item>
-                                <Form.Item
                                   label="CMND"
                                   name="idNo"
                                   className="form-idNo"

@@ -34,6 +34,6 @@ const invoicesApi = {
   getid(params){
     const url = `/api/v1/invoices/${params}/`;
     return axiosClient.get(url);
-  }
+  },
 };
 export default invoicesApi;

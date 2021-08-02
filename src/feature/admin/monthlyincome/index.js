@@ -32,7 +32,7 @@ function Monthlyincome(props) {
   //api
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [isModalVisible_1, setIsModalVisible_1] = useState(false);
-  const [rowEdit, setRowEdit] = useState({});
+  const [rowEdit, setRowEdit] = useState({branch:{description:""}});
   const [monthlyincomeList, setMonthlyincomeList] = useState([]);
   const fetchMonthlyincomeList = async () => {
     try {
@@ -270,7 +270,7 @@ function Monthlyincome(props) {
             <Form.Item label="Chi nhánh" name="branchId" className="branchid-2">
               <Select
                 className="select-branchid"
-                placeholder={rowEdit.branchId}
+                placeholder={rowEdit.branch.description}
                 style={{ width: 250 }}
               >
                 {branchList.map((branchid) => (

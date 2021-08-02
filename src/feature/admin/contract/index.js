@@ -46,7 +46,7 @@ function Contract(props) {
   const [idSelected_1, setidSelected_1] = useState([]);
 
   const [isloadingUpdate, setIsloadingUpdate] = useState(false);
-  const [rowEdit, setRowEdit] = useState({});
+  const [rowEdit, setRowEdit] = useState({owner:{userName:""},tenant:{userName:""}});
   const [rowEdit_confirm, setRowEdit_confirm] = useState({});
   const [isModalVisible_1, setIsModalVisible_1] = useState(false);
   const [isModalVisible_2, setIsModalVisible_2] = useState(false);
@@ -390,6 +390,7 @@ function Contract(props) {
                 onChange={handleChange}
                 className="select-owner"
                 style={{ width: 300 }}
+                placeholder={rowEdit.owner.userName}
               >
                 {usersList.map((ownerid) =>
                   ownerid.roles[0].name === "ROLE_ADMIN" ? (
@@ -411,6 +412,7 @@ function Contract(props) {
                 onChange={handleChange_1}
                 className="select-tenant"
                 style={{ width: 300 }}
+                placeholder={rowEdit.tenant.userName}
               >
                 {usersList.map((ownerid) =>
                   ownerid.roles[0].name === "ROLE_USER" ? (

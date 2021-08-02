@@ -29,7 +29,7 @@ function Monthlypayment(props) {
   //loading update
   const [isloadingUpdate, setIsloadingUpdate] = useState(false);
   const [branchList, setBranchList] = useState([]);
-  const [rowEdit, setRowEdit] = useState({});
+  const [rowEdit, setRowEdit] = useState({branch:{description:""}});
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [isModalVisible_1, setIsModalVisible_1] = useState(false);
   const [state, setstate] = useState([]);
@@ -278,7 +278,7 @@ function Monthlypayment(props) {
               name="branchId"
               className="form-branchId"
             >
-              <Select className="select-branch-id" style={{ width: 300 }}>
+              <Select className="select-branch-id" style={{ width: 300 }} placeholder={rowEdit.branch.description}>
                 {branchList.map((branchid) => (
                   <Select.Option key={branchid.id} value={branchid.id}>
                     {branchid.description}

@@ -61,7 +61,6 @@ function Invoices() {
     fetchInvoicesList();
     fetchUsersList();
   }, []);
-
   //form
   const onFinish = (values) => {
     const dt =new Date();
@@ -77,6 +76,7 @@ function Invoices() {
       try {
         const response = await invoicesApi.create(dataCreate);
         console.log("Fetch create invoices successfully: ", response.data);
+        console.log("ffdfđf", response.data.electricityWater.room.total);
         // setInvoicesList(response.data);
         fetchInvoicesList();
         setIsModalVisible(false);
@@ -140,7 +140,7 @@ function Invoices() {
       title: "Chi nhánh",
       dataIndex: "user",
       key: "user",
-      render: (user) => <div>{user.room.branch.location}</div>,
+      render: (user) => <div>{user.room.branch.description}</div>,
     },
     {
       title: "Phòng",
@@ -159,18 +159,38 @@ function Invoices() {
       dataIndex: "total",
       key: "total",
     },
-    {
-      title: "Ngày tạo hợp đồng",
-      dataIndex: "contract",
-      key: "contract",
-      // render: (contract) => <div>{contract.signDate}</div>,
-      render: (contract) =>
-        contract.signDate === null ? (
-          <Tag color="#668595">NULL</Tag>
-        ) : (
-          <Tag color="#21363c">{contract.signDate}</Tag>
-        ),
-    },
+    // {
+    //   title: "Tổng tiền phòng",
+    //   dataIndex: "user",
+    //   key: "user",
+    //   render: (user) => <div>{user.room.total}</div>,
+    // },
+    // {
+    //   title: "Tổng tiền điện",
+    //   dataIndex: "electricityWater",
+    //   key: "electricityWater",
+    //   render: (electricityWater) => (
+    //     <div>{electricityWater.totalElectricity}</div>
+    //   ),
+    // },
+    // {
+    //   title: "Tổng tiền nước",
+    //   dataIndex: "electricityWater",
+    //   key: "electricityWater",
+    //   render: (electricityWater) => <div>{electricityWater.totalWater}</div>,
+    // },
+    // {
+    //   title: "Ngày tạo hợp đồng",
+    //   dataIndex: "contract",
+    //   key: "contract",
+    //   // render: (contract) => <div>{contract.signDate}</div>,
+    //   render: (contract) =>
+    //     contract.signDate === null ? (
+    //       <Tag color="#668595">NULL</Tag>
+    //     ) : (
+    //       <Tag color="#21363c">{contract.signDate}</Tag>
+    //     ),
+    // },
     {
       title: "Ngày thanh toán",
       dataIndex: "paymentDate",

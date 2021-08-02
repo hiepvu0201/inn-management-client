@@ -11,7 +11,7 @@ import {
   faEdit,
   faMapMarkerAlt,
   faSignOutAlt,
-  faUserEdit
+  faUserEdit,
 } from "@fortawesome/free-solid-svg-icons";
 import Footer from "./../../../components/footer";
 import { faSave } from "@fortawesome/free-regular-svg-icons";
@@ -53,8 +53,10 @@ function Users(props) {
   const [isloadingUpdate, setIsloadingUpdate] = useState(false);
   //
   const [rowEdit, setRowEdit] = useState({ roles: [{ name: "" }] });
-  const [rowEditcheck, setRowEditcheck] = useState({});
-  const [rowEditcheckout, setRowEditcheckout] = useState({});
+  const [rowEditcheck, setRowEditcheck] = useState({ roles: [{ name: "" }] });
+  const [rowEditcheckout, setRowEditcheckout] = useState({
+    roles: [{ name: "" }],
+  });
   //api
   //getAll
   const [usersList, setIsusersList] = useState([]);
@@ -182,15 +184,11 @@ function Users(props) {
       )
     );
   }
-  var prop2332=[];
+  var prop2332 = [];
   {
-    roleList.map((us)=>
-      us.name==="ROLE_USER"?(
-        prop2332.push(us.id)
-      ):(
-        <></>
-      )
-    )
+    roleList.map((us) =>
+      us.name === "ROLE_USER" ? prop2332.push(us.id) : <></>
+    );
   }
   //form
   const [table, setTable] = useState([]);
@@ -199,7 +197,7 @@ function Users(props) {
     console.log("Value", values);
     const dataCreate = {
       ...values,
-      roleIds:prop2332
+      roleIds: prop2332,
     };
     console.log("<<<", dataCreate);
     var myJSON = JSON.stringify(dataCreate);
@@ -259,8 +257,8 @@ function Users(props) {
       ...values,
       userName: rowEdit.userName,
       password: rowEdit.password,
-      roleIds: prop2332
-
+      roleIds: prop2332,
+      email:rowEdit.email,
     };
     console.log("<<<", dataUpdate);
     var myJSONupdate = JSON.stringify(dataUpdate);
@@ -428,28 +426,6 @@ function Users(props) {
       title: "Địa chỉ",
       dataIndex: "address",
       key: "address",
-    },
-    {
-      title: "Ngày checkin",
-      dataIndex: "checkinDate",
-      key: "checkinDate",
-      render: (checkinDate) =>
-        checkinDate === null ? (
-          <Tag color="#80efb2">NULL</Tag>
-        ) : (
-          <Tag color="#52b4f4">{checkinDate}</Tag>
-        ),
-    },
-    {
-      title: "Ngày checkout",
-      dataIndex: "checkoutDate",
-      key: "checkoutDate",
-      render: (checkoutDate) =>
-        checkoutDate === null ? (
-          <Tag color="#e28f20">NULL</Tag>
-        ) : (
-          <Tag color="#fca304">{checkoutDate}</Tag>
-        ),
     },
     {
       title: "Hình ảnh",
@@ -649,33 +625,65 @@ function Users(props) {
                 className="input-username-223"
               />
             </Form.Item> */}
-            <Form.Item label="Phòng" name="roomNo" className="form-roomnous2">
-              <Select className="select-roomNo12" style={{ width: 320 }}>
-                {roomList.map((roomid) => (
-                  <Select.Option key={roomid.roomNo} value={roomid.roomNo}>
-                    {roomid.roomNo}
-                  </Select.Option>
-                ))}
-              </Select>
-            </Form.Item>
-            <div style={{ display: "flex" }}>
-              <Button
-                type="primary"
-                htmlType="submit"
-                style={{ borderRadius: "8px" }}
-              >
-                CẬP NHẬT{" "}
-              </Button>
-              <div style={{ paddingLeft: "10px" }}>
-                <Button
-                  type="default"
-                  onClick={handleCancel_Checkin}
-                  style={{ borderRadius: "8px" }}
+            {rowEditcheck.roles[0].name === "ROLE_ADMIN" ? (
+              <div style={{ display: "block", paddingBottom: "20px" }}>
+                <div
+                  style={{
+                    paddingBottom: "10px",
+                    fontSize: "35px",
+                    fontFamily: "'Festive', cursive",
+                    display: "flex",
+                    color: "#708090",
+                    fontWeight: "bold",
+                  }}
                 >
-                  HỦY BỎ
-                </Button>
+                  Vì là tài khoản admin không được thực hiện chức năng checkin
+                </div>
+                <div>
+                  <Button
+                    type="primary"
+                    onClick={handleCancel_Checkin}
+                    style={{ borderRadius: "8px" }}
+                  >
+                    HỦY BỎ
+                  </Button>
+                </div>
               </div>
-            </div>
+            ) : (
+              <div>
+                <Form.Item
+                  label="Phòng"
+                  name="roomNo"
+                  className="form-roomnous2"
+                >
+                  <Select className="select-roomNo12" style={{ width: 320 }}>
+                    {roomList.map((roomid) => (
+                      <Select.Option key={roomid.roomNo} value={roomid.roomNo}>
+                        {roomid.roomNo}
+                      </Select.Option>
+                    ))}
+                  </Select>
+                </Form.Item>
+                <div style={{ display: "flex" }}>
+                  <Button
+                    type="primary"
+                    htmlType="submit"
+                    style={{ borderRadius: "8px" }}
+                  >
+                    CẬP NHẬT{" "}
+                  </Button>
+                  <div style={{ paddingLeft: "10px" }}>
+                    <Button
+                      type="default"
+                      onClick={handleCancel_Checkin}
+                      style={{ borderRadius: "8px" }}
+                    >
+                      HỦY BỎ
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            )}
           </Form>
         </Spin>
       </Modal>
@@ -710,47 +718,52 @@ function Users(props) {
             onFinish={onFinish_checkout}
             onFinishFailed={handleCancel_Checkin}
           >
-            {/* <Form.Item
-              label="Khách trọ"
-              name="userName"
-              value="userName"
-              className="form-userName-2"
-            >
-              <Input
-                className="input-username-24"
-                placeholder={rowEditcheckout.userName}
-                disabled
-              />
-            </Form.Item> */}
-            {/* <Form.Item
-              className="form-checkoutdate"
-              label="Ngày checkout"
-              name="checkOutDate"
-            >
-              <DatePicker
-                className="datepicker-checkoutdate"
-                showTime
-                format="YYYY-MM-DD HH:mm:ss"
-              />
-            </Form.Item> */}
-            <div style={{ display: "flex" }}>
-              <Button
-                type="primary"
-                htmlType="submit"
-                style={{ borderRadius: "8px" }}
-              >
-                CẬP NHẬT{" "}
-              </Button>
-              <div style={{ paddingLeft: "10px" }}>
-                <Button
-                  type="default"
-                  onClick={handleCancel_Checkout}
-                  style={{ borderRadius: "8px" }}
+            {rowEditcheckout.roles[0].name === "ROLE_ADMIN" ? (
+              <div style={{ display: "block", paddingBottom: "20px" }}>
+                <div
+                  style={{
+                    paddingBottom: "10px",
+                    fontSize: "35px",
+                    fontFamily: "'Festive', cursive",
+                    display: "flex",
+                    color: "#708090",
+                    fontWeight: "bold",
+                  }}
                 >
-                  HỦY BỎ
-                </Button>
+                  Vì là tài khoản admin không được thực hiện chức năng checkout
+                </div>
+                <div>
+                  <Button
+                    type="primary"
+                    onClick={handleCancel_Checkout}
+                    style={{ borderRadius: "8px" }}
+                  >
+                    HỦY BỎ
+                  </Button>
+                </div>
               </div>
-            </div>
+            ) : (
+              <div>
+                <div style={{ display: "flex" }}>
+                  <Button
+                    type="primary"
+                    htmlType="submit"
+                    style={{ borderRadius: "8px" }}
+                  >
+                    CẬP NHẬT{" "}
+                  </Button>
+                  <div style={{ paddingLeft: "10px" }}>
+                    <Button
+                      type="default"
+                      onClick={handleCancel_Checkout}
+                      style={{ borderRadius: "8px" }}
+                    >
+                      HỦY BỎ
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            )}
           </Form>
         </Spin>
       </Modal>
@@ -795,7 +808,7 @@ function Users(props) {
                 >
                   Vui long bấm vào icon chuyển tới trang thông tin cá nhân
                 </div>
-                <div>
+                <div style={{ display: "block" }}>
                   <Link to="/info">
                     <FontAwesomeIcon
                       icon={faUserEdit}
@@ -803,6 +816,15 @@ function Users(props) {
                       color="#8FBC8F"
                     />
                   </Link>
+                  <div style={{paddingTop:"15px"}}>
+                    <Button
+                      type="primary"
+                      onClick={handleCancel_1}
+                      style={{ borderRadius: "8px" }}
+                    >
+                      HỦY BỎ
+                    </Button>
+                  </div>
                 </div>
               </div>
             ) : (
@@ -829,12 +851,12 @@ function Users(props) {
                     </Button>
                   </div>
                 </div> */}
-                <Form.Item label="Email" name="email" className="form-email">
+                {/* <Form.Item label="Email" name="email" className="form-email">
                   <Input
                     placeholder={rowEdit.email}
                     className="input-email12"
                   />
-                </Form.Item>
+                </Form.Item> */}
                 <Form.Item
                   label="Họ và tên"
                   name="fullName"
@@ -905,27 +927,26 @@ function Users(props) {
                     )}
                   </Upload>
                 </Form.Item>
+                <div style={{ display: "flex" }}>
+                  <Button
+                    type="primary"
+                    htmlType="submit"
+                    style={{ borderRadius: "8px" }}
+                  >
+                    CHỈNH SỬA{" "}
+                  </Button>
+                  <div style={{ paddingLeft: "10px" }}>
+                    <Button
+                      type="default"
+                      onClick={handleCancel_1}
+                      style={{ borderRadius: "8px" }}
+                    >
+                      HỦY BỎ
+                    </Button>
+                  </div>
+                </div>
               </div>
             )}
-
-            <div style={{ display: "flex" }}>
-              <Button
-                type="primary"
-                htmlType="submit"
-                style={{ borderRadius: "8px" }}
-              >
-                CHỈNH SỬA{" "}
-              </Button>
-              <div style={{ paddingLeft: "10px" }}>
-                <Button
-                  type="default"
-                  onClick={handleCancel_1}
-                  style={{ borderRadius: "8px" }}
-                >
-                  HỦY BỎ
-                </Button>
-              </div>
-            </div>
           </Form>
         </Spin>
       </Modal>

@@ -223,7 +223,7 @@ function Role(props) {
               <div style={{ paddingLeft: "10px" }}>
                 <Button
                   type="default"
-                  onClick={handleCancel}
+                  onClick={handleCancel_1}
                   style={{ borderRadius: "8px" }}
                 >
                   HỦY BỎ

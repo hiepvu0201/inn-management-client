@@ -118,7 +118,7 @@
 .select-branches-edit{
     position:relative;
     left:70px;
-      margin-left:70px;
+      margin-left:-2px;
 
   }
   .select-facility-edit{

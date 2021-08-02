@@ -251,25 +251,31 @@ function Reportedissues(props) {
               label="Tiêu đề"
               name="title"
               className="form-item-report"
-              placeholder={rowEdit.title}
             >
-              <Input className="input-item-report" />
+              <Input
+                className="input-item-report"
+                placeholder={rowEdit.title}
+              />
             </Form.Item>
             <Form.Item
               label="Mô tả"
               name="description"
               className="form-description-report"
-              placeholder={rowEdit.description}
             >
-              <Input className="input-description-report" />
+              <Input
+                className="input-description-report"
+                placeholder={rowEdit.description}
+              />
             </Form.Item>
             <Form.Item
               label="Tình trạng"
               name="status"
               className="form-status-report"
-              placeholder={rowEdit.status}
             >
-              <Input  className="select-status-report"/>
+              <Input
+                className="select-status-report"
+                placeholder={rowEdit.status}
+              />
             </Form.Item>
             <div style={{ display: "flex" }}>
               <Button

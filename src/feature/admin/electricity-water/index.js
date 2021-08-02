@@ -36,7 +36,7 @@ function ElectricityWaters(props) {
 
   const [idSelected, setidSelected] = useState([]);
   const [isloadingUpdate, setIsloadingUpdate] = useState(false);
-  const [rowEdit, setRowEdit] = useState({});
+  const [rowEdit, setRowEdit] = useState({room:{roomNo:""}});
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [isModalVisible_1, setIsModalVisible_1] = useState(false);
 
@@ -395,6 +395,7 @@ function ElectricityWaters(props) {
                 onChange={handleChange}
                 className="select-roomid"
                 style={{ width: 300 }}
+                placeholder={rowEdit.room.roomNo}
               >
                 {roomList.map((roomsid) => (
                   <Select.Option key={roomsid.id} value={roomsid.id}>

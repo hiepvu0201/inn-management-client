@@ -30,7 +30,7 @@ import { Link } from "react-router-dom";
 const { Option } = Select;
 
 function Branches(props) {
-  const [rowEdit, setRowEdit] = useState({});
+  const [rowEdit, setRowEdit] = useState({facilities:[{name:""}]});
   //spin
   const [isloadingUpdate, setIsloadingUpdate] = useState(false);
   const [nullstate, setNullstate] = useState([]);
@@ -316,6 +316,7 @@ function Branches(props) {
             <Input
               className="input-location-branches"
               style={{ borderRadius: "8px" }}
+              placeholder={rowEdit.location}
             />
           </Form.Item>
           <Form.Item
@@ -362,6 +363,7 @@ function Branches(props) {
               mode="multiple"
               className="input-facility2"
               style={{ width: 320 }}
+              placeholder={rowEdit.facilities[0].name}
             >
               {propsselect}
             </Select>

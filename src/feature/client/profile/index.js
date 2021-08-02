@@ -63,6 +63,7 @@ function Profile() {
       userName: userList.userName,
       password: userList.password,
       roleIds: [userList.roles[0].id],
+      email:userList.email
     };
     console.log("<<<", dataUpdate);
     var myJSONupdate = JSON.stringify(dataUpdate);
@@ -257,18 +258,7 @@ function Profile() {
                               onFinish={onFinish_edit}
                               onFinishFailed={handleCancel}
                             >
-                              <Form.Item
-                                label="email"
-                                name="email"
-                                className="form-email"
-                              >
-                                <div style={{ width: "90%" }}>
-                                  <Input
-                                    placeholder={userList.email}
-                                    className="row-email"
-                                  />
-                                </div>
-                              </Form.Item>
+                              
                               <Form.Item
                                 label="Họ và tên"
                                 name="fullName"
